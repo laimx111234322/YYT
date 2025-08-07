@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通业务漏斗模型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066b2', // 怡亚通主蓝色
+                        secondary: '#0099da', // 怡亚通次蓝色
+                        accent: '#ff6600', // 怡亚通橙色强调
+                        dark: '#333333',
+                        light: '#f5f7fa',
+                    },
+                    fontFamily: {
+                        sans: ['Microsoft YaHei', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease-in-out;
+            }
+            .funnel-layer {
+                transition: all 0.5s ease;
+            }
+            .funnel-layer:hover {
+                transform: scale(1.02);
+            }
+            .funnel-connector {
+                width: 4px;
+                background: linear-gradient(to bottom, #0099da, #0066b2);
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://picsum.photos/id/20/80/40" alt="怡亚通logo" class="h-10">
+                <nav class="ml-10 hidden md:flex space-x-8">
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">首页</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">关于我们</a>
+                    <a href="#" class="text-primary font-medium hover:text-accent transition-custom">业务漏斗</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">服务介绍</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">联系我们</a>
+                </nav>
+            </div>
+            <div class="flex items-center">
+                <a href="tel:4008888888" class="hidden md:flex items-center text-primary mr-6">
+                    <i class="fa fa-phone mr-2"></i>
+                    <span>400-888-8888</span>
+                </a>
+                <button class="md:hidden text-dark text-xl" id="menuToggle">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white absolute w-full border-t" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">首页</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">关于我们</a>
+                <a href="#" class="text-primary font-medium py-2 hover:text-accent transition-custom">业务漏斗</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">服务介绍</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">联系我们</a>
+                <a href="tel:4008888888" class="text-primary py-2">
+                    <i class="fa fa-phone mr-2"></i>
+                    <span>400-888-8888</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 text-shadow leading-tight">
+                    怡亚通业务漏斗模型
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 opacity-90">
+                    从培训赋能到自营品牌，构建完整跨境电商生态链，实现多方共赢
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#funnel" class="bg-white text-primary font-medium px-8 py-3 rounded-md hover:bg-gray-100 transition-custom">
+                        了解漏斗模型
+                    </a>
+                    <a href="#contact-us" class="bg-accent text-white font-medium px-8 py-3 rounded-md hover:bg-accent/90 transition-custom">
+                        咨询合作详情
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 漏斗模型概述 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">全方位业务生态体系</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
+                    怡亚通构建了从流量入口到供应链金融的完整业务漏斗，通过层层递进的合作模式，
+                    与合作伙伴共同成长，实现价值最大化
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-light p-8 rounded-xl shadow-md">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-full md:w-1/3">
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto">
+                                4
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                层
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>从培训开始建立流量入口，筛选优质合作伙伴</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>通过代运营服务为优质产品提供专业运营支持</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>与优质工厂成立合资公司，深度参与产品运营</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>最终筛选顶级产品进行自营，实现供应链金融</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 漏斗模型可视化 -->
+    <section id="funnel" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">业务漏斗模型详解</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- 漏斗可视化 -->
+                <div class="relative max-w-3xl mx-auto mb-20">
+                    <!-- 第一层：培训 -->
+                    <div class="funnel-layer bg-primary text-white p-6 rounded-t-3xl mb-2" style="width: 100%;">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-0">第一层：培训赋能</h3>
+                            <span class="bg-white text-primary px-4 py-1 rounded-full text-sm font-medium">流量入口</span>
+                        </div>
+                    </div>
+                    
+                    <div class="funnel-connector" style="height: 30px;"></div>
+                    
+                    <!-- 第二层：代运营 -->
+                    <div class="funnel-layer bg-secondary text-white p-6 mb-2" style="width: 80%; margin: 0 auto;">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-0">第二层：代运营服务</h3>
+                            <span class="bg-white text-secondary px-4 py-1 rounded-full text-sm font-medium">服务深化</span>
+                        </div>
+                    </div>
+                    
+                    <div class="funnel-connector" style="height: 30px;"></div>
+                    
+                    <!-- 第三层：联合运营 -->
+                    <div class="funnel-layer bg-accent text-white p-6 mb-2" style="width: 60%; margin: 0 auto;">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-0">第三层：联合运营</h3>
+                            <span class="bg-white text-accent px-4 py-1 rounded-full text-sm font-medium">深度合作</span>
+                        </div>
+                    </div>
+                    
+                    <div class="funnel-connector" style="height: 30px;"></div>
+                    
+                    <!-- 第四层：自营 -->
+                    <div class="funnel-layer bg-dark text-white p-6 rounded-b-3xl" style="width: 40%; margin: 0 auto;">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-0">第四层：自营业务</h3>
+                            <span class="bg-white text-dark px-4 py-1 rounded-full text-sm font-medium">价值最大化</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 各层详细介绍 -->
+                <div class="space-y-20">
+                    <!-- 第一层：培训 -->
+                    <div class="funnel-detail" id="layer1">
+                        <div class="flex flex-col md:flex-row gap-10 items-center">
+                            <div class="w-full md:w-1/2">
+                                <span class="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">第一层：流量入口</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-primary mb-6">培训赋能</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed">
+                                    作为业务漏斗的入口，我们提供专业的跨境电商培训课程，
+                                    面向各类潜在合作伙伴，培养跨境电商人才，同时筛选有潜力的优质资源。
+                                </p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">目标客户</h4>
+                                            <p class="text-gray-600">大学生、工厂转型企业、跨境电商创业者</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">培训周期</h4>
+                                            <p class="text-gray-600">7天短期培训至1个月系统培训</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-money"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">付费模式</h4>
+                                            <p class="text-gray-600">创新"先学习后付费"模式，降低入门门槛</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#contact-us" class="inline-flex items-center text-primary font-medium hover:text-accent transition-custom">
+                                    了解培训详情 <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="w-full md:w-1/2">
+                                <img src="https://picsum.photos/id/20/600/400" alt="怡亚通培训赋能" class="rounded-lg shadow-xl w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二层：代运营 -->
+                    <div class="funnel-detail" id="layer2">
+                        <div class="flex flex-col md:flex-row-reverse gap-10 items-center">
+                            <div class="w-full md:w-1/2">
+                                <span class="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">第二层：服务深化</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-secondary mb-6">代运营服务</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed">
+                                    从培训中筛选出拥有优质产品但缺乏运营能力的工厂或企业，
+                                    提供专业的亚马逊等平台代运营服务，帮助其打开跨境电商市场。
+                                </p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-cogs"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">服务内容</h4>
+                                            <p class="text-gray-600">店铺运营、Listing优化、营销推广、订单处理、客户服务</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-calculator"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">收费模式</h4>
+                                            <p class="text-gray-600">基础服务费 + 销售业绩提成，与客户共同成长</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-shield"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">运营保障</h4>
+                                            <p class="text-gray-600">店铺账号和收款由怡亚通统一把控，物流由怡亚通提供</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#contact-us" class="inline-flex items-center text-secondary font-medium hover:text-accent transition-custom">
+                                    咨询代运营服务 <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="w-full md:w-1/2">
+                                <img src="https://picsum.photos/id/48/600/400" alt="怡亚通代运营服务" class="rounded-lg shadow-xl w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第三层：联合运营 -->
+                    <div class="funnel-detail" id="layer3">
+                        <div class="flex flex-col md:flex-row gap-10 items-center">
+                            <div class="w-full md:w-1/2">
+                                <span class="inline-block bg-accent/10 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">第三层：深度合作</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-accent mb-6">联合运营</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed">
+                                    对于具有优质产品和市场潜力的合作伙伴，我们将与其共同成立合资公司，
+                                    进行深度的联合运营，共享资源，共担风险，实现利益最大化。
+                                </p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-handshake-o"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">合作模式</h4>
+                                            <p class="text-gray-600">与优质工厂共同出资成立合资公司，专业团队运营</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-pie-chart"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">利益分配</h4>
+                                            <p class="text-gray-600">根据出资比例和贡献度进行利润分配，风险共担</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-globe"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">资源支持</h4>
+                                            <p class="text-gray-600">共享怡亚通全球供应链网络、物流体系和销售渠道</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#contact-us" class="inline-flex items-center text-accent font-medium hover:text-primary transition-custom">
+                                    了解联合运营 <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="w-full md:w-1/2">
+                                <img src="https://picsum.photos/id/180/600/400" alt="怡亚通联合运营" class="rounded-lg shadow-xl w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第四层：自营 -->
+                    <div class="funnel-detail" id="layer4">
+                        <div class="flex flex-col md:flex-row-reverse gap-10 items-center">
+                            <div class="w-full md:w-1/2">
+                                <span class="inline-block bg-dark/10 text-dark px-4 py-1 rounded-full text-sm font-medium mb-4">第四层：价值最大化</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-dark mb-6">自营业务</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed">
+                                    经过层层筛选，对于市场潜力巨大、品质卓越的顶级产品，
+                                    怡亚通将直接进行自营，全面掌控产品运营和市场推广，
+                                    最终实现供应链金融的价值闭环。
+                                </p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-dark/10 flex items-center justify-center text-dark mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">产品选择</h4>
+                                            <p class="text-gray-600">经过市场验证的优质产品，具有强大的市场竞争力</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-dark/10 flex items-center justify-center text-dark mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">运营策略</h4>
+                                            <p class="text-gray-600">全渠道营销，品牌化运营，最大化市场份额和利润</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-dark/10 flex items-center justify-center text-dark mr-3 mt-1 flex-shrink-0">
+                                            <i class="fa fa-university"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">最终目标</h4>
+                                            <p class="text-gray-600">构建完整的供应链金融体系，实现产业价值最大化</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#contact-us" class="inline-flex items-center text-dark font-medium hover:text-accent transition-custom">
+                                    探讨自营合作 <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="w-full md:w-1/2">
+                                <img src="https://picsum.photos/id/160/600/400" alt="怡亚通自营业务" class="rounded-lg shadow-xl w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">我们的核心优势</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    怡亚通凭借多年供应链管理经验和跨境电商运营能力，为合作伙伴提供全方位支持
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">全球供应链网络</h3>
+                    <p class="text-gray-600">
+                        覆盖全球的供应链体系，提供高效、低成本的物流解决方案，
+                        助力产品快速进入全球市场
+                    </p>
+                </div>
+                
+                <div class="bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-2xl mb-6">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">专业运营团队</h3>
+                    <p class="text-gray-600">
+                        拥有多年跨境电商运营经验的专业团队，熟悉各大平台规则，
+                        能有效提升产品销量和品牌影响力
+                    </p>
+                </div>
+                
+                <div class="bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">安全风控体系</h3>
+                    <p class="text-gray-600">
+                        完善的风险控制机制，保障账号安全和资金安全，
+                        为业务发展提供稳定保障
+                    </p>
+                </div>
+                
+                <div class="bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 rounded-full bg-dark/10 flex items-center justify-center text-dark text-2xl mb-6">
+                        <i class="fa fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">供应链金融支持</h3>
+                    <p class="text-gray-600">
+                        提供灵活的供应链金融服务，解决资金周转问题，
+                        助力业务快速扩张
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">合作成功案例</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    众多合作伙伴通过我们的漏斗模型实现了业务增长和品牌升级
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-custom">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/id/96/60/60" alt="案例企业logo" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">某家居用品工厂</h3>
+                                <p class="text-gray-500 text-sm">从培训到联合运营的全漏斗案例</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            该工厂通过参加我们的7天速成培训，了解跨境电商运营基础。
+                            因其产品质量优异，我们为其提供代运营服务，6个月内实现月销10万美元。
+                            随后双方成立合资公司进行联合运营，目前年销售额已突破2000万美元。
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">培训赋能</span>
+                            <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">代运营</span>
+                            <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">联合运营</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-custom">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/id/91/60/60" alt="案例企业logo" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">某3C配件品牌</h3>
+                                <p class="text-gray-500 text-sm">从代运营到自营的升级案例</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            该品牌初期通过我们的代运营服务进入亚马逊市场，凭借优质产品和
+                            专业运营，1年内成为品类Top 10卖家。鉴于其市场潜力，我们将其纳入
+                            自营体系，通过全渠道运营和品牌化策略，目前全球年销售额已达5000万美元。
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">代运营</span>
+                            <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">联合运营</span>
+                            <span class="bg-dark/10 text-dark text-xs px-3 py-1 rounded-full">自营业务</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 咨询表单 -->
+    <section id="contact-us" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">咨询合作详情</h2>
+                        <div class="w-20 h-1 bg-accent mb-6"></div>
+                        <p class="text-gray-600 mb-8">
+                            无论您处于业务漏斗的哪个阶段，我们都能为您提供定制化的解决方案。
+                            填写下方表单，我们的专业顾问将在24小时内与您联系。
+                        </p>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 mt-1">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">总部地址</h3>
+                                    <p class="text-gray-600">深圳市南山区科技园科苑南路3099号</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 mt-1">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">联系电话</h3>
+                                    <p class="text-gray-600">400-888-8888</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 mt-1">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">电子邮箱</h3>
+                                    <p class="text-gray-600">cooperation@easye.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-custom">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-custom">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-custom">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <form class="bg-light p-8 rounded-lg shadow-md">
+                            <div class="mb-6">
+                                <label for="company" class="block text-gray-700 font-medium mb-2">企业名称 *</label>
+                                <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-custom" placeholder="请输入企业名称">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">联系人 *</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-custom" placeholder="请输入联系人姓名">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">联系电话 *</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-custom" placeholder="请输入联系电话">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="cooperation-type" class="block text-gray-700 font-medium mb-2">意向合作类型</label>
+                                <select id="cooperation-type" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-custom">
+                                    <option value="">请选择合作类型</option>
+                                    <option value="training">培训服务</option>
+                                    <option value="operation">代运营服务</option>
+                                    <option value="joint">联合运营</option>
+                                    <option value="self">自营合作</option>
+                                    <option value="other">其他合作</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">合作需求描述</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-custom" placeholder="请描述您的合作需求或疑问"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-accent text-white font-medium px-6 py-3 rounded-md hover:bg-accent/90 transition-custom">
+                                提交咨询
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="https://picsum.photos/id/30/120/60" alt="怡亚通logo" class="h-12 mb-6">
+                    <p class="text-gray-400 mb-6">
+                        怡亚通作为中国领先的供应链服务商，构建了从培训到自营的完整业务漏斗，
+                        为合作伙伴提供全方位的跨境电商解决方案，助力企业实现全球化发展。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">业务体系</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#layer1" class="text-gray-400 hover:text-white transition-custom">培训赋能</a></li>
+                        <li><a href="#layer2" class="text-gray-400 hover:text-white transition-custom">代运营服务</a></li>
+                        <li><a href="#layer3" class="text-gray-400 hover:text-white transition-custom">联合运营</a></li>
+                        <li><a href="#layer4" class="text-gray-400 hover:text-white transition-custom">自营业务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">供应链金融</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">关于我们</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">公司简介</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">发展历程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">团队介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">成功案例</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">新闻动态</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">联系方式</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-accent mt-1 mr-3"></i>
+                            <span class="text-gray-400">深圳市南山区科技园科苑南路3099号</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-accent mt-1 mr-3"></i>
+                            <span class="text-gray-400">400-888-8888</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-accent mt-1 mr-3"></i>
+                            <span class="text-gray-400">cooperation@easye.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o text-accent mt-1 mr-3"></i>
+                            <span class="text-gray-400">周一至周五 9:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 深圳市怡亚通供应链股份有限公司 版权所有</p>
+                <p class="mt-2">粤ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-lg');
+                navbar.classList.remove('py-3', 'shadow-md');
+            } else {
+                navbar.classList.add('py-3', 'shadow-md');
+                navbar.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+        
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // 漏斗层动画效果
+        const funnelLayers = document.querySelectorAll('.funnel-layer');
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        funnelLayers.forEach(layer => {
+            layer.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(layer);
+        });
+    </script>
+</body>
+</html>

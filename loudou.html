@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通业务增长漏斗 | 内部战略方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0052CC', // 怡亚通深蓝主色
+                        secondary: '#2383E2', // 亮蓝色
+                        accent: '#FF5630', // 强调红橙色
+                        dark: '#172B4D',
+                        light: '#F4F5F7',
+                        success: '#00B8D9',
+                        profit: '#00B578'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Microsoft YaHei', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .funnel-gradient {
+                background: linear-gradient(135deg, var(--tw-gradient-stops));
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .funnel-hover {
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            .funnel-hover:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 12px 20px rgba(0, 82, 204, 0.15);
+            }
+            .counter-animation {
+                transition: all 1.5s ease-out;
+            }
+            .connector {
+                height: 24px;
+                width: 6px;
+                margin: 0 auto;
+                background: linear-gradient(to bottom, #2383E2, #0052CC);
+                transform-origin: top center;
+                opacity: 0;
+                transform: scaleY(0);
+                transition: all 0.6s ease 0.3s;
+            }
+            .connector.visible {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-dark overflow-x-hidden">
+    <!-- 顶部导航 -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://picsum.photos/id/20/80/40" alt="怡亚通集团" class="h-10">
+                <h1 class="ml-4 text-xl font-bold text-primary hidden md:block">怡亚通业务增长漏斗</h1>
+                <span class="ml-4 text-sm bg-accent/10 text-accent px-3 py-1 rounded-full hidden md:inline-block">
+                    内部战略方案 | 股东专享
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-500 hidden md:block">
+                    <i class="fa fa-calendar-o mr-1"></i> 2025战略规划
+                </span>
+                <button class="bg-primary/10 text-primary px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/20 transition-colors">
+                    <i class="fa fa-download mr-1"></i> 下载方案
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://picsum.photos/id/180/1200/800')] bg-cover bg-center"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 leading-tight text-shadow">
+                    流量层层递进 · 盈利层层叠加
+                </h1>
+                <p class="text-[clamp(1.1rem,2vw,1.4rem)] mb-10 opacity-90 max-w-3xl mx-auto">
+                    从培训入口到品牌自营的四级业务漏斗，构建可持续增长的盈利生态，
+                    全面掌控流量、运营、资金与物流，实现收益最大化
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl md:text-4xl font-bold mb-1 counter" data-target="4">0</div>
+                        <div class="text-sm opacity-80">业务层级</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl md:text-4xl font-bold mb-1 counter" data-target="100">0</div>
+                        <div class="text-sm opacity-80">流量转化率(%)</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl md:text-4xl font-bold mb-1 counter" data-target="300">0</div>
+                        <div class="text-sm opacity-80">预期年增长率(%)</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl md:text-4xl font-bold mb-1 counter" data-target="5">0</div>
+                        <div class="text-sm opacity-80">年投资回报(倍)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </section>
+
+    <!-- 核心漏斗可视化 -->
+    <section class="py-16 md:py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">四级增长漏斗模型</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    每一层级都构建在前者基础上，形成流量与利润的乘数效应，
+                    全面把控业务链条，实现收益最大化
+                </p>
+            </div>
+            
+            <!-- 漏斗图形 -->
+            <div class="max-w-4xl mx-auto mb-20">
+                <!-- 第一层：培训 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-primary to-secondary text-white p-6 md:p-8 rounded-t-3xl mb-0" style="width: 100%; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.1s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">流量入口</span>
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2">第一层：培训赋能</h3>
+                            <p class="text-white/90 text-sm md:text-base">大学生 · 工厂转型 · 跨境电商创业者</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-primary font-bold px-4 py-2 rounded-lg text-lg">
+                            利润基数 <span class="text-accent">×1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">培训周期</div>
+                            <div class="font-medium">7天 - 1个月</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">个人收费</div>
+                            <div class="font-medium">5,000元</div>
+                            <div class="text-xs text-white/80">先学习后付费</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">企业收费</div>
+                            <div class="font-medium">60,000元</div>
+                            <div class="text-xs text-white/80">先学习后付费</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector"></div>
+                
+                <!-- 第二层：代运营 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-secondary to-success text-white p-6 md:p-8 mb-0" style="width: 80%; margin: 0 auto; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.3s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">服务深化</span>
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2">第二层：代运营服务</h3>
+                            <p class="text-white/90 text-sm md:text-base">优质工厂 · 潜力产品 · 运营赋能</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-secondary font-bold px-4 py-2 rounded-lg text-lg">
+                            利润基数 <span class="text-accent">×5-8</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">基础服务费</div>
+                            <div class="font-medium">30,000元/月</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">利润分成</div>
+                            <div class="font-medium">销售额的20%</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">增值服务</div>
+                            <div class="font-medium">供应链金融</div>
+                            <div class="text-xs text-white/80">账号与资金把控</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector"></div>
+                
+                <!-- 第三层：联合运营 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-success to-accent text-white p-6 md:p-8 mb-0" style="width: 60%; margin: 0 auto; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.5s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">深度绑定</span>
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2">第三层：联合运营</h3>
+                            <p class="text-white/90 text-sm md:text-base">合资公司 · 风险共担 · 利润共享</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-success font-bold px-4 py-2 rounded-lg text-lg">
+                            利润基数 <span class="text-accent">×15-20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">持股比例</div>
+                            <div class="font-medium">30-40%</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">运营控制权</div>
+                            <div class="font-medium">怡亚通主导</div>
+                            <div class="text-xs text-white/80">账号与物流把控</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">收益模式</div>
+                            <div class="font-medium">股权分红+服务费</div>
+                            <div class="text-xs text-white/80">供应链金融收益</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector"></div>
+                
+                <!-- 第四层：品牌自营 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-accent to-dark text-white p-6 md:p-8 rounded-b-3xl" style="width: 40%; margin: 0 auto; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.7s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">价值最大化</span>
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2">第四层：品牌自营</h3>
+                            <p class="text-white/90 text-sm md:text-base">顶级产品 · 全链掌控 · 品牌增值</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-accent font-bold px-4 py-2 rounded-lg text-lg">
+                            利润基数 <span class="text-primary">×30-50</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">业务模式</div>
+                            <div class="font-medium">100%自营</div>
+                            <div class="text-xs text-white/80">全渠道运营</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">利润空间</div>
+                            <div class="font-medium">50-70%</div>
+                            <div class="text-xs text-white/80">品牌溢价+渠道利润</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">金融赋能</div>
+                            <div class="font-medium">全链条金融服务</div>
+                            <div class="text-xs text-white/80">资本运作空间大</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 增长曲线 -->
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-8 mb-16">
+                <h3 class="text-xl md:text-2xl font-bold text-dark mb-6 text-center">流量转化与利润增长曲线</h3>
+                <div class="h-80">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 每层详细说明 -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto space-y-20">
+                <!-- 第一层详情 -->
+                <div class="layer-detail flex flex-col md:flex-row gap-10 items-center" style="opacity: 0; transform: translateY(30px); transition: all 0.8s ease 0.2s;">
+                    <div class="w-full md:w-1/2">
+                        <span class="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">流量入口 | 第一层</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary mb-6">培训赋能体系</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            作为整个业务漏斗的流量入口，培训体系不仅是重要的利润来源，更是筛选优质合作伙伴的第一道关口。
+                            创新的"先学习后付费"模式极大降低了参与门槛，能够快速扩大用户基数，为后续业务层提供充足的潜在客户。
+                        </p>
+                        
+                        <div class="bg-light rounded-xl p-6 mb-6">
+                            <h4 class="font-bold text-dark mb-4 flex items-center">
+                                <i class="fa fa-line-chart text-primary mr-2"></i> 商业价值
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <span>每年可触达10,000+潜在客户，形成庞大的流量池</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <span>筛选转化率约30%，为代运营业务提供优质客户</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <span>建立行业影响力，塑造专业品牌形象</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <span>单客经济价值起点，为后续业务层铺垫</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex items-center text-primary font-bold">
+                            <span>预期年收益：1.2-1.8亿元</span>
+                            <div class="ml-4 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                                利润率 45%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://picsum.photos/id/20/600/400" alt="怡亚通培训赋能" class="w-full h-auto">
+                            <div class="bg-primary/5 p-4">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="text-sm text-gray-500">培训转化路径</div>
+                                        <div class="font-bold">学员 → 客户 → 合作伙伴</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm text-gray-500">年度增长目标</div>
+                                        <div class="font-bold text-primary">+80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 第二层详情 -->
+                <div class="layer-detail flex flex-col md:flex-row-reverse gap-10 items-center" style="opacity: 0; transform: translateY(30px); transition: all 0.8s ease 0.4s;">
+                    <div class="w-full md:w-1/2">
+                        <span class="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">服务深化 | 第二层</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-secondary mb-6">代运营服务</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            从培训学员中筛选出拥有优质产品但缺乏运营能力的工厂，提供全方位代运营服务。
+                            此阶段开始全面掌控店铺账号和资金流，怡亚通提供物流支持，并开展供应链金融业务，
+                            形成多元化收益渠道。
+                        </p>
+                        
+                        <div class="bg-light rounded-xl p-6 mb-6">
+                            <h4 class="font-bold text-dark mb-4 flex items-center">
+                                <i class="fa fa-shield text-secondary mr-2"></i> 核心优势
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>账号与资金双重把控，风险可控</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>基础服务费+利润分成，收益稳定增长</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>物流由怡亚通提供，增加利润点</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>开展供应链金融，提升资金利用率</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex items-center text-secondary font-bold">
+                            <span>预期年收益：5-8亿元</span>
+                            <div class="ml-4 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">
+                                利润率 35%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://picsum.photos/id/48/600/400" alt="怡亚通代运营服务" class="w-full h-auto">
+                            <div class="bg-secondary/5 p-4">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="text-sm text-gray-500">代运营客户数量</div>
+                                        <div class="font-bold">目标500-800家/年</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm text-gray-500">平均单客价值</div>
+                                        <div class="font-bold text-secondary">100-150万元/年</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 第三层详情 -->
+                <div class="layer-detail flex flex-col md:flex-row gap-10 items-center" style="opacity: 0; transform: translateY(30px); transition: all 0.8s ease 0.6s;">
+                    <div class="w-full md:w-1/2">
+                        <span class="inline-block bg-success/10 text-success px-4 py-1 rounded-full text-sm font-medium mb-4">深度绑定 | 第三层</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-success mb-6">联合运营</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            从代运营客户中筛选出最优质的产品和工厂，通过成立合资公司的方式进行深度绑定。
+                            怡亚通持股30-40%，主导运营，共享资源，共担风险，实现利润最大化。
+                            此阶段供应链金融业务进一步深化，收益结构更加多元。
+                        </p>
+                        
+                        <div class="bg-light rounded-xl p-6 mb-6">
+                            <h4 class="font-bold text-dark mb-4 flex items-center">
+                                <i class="fa fa-pie-chart text-success mr-2"></i> 收益结构
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-success mt-1 mr-3"></i>
+                                    <span>股权分红（30-40%）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-success mt-1 mr-3"></i>
+                                    <span>运营服务费（10-15%）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-success mt-1 mr-3"></i>
+                                    <span>供应链金融收益（8-12%）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-success mt-1 mr-3"></i>
+                                    <span>物流及其他服务收益（5-8%）</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex items-center text-success font-bold">
+                            <span>预期年收益：15-25亿元</span>
+                            <div class="ml-4 bg-success/10 text-success px-3 py-1 rounded-full text-sm">
+                                利润率 40%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://picsum.photos/id/180/600/400" alt="怡亚通联合运营" class="w-full h-auto">
+                            <div class="bg-success/5 p-4">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="text-sm text-gray-500">计划合资公司</div>
+                                        <div class="font-bold">30-50家/年</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm text-gray-500">平均估值增长</div>
+                                        <div class="font-bold text-success">+120%/年</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 第四层详情 -->
+                <div class="layer-detail flex flex-col md:flex-row-reverse gap-10 items-center" style="opacity: 0; transform: translateY(30px); transition: all 0.8s ease 0.8s;">
+                    <div class="w-full md:w-1/2">
+                        <span class="inline-block bg-accent/10 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">价值最大化 | 第四层</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-accent mb-6">品牌自营</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            经过层层筛选，选择市场潜力巨大、品质卓越的顶级产品进行100%自营。
+                            怡亚通全面掌控产品设计、生产、营销和销售全链条，打造自有品牌，
+                            实现利润最大化。此阶段供应链金融业务成熟，形成完整的商业闭环。
+                        </p>
+                        
+                        <div class="bg-light rounded-xl p-6 mb-6">
+                            <h4 class="font-bold text-dark mb-4 flex items-center">
+                                <i class="fa fa-rocket text-accent mr-2"></i> 战略价值
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>品牌溢价空间大，利润率高达50-70%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>全渠道布局，掌控定价权和市场份额</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>资本运作空间广阔，可独立分拆上市</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>形成品牌矩阵，构建行业壁垒</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex items-center text-accent font-bold">
+                            <span>预期年收益：30-50亿元</span>
+                            <div class="ml-4 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">
+                                利润率 50-70%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://picsum.photos/id/160/600/400" alt="怡亚通自营业务" class="w-full h-auto">
+                            <div class="bg-accent/5 p-4">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="text-sm text-gray-500">自营品牌计划</div>
+                                        <div class="font-bold">10-20个核心品牌</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm text-gray-500">投资回报率</div>
+                                        <div class="font-bold text-accent">500-800%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势与数据 -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">核心竞争力与增长引擎</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    全面掌控业务链条，构建护城河，实现指数级增长
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">全链条掌控</h3>
+                    <p class="text-gray-600 mb-4">
+                        从账号、资金到物流的全方位把控，确保业务安全和利润空间
+                    </p>
+                    <div class="text-primary font-bold">风险可控率 99.5%</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-2xl mb-6">
+                        <i class="fa fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">供应链金融</h3>
+                    <p class="text-gray-600 mb-4">
+                        从第二层开始植入金融服务，提升资金利用率和收益水平
+                    </p>
+                    <div class="text-secondary font-bold">资金回报率 +35%</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-full bg-success/10 flex items-center justify-center text-success text-2xl mb-6">
+                        <i class="fa fa-random"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">流量转化</h3>
+                    <p class="text-gray-600 mb-4">
+                        层层筛选优质客户，流量转化率高达30%，远超行业平均水平
+                    </p>
+                    <div class="text-success font-bold">转化效率 ×3</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">指数级增长</h3>
+                    <p class="text-gray-600 mb-4">
+                        每一层级利润呈几何级数增长，形成强大的复利效应
+                    </p>
+                    <div class="text-accent font-bold">年复合增长 +150%</div>
+                </div>
+            </div>
+            
+            <!-- 三年财务预测 -->
+            <div class="max-w-5xl mx-auto mt-16 bg-white rounded-xl shadow-xl p-6 md:p-8">
+                <h3 class="text-xl md:text-2xl font-bold text-dark mb-6 text-center">未来三年财务预测（亿元）</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-gray-200">
+                                <th class="py-4 px-4 font-bold text-gray-600">业务层级</th>
+                                <th class="py-4 px-4 font-bold text-gray-600">2023年</th>
+                                <th class="py-4 px-4 font-bold text-gray-600">2024年</th>
+                                <th class="py-4 px-4 font-bold text-gray-600">2025年</th>
+                                <th class="py-4 px-4 font-bold text-gray-600">三年复合增长率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-4 font-medium">培训赋能</td>
+                                <td class="py-4 px-4">1.5</td>
+                                <td class="py-4 px-4">3.2</td>
+                                <td class="py-4 px-4">6.8</td>
+                                <td class="py-4 px-4 text-primary font-bold">113%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-4 font-medium">代运营服务</td>
+                                <td class="py-4 px-4">6.5</td>
+                                <td class="py-4 px-4">15.8</td>
+                                <td class="py-4 px-4">35.2</td>
+                                <td class="py-4 px-4 text-secondary font-bold">133%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-4 font-medium">联合运营</td>
+                                <td class="py-4 px-4">20.3</td>
+                                <td class="py-4 px-4">45.6</td>
+                                <td class="py-4 px-4">98.5</td>
+                                <td class="py-4 px-4 text-success font-bold">119%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-4 font-medium">品牌自营</td>
+                                <td class="py-4 px-4">38.7</td>
+                                <td class="py-4 px-4">92.5</td>
+                                <td class="py-4 px-4">210.8</td>
+                                <td class="py-4 px-4 text-accent font-bold">132%</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-4 px-4 font-bold">合计</td>
+                                <td class="py-4 px-4 font-bold">67.0</td>
+                                <td class="py-4 px-4 font-bold">157.1</td>
+                                <td class="py-4 px-4 font-bold">351.3</td>
+                                <td class="py-4 px-4 text-dark font-bold">129%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 总结与展望 -->
+    <section class="py-16 bg-gradient-to-r from-primary to-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-6">构建行业领先的增长引擎</h2>
+                <p class="text-xl mb-10 opacity-90 leading-relaxed">
+                    四级业务漏斗模型不仅创造了层层递进的流量转化路径，更构建了倍数增长的盈利模式。
+                    通过全面掌控业务链条，从第二层开始植入供应链金融，实现了资本效率的最大化。
+                    未来三年，我们有信心实现年均129%的复合增长，打造千亿级市值的产业生态平台。
+                </p>
+                
+                <div class="inline-block bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-2xl">
+                    <div class="text-4xl md:text-5xl font-bold mb-4 text-accent counter" data-target="350">0</div>
+                    <div class="text-xl mb-2">2025年预期总收益（亿元）</div>
+                    <div class="w-20 h-1 bg-accent mx-auto my-6"></div>
+                    <div class="text-white/80">
+                        这一业务模式将为股东带来持续、稳定且高速增长的回报，
+                        构建起难以复制的行业壁垒和竞争优势
+                    </div>
+                </div>
+                
+                <div class="mt-12">
+                    <a href="#" class="inline-block bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
+                        查看详细投资回报分析
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <img src="https://picsum.photos/id/30/120/60" alt="怡亚通集团" class="h-10 mx-auto mb-6">
+                <p class="text-gray-400 text-sm">
+                    © 2023 怡亚通集团 内部战略文件 | 保密等级：绝密
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-accent text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent/90 z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 数字计数器动画
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 动画持续时间（毫秒）
+                const stepTime = 20; // 每步时间间隔（毫秒）
+                const totalSteps = duration / stepTime;
+                const stepSize = target / totalSteps;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += stepSize;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current);
+                        setTimeout(updateCounter, stepTime);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // 滚动显示元素动画
+        function setupScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // 如果是连接器，添加visible类
+                        if (entry.target.classList.contains('connector')) {
+                            entry.target.classList.add('visible');
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察漏斗层
+            document.querySelectorAll('.funnel-layer, .layer-detail, .connector').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // 初始化增长曲线图表
+        function initGrowthChart() {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['培训', '代运营', '联合运营', '品牌自营'],
+                    datasets: [
+                        {
+                            label: '流量转化（万人）',
+                            data: [10, 3, 0.9, 0.27],
+                            borderColor: '#0052CC',
+                            backgroundColor: 'rgba(0, 82, 204, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: '年利润（亿元）',
+                            data: [1.5, 6.5, 20.3, 38.7],
+                            borderColor: '#FF5630',
+                            backgroundColor: 'rgba(255, 86, 48, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutQuart'
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: '流量转化（万人）'
+                            },
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: '年利润（亿元）'
+                            },
+                            grid: {
+                                drawOnChartArea: false,
+                            },
+                        },
+                    }
+                }
+            });
+        }
+        
+        // 返回顶部按钮
+        function setupBackToTop() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 延迟启动计数器动画，确保元素已加载
+            setTimeout(animateCounters, 500);
+            
+            setupScrollAnimations();
+            initGrowthChart();
+            setupBackToTop();
+        });
+    </script>
+</body>
+</html>
+    
