@@ -1,0 +1,1492 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构美品牌全球化战略新机遇</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        neutral: '#86909C',
+                        light: '#F2F3F5',
+                        dark: '#1D2129',
+                        southeast: '#FF7D00', // 东南亚市场主题色
+                        northamerica: '#0070F3', // 北美市场主题色
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .slide-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .slide-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-dark overflow-x-hidden">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <span class="text-primary font-bold text-xl">构美品牌出海战略</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#cover" class="text-neutral hover:text-primary text-sm font-medium transition-colors">封面</a>
+                    <a href="#summary" class="text-neutral hover:text-primary text-sm font-medium transition-colors">核心摘要</a>
+                    <a href="#global-trends" class="text-neutral hover:text-primary text-sm font-medium transition-colors">全球趋势</a>
+                    <a href="#southeast-asia" class="text-neutral hover:text-primary text-sm font-medium transition-colors">东南亚市场</a>
+                    <a href="#north-america" class="text-neutral hover:text-primary text-sm font-medium transition-colors">北美市场</a>
+                    <a href="#strategy" class="text-neutral hover:text-primary text-sm font-medium transition-colors">战略建议</a>
+                    <a href="#financial" class="text-neutral hover:text-primary text-sm font-medium transition-colors">财务预估</a>
+                    <a href="#conclusion" class="text-neutral hover:text-primary text-sm font-medium transition-colors">总结</a>
+                </nav>
+                
+                <button id="menu-toggle" class="md:hidden text-neutral hover:text-primary">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#cover" class="block text-neutral hover:text-primary text-sm font-medium">封面</a>
+                <a href="#summary" class="block text-neutral hover:text-primary text-sm font-medium">核心摘要</a>
+                <a href="#global-trends" class="block text-neutral hover:text-primary text-sm font-medium">全球趋势</a>
+                <a href="#southeast-asia" class="block text-neutral hover:text-primary text-sm font-medium">东南亚市场</a>
+                <a href="#north-america" class="block text-neutral hover:text-primary text-sm font-medium">北美市场</a>
+                <a href="#strategy" class="block text-neutral hover:text-primary text-sm font-medium">战略建议</a>
+                <a href="#financial" class="block text-neutral hover:text-primary text-sm font-medium">财务预估</a>
+                <a href="#conclusion" class="block text-neutral hover:text-primary text-sm font-medium">总结</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 封面页 -->
+    <section id="cover" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-primary/10 pt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-8 inline-block">
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight mb-6">
+                    构美品牌全球化战略新机遇
+                </h1>
+                <h2 class="text-[clamp(1.2rem,3vw,1.8rem)] text-neutral font-medium mb-8">
+                    东南亚与北美市场深度洞察与进军建议
+                </h2>
+                <p class="text-lg text-neutral mb-4">数据驱动的市场进入策略与增长路径规划</p>
+                <p class="text-neutral"></p>
+                
+                <div class="mt-16">
+                    <a href="#summary" class="inline-block animate-bounce">
+                        <i class="fa fa-angle-down text-primary text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心摘要 -->
+    <section id="summary" class="py-20 bg-white slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-primary font-semibold mb-2">第一部分：引言与核心结论</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">汇报核心摘要</h2>
+                    <div class="w-20 h-1 bg-primary mt-4"></div>
+                </div>
+                
+                <div class="bg-light rounded-2xl p-8 shadow-sm mb-8">
+                    <div class="flex items-start mb-6">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                            <i class="fa fa-lightbulb-o text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">核心观点</h4>
+                            <p class="text-neutral">东南亚市场是必争的增量市场，需快速抢占；北美市场是品牌溢价的利润市场，需精耕细作。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-6">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                            <i class="fa fa-line-chart text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">战略建议："双轨并行，差异化布局"</h4>
+                            <ul class="list-disc list-inside space-y-1 text-neutral ml-2">
+                                <li><span class="font-medium text-dark">东南亚：</span>以高性价比产品、社交电商（TikTok Shop）为核心，追求规模与市场份额。</li>
+                                <li><span class="font-medium text-dark">北美：</span>以品牌独立站（DTC）+ 高端产品线为核心，追求利润与品牌价值。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                            <i class="fa fa-trophy text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">预期价值</h4>
+                            <p class="text-neutral">构建全球品牌矩阵，分散单一市场风险，实现营收与品牌力的双重增长。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-southeast/5 rounded-xl p-6 border border-southeast/20 card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-rocket text-southeast text-2xl mr-3"></i>
+                            <h4 class="font-semibold text-lg">东南亚市场机遇</h4>
+                        </div>
+                        <ul class="space-y-2 text-sm text-neutral">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-southeast mt-1 mr-2"></i>
+                                <span>年增长率超10%，全球增速最快的美妆市场</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-southeast mt-1 mr-2"></i>
+                                <span>80%消费者通过社交电商购买美妆产品</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-southeast mt-1 mr-2"></i>
+                                <span>年轻人口占比高，消费潜力巨大</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-northamerica/5 rounded-xl p-6 border border-northamerica/20 card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-diamond text-northamerica text-2xl mr-3"></i>
+                            <h4 class="font-semibold text-lg">北美市场机遇</h4>
+                        </div>
+                        <ul class="space-y-2 text-sm text-neutral">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-northamerica mt-1 mr-2"></i>
+                                <span>全球最大美妆市场，规模超1000亿美元</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-northamerica mt-1 mr-2"></i>
+                                <span>DTC模式成熟，品牌溢价空间大</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-northamerica mt-1 mr-2"></i>
+                                <span>消费者对特色成分产品接受度高</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全球美妆市场宏观趋势 -->
+    <section id="global-trends" class="py-20 bg-light slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-primary font-semibold mb-2">第二部分：全球美妆市场宏观趋势</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">全球美妆个护市场概览</h2>
+                    <div class="w-20 h-1 bg-primary mt-4"></div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-sm mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center p-6 bg-primary/5 rounded-xl">
+                            <div class="text-3xl font-bold text-primary mb-2">$6000亿+</div>
+                            <div class="text-neutral">全球市场规模</div>
+                        </div>
+                        <div class="text-center p-6 bg-primary/5 rounded-xl">
+                            <div class="text-3xl font-bold text-primary mb-2">4.5-5%</div>
+                            <div class="text-neutral">年复合增长率</div>
+                        </div>
+                        <div class="text-center p-6 bg-primary/5 rounded-xl">
+                            <div class="text-3xl font-bold text-primary mb-2">80%</div>
+                            <div class="text-neutral">线上渠道增长贡献</div>
+                        </div>
+                    </div>
+                    
+                    <div class="h-80 mb-6">
+                        <canvas id="regionChart"></canvas>
+                    </div>
+                    
+                    <div class="bg-primary/5 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">核心市场洞察</h4>
+                        <ul class="space-y-2 text-sm text-neutral">
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>新兴市场特别是东南亚成为全球增长引擎，增速是成熟市场的2-3倍</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>高端化、天然成分、个性化成为全球消费共同趋势</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>社交媒体成为品牌与消费者互动的核心渠道，影响超过50%的购买决策</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h4 class="font-semibold mb-4 text-center">全球美妆消费趋势</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">纯净美妆 (Clean Beauty)</span>
+                                    <span class="text-sm font-medium">+68%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 68%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">男士美妆</span>
+                                    <span class="text-sm font-medium">+42%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 42%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">个性化定制</span>
+                                    <span class="text-sm font-medium">+35%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">可持续包装</span>
+                                    <span class="text-sm font-medium">+28%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 28%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h4 class="font-semibold mb-4 text-center">全球渠道增长对比</h4>
+                        <div class="h-64">
+                            <canvas id="channelChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 东南亚市场深度洞察 -->
+    <section id="southeast-asia" class="py-20 bg-white slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-southeast font-semibold mb-2">第三部分：东南亚市场深度洞察</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">东南亚市场潜力与消费者画像</h2>
+                    <div class="w-20 h-1 bg-southeast mt-4"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-southeast/10">
+                        <h4 class="font-semibold text-lg mb-6 flex items-center">
+                            <i class="fa fa-pie-chart text-southeast mr-2"></i>市场规模与增长
+                        </h4>
+                        
+                        <div class="mb-6">
+                            <div class="text-4xl font-bold text-southeast mb-1">$300亿+</div>
+                            <div class="text-neutral">2023年市场规模</div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="text-3xl font-bold text-southeast mb-1">10%+</div>
+                            <div class="text-neutral">年复合增长率 (2024-2028)</div>
+                        </div>
+                        
+                        <div class="h-56">
+                            <canvas id="seCountryChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-southeast/10">
+                        <h4 class="font-semibold text-lg mb-6 flex items-center">
+                            <i class="fa fa-users text-southeast mr-2"></i>消费者特征
+                        </h4>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h5 class="font-medium mb-2">年龄分布</h5>
+                                <div class="h-24">
+                                    <canvas id="seAgeChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-medium mb-3">核心特征</h5>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-southeast/10 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                            <i class="fa fa-mobile text-southeast text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">社交电商依赖</span>
+                                            <p class="text-sm text-neutral mt-1">TikTok, Instagram, Facebook是发现品牌和购物的主要渠道</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-southeast/10 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                            <i class="fa fa-money text-southeast text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">价格敏感但追求品质</span>
+                                            <p class="text-sm text-neutral mt-1">对促销活动敏感，客单价约15-25美元</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-southeast/10 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                            <i class="fa fa-sun-o text-southeast text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">偏好特点</span>
+                                            <p class="text-sm text-neutral mt-1">追求美白、防晒、轻薄妆容，日韩妆效受欢迎</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-southeast/10 mb-10">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-shopping-bag text-southeast mr-2"></i>东南亚渠道与竞争格局
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-medium mb-4">核心渠道分布</h5>
+                            <div class="h-60">
+                                <canvas id="seChannelChart"></canvas>
+                            </div>
+                            <div class="mt-4 text-sm text-neutral">
+                                <p class="font-medium text-dark mb-1">渠道亮点</p>
+                                <p>• TikTok Shop美妆品类GMV增速超200%（2023年）</p>
+                                <p>• Shopee和Lazada占据市场主导地位，是基本盘</p>
+                                <p>• 社交电商整体占比持续提升，已超过40%</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium mb-4">竞争格局与机会点</h5>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">国际品牌（欧莱雅等）</span>
+                                    <span class="text-sm">35%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-500 h-2 rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">本地品牌</span>
+                                    <span class="text-sm">25%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-500 h-2 rounded-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">中国出海品牌（完美日记等）</span>
+                                    <span class="text-sm">40%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-500 h-2 rounded-full" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-southeast/5 p-4 rounded-lg">
+                                <h6 class="font-medium mb-2">构美机会点</h6>
+                                <p class="text-sm text-neutral">利用中国供应链优势，推出适合热带气候、高性价比的差异化产品，重点布局TikTok Shop等新兴渠道，快速抢占市场份额。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 北美市场深度洞察 -->
+    <section id="north-america" class="py-20 bg-light slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-northamerica font-semibold mb-2">第四部分：北美市场深度洞察</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">北美市场潜力与消费者画像</h2>
+                    <div class="w-20 h-1 bg-northamerica mt-4"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-northamerica/10">
+                        <h4 class="font-semibold text-lg mb-6 flex items-center">
+                            <i class="fa fa-pie-chart text-northamerica mr-2"></i>市场规模与增长
+                        </h4>
+                        
+                        <div class="mb-6">
+                            <div class="text-4xl font-bold text-northamerica mb-1">$1000亿+</div>
+                            <div class="text-neutral">2023年市场规模</div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="text-3xl font-bold text-northamerica mb-1">3-4%</div>
+                            <div class="text-neutral">年复合增长率</div>
+                        </div>
+                        
+                        <div class="h-56">
+                            <canvas id="naCountryChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-northamerica/10">
+                        <h4 class="font-semibold text-lg mb-6 flex items-center">
+                            <i class="fa fa-users text-northamerica mr-2"></i>消费者特征
+                        </h4>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h5 class="font-medium mb-2">年龄分布</h5>
+                                <div class="h-24">
+                                    <canvas id="naAgeChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-medium mb-3">核心特征</h5>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-northamerica/10 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                            <i class="fa fa-flask text-northamerica text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">成分党主导</span>
+                                            <p class="text-sm text-neutral mt-1">超过60%的消费者购买时会关注成分安全性，纯净美妆(Clean Beauty)趋势明显</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-northamerica/10 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                            <i class="fa fa-laptop text-northamerica text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">DTC模式成熟</span>
+                                            <p class="text-sm text-neutral mt-1">习惯于通过品牌独立站购物，信任专业评测和KOL推荐</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-northamerica/10 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                                            <i class="fa fa-paint-brush text-northamerica text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">多元化需求</span>
+                                            <p class="text-sm text-neutral mt-1">对包容性（多种肤色号）、个性化需求高，客单价可达60-100+美元</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-northamerica/10">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-shopping-bag text-northamerica mr-2"></i>北美渠道与竞争格局
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-medium mb-4">核心渠道分布</h5>
+                            <div class="h-60">
+                                <canvas id="naChannelChart"></canvas>
+                            </div>
+                            <div class="mt-4 text-sm text-neutral">
+                                <p class="font-medium text-dark mb-1">渠道亮点</p>
+                                <p>• DTC独立站占比约20%，是品牌建设核心</p>
+                                <p>• 亚马逊美妆份额持续增长，是重要流量补充</p>
+                                <p>• Sephora, Ulta是线下高端品牌必争之地</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium mb-4">竞争格局与机会点</h5>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">国际巨头（雅诗兰黛、宝洁等）</span>
+                                    <span class="text-sm">60%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-500 h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">DTC新品牌（Glossier, Fenty等）</span>
+                                    <span class="text-sm">25%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-500 h-2 rounded-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">其他区域品牌</span>
+                                    <span class="text-sm">15%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-500 h-2 rounded-full" style="width: 15%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-northamerica/5 p-4 rounded-lg">
+                                <h6 class="font-medium mb-2">构美机会点</h6>
+                                <p class="text-sm text-neutral">避开大众市场红海，以"中国特色成分"（如灵芝、茶粹）或独特科技概念切入细分市场，通过DTC模式讲好品牌故事，建立差异化优势。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 构美双市场战略建议 -->
+    <section id="strategy" class="py-20 bg-white slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-primary font-semibold mb-2">第五部分：构美双市场战略建议</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">差异化战略布局</h2>
+                    <div class="w-20 h-1 bg-primary mt-4"></div>
+                </div>
+                
+                <!-- 产品策略 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm mb-10">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-cube text-primary mr-2"></i>产品策略
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="border border-southeast/20 rounded-xl p-6 bg-southeast/5">
+                            <h5 class="font-medium text-lg mb-4 text-southeast">东南亚市场</h5>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-southeast mt-1 mr-2"></i>
+                                    <span>主打畅销品与性价比系列，价格定位中端</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-southeast mt-1 mr-2"></i>
+                                    <span>包装设计明亮活泼，符合当地审美偏好</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-southeast mt-1 mr-2"></i>
+                                    <span>重点开发持妆、防晒、美白功效产品</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-southeast mt-1 mr-2"></i>
+                                    <span>小规格包装为主，降低尝试门槛</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-southeast mt-1 mr-2"></i>
+                                    <span>快速迭代，紧跟当地流行趋势</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border border-northamerica/20 rounded-xl p-6 bg-northamerica/5">
+                            <h5 class="font-medium text-lg mb-4 text-northamerica">北美市场</h5>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-northamerica mt-1 mr-2"></i>
+                                    <span>主打高端线与特色成分系列，强调"中国成分"优势</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-northamerica mt-1 mr-2"></i>
+                                    <span>包装简约高级，突出环保可持续理念</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-northamerica mt-1 mr-2"></i>
+                                    <span>强调科技、纯净、高效等核心概念</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-northamerica mt-1 mr-2"></i>
+                                    <span>全规格产品线，满足不同需求</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-northamerica mt-1 mr-2"></i>
+                                    <span>提供广泛的肤色选择，强调包容性</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 渠道与营销策略 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm mb-10">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-bullhorn text-primary mr-2"></i>渠道与营销策略
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-medium text-lg mb-4 text-southeast flex items-center">
+                                <i class="fa fa-map-marker mr-2"></i>东南亚市场
+                            </h5>
+                            
+                            <div class="mb-6">
+                                <h6 class="font-medium mb-3">核心渠道</h6>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>优先入驻TikTok Shop，抓住增长红利</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>同步布局Shopee Mall和Lazada官方店</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>后期考虑与本地连锁美妆店合作</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h6 class="font-medium mb-3">营销策略</h6>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>与海量中腰部及小微KOL合作</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>高频次短视频与直播带货</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>参与平台大促活动，提高曝光</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-southeast mr-2"></div>
+                                        <span>本地化内容创作，贴合当地文化</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium text-lg mb-4 text-northamerica flex items-center">
+                                <i class="fa fa-map-marker mr-2"></i>北美市场
+                            </h5>
+                            
+                            <div class="mb-6">
+                                <h6 class="font-medium mb-3">核心渠道</h6>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>自建品牌独立站（Shopify）作为核心阵地</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>亚马逊作为重要的流量补充</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>中长期目标：进入Sephora等专业渠道</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h6 class="font-medium mb-3">营销策略</h6>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>与垂直领域专家（皮肤科医生等）合作</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>深耕YouTube长篇评测和Instagram美学</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>注重内容质量，强调成分故事和科技背景</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 rounded-full bg-northamerica mr-2"></div>
+                                        <span>参与环保和社会责任项目，提升品牌形象</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 风险与应对措施 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-exclamation-triangle text-primary mr-2"></i>风险与应对措施
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-medium text-lg mb-4 text-southeast">东南亚市场风险</h5>
+                            
+                            <div class="space-y-4">
+                                <div class="border border-red-100 bg-red-50 p-4 rounded-lg">
+                                    <h6 class="font-medium text-red-700 mb-2">物流与基础设施差异</h6>
+                                    <p class="text-sm text-neutral mb-2">物流成本可占销售额的15-25%，各国基础设施差异大</p>
+                                    <p class="text-sm font-medium">应对：选择可靠本地合作伙伴，建立区域仓储中心</p>
+                                </div>
+                                
+                                <div class="border border-red-100 bg-red-50 p-4 rounded-lg">
+                                    <h6 class="font-medium text-red-700 mb-2">政策法规多变</h6>
+                                    <p class="text-sm text-neutral mb-2">以印尼为例，进口限制和本地含量要求不断变化</p>
+                                    <p class="text-sm font-medium">应对：密切关注政策变化，必要时考虑本地化生产</p>
+                                </div>
+                                
+                                <div class="border border-red-100 bg-red-50 p-4 rounded-lg">
+                                    <h6 class="font-medium text-red-700 mb-2">市场竞争内卷</h6>
+                                    <p class="text-sm text-neutral mb-2">价格竞争激烈，中国出海品牌众多</p>
+                                    <p class="text-sm font-medium">应对：持续产品微创新，建立差异化优势，提升品牌认知</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium text-lg mb-4 text-northamerica">北美市场风险</h5>
+                            
+                            <div class="space-y-4">
+                                <div class="border border-red-100 bg-red-50 p-4 rounded-lg">
+                                    <h6 class="font-medium text-red-700 mb-2">营销成本高企</h6>
+                                    <p class="text-sm text-neutral mb-2">Meta/Google广告竞争激烈，初期CAC可能高达40-60美元</p>
+                                    <p class="text-sm font-medium">应对：精准定位细分人群，注重内容质量而非盲目投放</p>
+                                </div>
+                                
+                                <div class="border border-red-100 bg-red-50 p-4 rounded-lg">
+                                    <h6 class="font-medium text-red-700 mb-2">品牌建立周期长</h6>
+                                    <p class="text-sm text-neutral mb-2">消费者品牌忠诚度高，新品牌认知建立需要时间</p>
+                                    <p class="text-sm font-medium">应对：长期主义，投资品牌建设，讲好差异化故事</p>
+                                </div>
+                                
+                                <div class="border border-red-100 bg-red-50 p-4 rounded-lg">
+                                    <h6 class="font-medium text-red-700 mb-2">退货率与合规风险</h6>
+                                    <p class="text-sm text-neutral mb-2">DTC模式退货率较高（15-25%），产品合规要求严格</p>
+                                    <p class="text-sm font-medium">应对：优化退货政策，确保产品合规，购买产品责任险</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 财务初步预估与路线图 -->
+    <section id="financial" class="py-20 bg-light slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-primary font-semibold mb-2">第六部分：财务初步预估与路线图</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">投资回报与实施路径</h2>
+                    <div class="w-20 h-1 bg-primary mt-4"></div>
+                </div>
+                
+                <!-- 初步投资与回报预测 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm mb-10">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-money text-primary mr-2"></i>初步投资与回报预测
+                    </h4>
+                    
+                    <div class="mb-8">
+                        <p class="text-neutral mb-4">假设：构美首年进入市场投入预算为 <span class="font-bold text-primary">$500万</span></p>
+                        <div class="h-80">
+                            <canvas id="financialChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-southeast/5 p-5 rounded-xl">
+                            <h5 class="font-medium mb-3 text-southeast">东南亚市场</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">投入分配</span>
+                                    <span class="font-medium">$300万 (60%)</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">主要用途</span>
+                                    <span class="font-medium">KOL合作、平台广告</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">预期首年GMV</span>
+                                    <span class="font-medium">$800万 - 1000万</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">预期毛利率</span>
+                                    <span class="font-medium">45% - 50%</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">核心目标</span>
+                                    <span class="font-medium">市场份额与规模</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-northamerica/5 p-5 rounded-xl">
+                            <h5 class="font-medium mb-3 text-northamerica">北美市场</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">投入分配</span>
+                                    <span class="font-medium">$200万 (40%)</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">主要用途</span>
+                                    <span class="font-medium">独立站、品牌营销</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">预期首年GMV</span>
+                                    <span class="font-medium">$300万 - 500万</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">预期毛利率</span>
+                                    <span class="font-medium">65% - 70%</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-neutral">核心目标</span>
+                                    <span class="font-medium">品牌建设与利润</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 实施路线图 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <h4 class="font-semibold text-lg mb-6 flex items-center">
+                        <i class="fa fa-road text-primary mr-2"></i>实施路线图 (Roadmap)
+                    </h4>
+                    
+                    <div class="relative">
+                        <!-- 时间线 -->
+                        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+                        
+                        <!-- 阶段1 -->
+                        <div class="relative pl-16 pb-10">
+                            <div class="absolute left-0 top-1 w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h5 class="font-medium text-lg mb-2">Phase 1 (0-6个月)：市场验证</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-southeast/5 p-4 rounded-lg">
+                                    <h6 class="font-medium text-sm text-southeast mb-2">东南亚市场</h6>
+                                    <ul class="space-y-1 text-sm text-neutral">
+                                        <li>• 选择1-2个核心国家（印尼/越南）试水</li>
+                                        <li>• 入驻TikTok Shop和Shopee</li>
+                                        <li>• 测试10-15款潜力产品</li>
+                                        <li>• 建立基础本地运营团队</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-northamerica/5 p-4 rounded-lg">
+                                    <h6 class="font-medium text-sm text-northamerica mb-2">北美市场</h6>
+                                    <ul class="space-y-1 text-sm text-neutral">
+                                        <li>• 搭建品牌独立站（Shopify）</li>
+                                        <li>• 推出5-8款高端特色产品</li>
+                                        <li>• 启动小规模测试投放</li>
+                                        <li>• 建立初步客户服务体系</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 阶段2 -->
+                        <div class="relative pl-16 pb-10">
+                            <div class="absolute left-0 top-1 w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h5 class="font-medium text-lg mb-2">Phase 2 (7-12个月)：规模扩张</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-southeast/5 p-4 rounded-lg">
+                                    <h6 class="font-medium text-sm text-southeast mb-2">东南亚市场</h6>
+                                    <ul class="space-y-1 text-sm text-neutral">
+                                        <li>• 拓展至3-4个重点国家</li>
+                                        <li>• 全平台布局，优化供应链</li>
+                                        <li>• 扩大产品线至30+SKU</li>
+                                        <li>• 加大KOL营销力度</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-northamerica/5 p-4 rounded-lg">
+                                    <h6 class="font-medium text-sm text-northamerica mb-2">北美市场</h6>
+                                    <ul class="space-y-1 text-sm text-neutral">
+                                        <li>• 优化独立站用户体验与转化</li>
+                                        <li>• 入驻亚马逊，扩大流量来源</li>
+                                        <li>• 深化与专业KOL的合作</li>
+                                        <li>• 建立品牌社区，提升复购</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 阶段3 -->
+                        <div class="relative pl-16">
+                            <div class="absolute left-0 top-1 w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h5 class="font-medium text-lg mb-2">Phase 3 (12个月+)：品牌深化</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-southeast/5 p-4 rounded-lg">
+                                    <h6 class="font-medium text-sm text-southeast mb-2">东南亚市场</h6>
+                                    <ul class="space-y-1 text-sm text-neutral">
+                                        <li>• 探索线下Pop-up store和合作零售点</li>
+                                        <li>• 打造区域爆款，提升品牌知名度</li>
+                                        <li>• 考虑本地化生产或合作代工</li>
+                                        <li>• 建立会员体系，提升用户忠诚度</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-northamerica/5 p-4 rounded-lg">
+                                    <h6 class="font-medium text-sm text-northamerica mb-2">北美市场</h6>
+                                    <ul class="space-y-1 text-sm text-neutral">
+                                        <li>• 寻求进入Sephora等专业线下渠道</li>
+                                        <li>• 扩大品牌声量，提升品牌搜索量</li>
+                                        <li>• 优化LTV和CAC比率，提升盈利能力</li>
+                                        <li>• 考虑产品本土化研发与创新</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 总结与建议 -->
+    <section id="conclusion" class="py-20 bg-white slide-fade">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="mb-12">
+                    <h3 class="text-sm uppercase tracking-wider text-primary font-semibold mb-2">结尾</h3>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">总结与建议</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+                
+                <div class="bg-primary/5 rounded-2xl p-8 mb-10">
+                    <p class="text-lg mb-6">构美品牌全球化布局正处于关键机遇期，东南亚与北美市场的"双轨并行"战略是实现全球化突破的最优路径。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white p-5 rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-southeast/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-rocket text-southeast text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">东南亚市场价值</h4>
+                            <p class="text-sm text-neutral">快速获取市场份额，利用规模效应降低单位成本，为品牌全球化提供增长引擎</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-northamerica/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-diamond text-northamerica text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">北美市场价值</h4>
+                            <p class="text-sm text-neutral">建立高端品牌形象，获取更高利润空间，提升品牌全球影响力与话语权</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary text-white p-6 rounded-xl inline-block">
+                        <h4 class="font-semibold text-lg mb-2">建议决策</h4>
+                        <p>批准启动首批预算，成立两个市场的敏捷项目组，同步推进东南亚与北美市场的进入计划</p>
+                    </div>
+                </div>
+                
+                <div class="mb-10">
+                    <h3 class="text-xl font-semibold mb-4">Q&amp;A</h3>
+                    <p class="text-neutral">感谢聆听，欢迎提问</p>
+                </div>
+                
+                <div>
+                    <p class="text-neutral"></p>
+                    <p class="text-neutral mt-1"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-sm text-gray-400">
+                <p>&nbsp;构美品牌出海战略建议书</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+        
+        // 滚动动画
+        function checkSlide() {
+            const slides = document.querySelectorAll('.slide-fade');
+            const triggerBottom = window.innerHeight * 0.8;
+            
+            slides.forEach(slide => {
+                const slideTop = slide.getBoundingClientRect().top;
+                
+                if (slideTop < triggerBottom) {
+                    slide.classList.add('slide-visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkSlide);
+        window.addEventListener('load', checkSlide);
+        
+        // 图表初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 全球区域市场规模与增速对比
+            const regionCtx = document.getElementById('regionChart').getContext('2d');
+            new Chart(regionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['北美', '欧洲', '东南亚', '拉美', '中东非洲', '其他'],
+                    datasets: [
+                        {
+                            label: '市场规模（十亿美元）',
+                            data: [100, 85, 30, 25, 20, 15],
+                            backgroundColor: 'rgba(22, 93, 255, 0.7)',
+                            barPercentage: 0.6,
+                        },
+                        {
+                            label: '年增长率（%）',
+                            data: [3.5, 4, 10, 7, 6, 5],
+                            backgroundColor: 'rgba(114, 46, 209, 0.7)',
+                            type: 'line',
+                            yAxisID: 'y1',
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '市场规模（十亿美元）'
+                            }
+                        },
+                        y1: {
+                            beginAtZero: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: '年增长率（%）'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 全球渠道增长对比
+            const channelCtx = document.getElementById('channelChart').getContext('2d');
+            new Chart(channelCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['社交电商', '品牌独立站', '平台电商', '线下专业店', '百货商场', '直销'],
+                    datasets: [
+                        {
+                            label: '增长速度',
+                            data: [90, 85, 70, 40, 30, 50],
+                            backgroundColor: 'rgba(22, 93, 255, 0.2)',
+                            borderColor: 'rgba(22, 93, 255, 0.8)',
+                            pointBackgroundColor: 'rgba(22, 93, 255, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(22, 93, 255, 1)'
+                        }
+                    ]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+            
+            // 东南亚国家占比
+            const seCountryCtx = document.getElementById('seCountryChart').getContext('2d');
+            new Chart(seCountryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['印尼', '泰国', '越南', '马来西亚', '菲律宾', '新加坡', '其他'],
+                    datasets: [{
+                        data: [40, 15, 12, 11, 10, 7, 5],
+                        backgroundColor: [
+                            'rgba(255, 125, 0, 0.8)',
+                            'rgba(255, 125, 0, 0.7)',
+                            'rgba(255, 125, 0, 0.6)',
+                            'rgba(255, 125, 0, 0.5)',
+                            'rgba(255, 125, 0, 0.4)',
+                            'rgba(255, 125, 0, 0.3)',
+                            'rgba(255, 125, 0, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 12,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 东南亚年龄分布
+            const seAgeCtx = document.getElementById('seAgeChart').getContext('2d');
+            new Chart(seAgeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['18-24', '25-34', '35-44', '45+'],
+                    datasets: [{
+                        label: '年龄分布',
+                        data: [30, 45, 18, 7],
+                        backgroundColor: 'rgba(255, 125, 0, 0.7)',
+                        barPercentage: 0.6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 东南亚渠道分布
+            const seChannelCtx = document.getElementById('seChannelChart').getContext('2d');
+            new Chart(seChannelCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['社交电商 (TikTok Shop等)', '平台电商 (Shopee/Lazada)', '线下零售', '品牌官网', '其他'],
+                    datasets: [{
+                        data: [42, 35, 15, 5, 3],
+                        backgroundColor: [
+                            'rgba(255, 125, 0, 0.8)',
+                            'rgba(255, 125, 0, 0.6)',
+                            'rgba(255, 125, 0, 0.4)',
+                            'rgba(255, 125, 0, 0.3)',
+                            'rgba(255, 125, 0, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 12,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 北美国家占比
+            const naCountryCtx = document.getElementById('naCountryChart').getContext('2d');
+            new Chart(naCountryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['美国', '加拿大', '墨西哥'],
+                    datasets: [{
+                        data: [80, 15, 5],
+                        backgroundColor: [
+                            'rgba(0, 112, 243, 0.8)',
+                            'rgba(0, 112, 243, 0.6)',
+                            'rgba(0, 112, 243, 0.4)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 12,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 北美年龄分布
+            const naAgeCtx = document.getElementById('naAgeChart').getContext('2d');
+            new Chart(naAgeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['18-24', '25-34', '35-44', '45+'],
+                    datasets: [{
+                        label: '年龄分布',
+                        data: [15, 30, 30, 25],
+                        backgroundColor: 'rgba(0, 112, 243, 0.7)',
+                        barPercentage: 0.6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 北美渠道分布
+            const naChannelCtx = document.getElementById('naChannelChart').getContext('2d');
+            new Chart(naChannelCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['DTC独立站', '亚马逊', '线下专业店 (Sephora等)', '百货商场', '其他'],
+                    datasets: [{
+                        data: [20, 25, 30, 15, 10],
+                        backgroundColor: [
+                            'rgba(0, 112, 243, 0.8)',
+                            'rgba(0, 112, 243, 0.6)',
+                            'rgba(0, 112, 243, 0.4)',
+                            'rgba(0, 112, 243, 0.3)',
+                            'rgba(0, 112, 243, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 12,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 财务预测图表
+            const financialCtx = document.getElementById('financialChart').getContext('2d');
+            new Chart(financialCtx, {
+                type: 'line',
+                data: {
+                    labels: ['第1年', '第2年', '第3年'],
+                    datasets: [
+                        {
+                            label: '东南亚GMV（百万美元）',
+                            data: [9, 18, 30],
+                            borderColor: 'rgba(255, 125, 0, 0.8)',
+                            backgroundColor: 'rgba(255, 125, 0, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: '北美GMV（百万美元）',
+                            data: [4, 9, 18],
+                            borderColor: 'rgba(0, 112, 243, 0.8)',
+                            backgroundColor: 'rgba(0, 112, 243, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: '总营销投入（百万美元）',
+                            data: [5, 8, 12],
+                            borderColor: 'rgba(114, 46, 209, 0.8)',
+                            backgroundColor: 'transparent',
+                            tension: 0.4,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'GMV（百万美元）'
+                            }
+                        },
+                        y1: {
+                            beginAtZero: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: '营销投入（百万美元）'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
