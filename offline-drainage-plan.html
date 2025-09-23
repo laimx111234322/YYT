@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出海品牌线下培训线下引流落地方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36BFFA',
+                        accent: '#FF7D00',
+                        b2b: '#0070F3',
+                        b2c: '#14B8A6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .slide-transition {
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+            .slide-enter {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans overflow-x-hidden">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-primary">
+                <i class="fa fa-line-chart mr-2"></i>出海引流方案
+            </h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#section-1" class="nav-link hover:text-primary transition-colors">目标设定</a>
+                <a href="#section-2" class="nav-link hover:text-primary transition-colors">市场调研</a>
+                <a href="#section-3" class="nav-link hover:text-primary transition-colors">人群定位</a>
+                <a href="#section-4" class="nav-link hover:text-primary transition-colors">引流方案</a>
+                <a href="#section-5" class="nav-link hover:text-primary transition-colors">运营优化</a>
+                <a href="#section-6" class="nav-link hover:text-primary transition-colors">风险控制</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-dark focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#section-1" class="py-2 hover:text-primary transition-colors">目标设定</a>
+                <a href="#section-2" class="py-2 hover:text-primary transition-colors">市场调研</a>
+                <a href="#section-3" class="py-2 hover:text-primary transition-colors">人群定位</a>
+                <a href="#section-4" class="py-2 hover:text-primary transition-colors">引流方案</a>
+                <a href="#section-5" class="py-2 hover:text-primary transition-colors">运营优化</a>
+                <a href="#section-6" class="py-2 hover:text-primary transition-colors">风险控制</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 幻灯片容器 -->
+    <div class="pt-16">
+        <!-- 封面页 -->
+        <section class="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/10 p-4">
+            <div class="text-center max-w-4xl mx-auto slide-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary text-shadow">
+                    出海品牌线下培训<br>线下引流落地方案
+                </h1>
+                <p class="text-xl md:text-2xl text-dark/80 mb-10">
+                    数据化版·含B2B客户+市场调研
+                </p>
+                <div class="flex justify-center">
+                    <a href="#section-1" class="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center">
+                        开始浏览 <i class="fa fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 一、目标设定 -->
+        <section id="section-1" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">一、目标设定</h2>
+                    <p class="text-lg text-dark/70">数据化锚定·覆盖B2B客户</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- 核心目标 -->
+                <div class="mb-16 slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-bullseye text-accent mr-3"></i>（一）核心目标
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- 引流效率目标 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-users text-primary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">引流效率目标</h4>
+                            <ul class="space-y-2 text-dark/80">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>3个月内获取1800+精准意向客户（1200+ B2B，600+ B2C）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>平均每月600+客户</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>单场获客成本：B2B ≤350元/人，B2C ≤280元/人</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 转化衔接目标 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-exchange text-accent text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">转化衔接目标</h4>
+                            <ul class="space-y-2 text-dark/80">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>7天内试听邀约率：B2B 35%，B2C 45%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>试听后付费转化率：B2B 20%，B2C 30%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>3个月累计付费客户126+（B2B 84+，B2C 42+）</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 品牌扩散目标 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-bullhorn text-secondary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">品牌扩散目标</h4>
+                            <ul class="space-y-2 text-dark/80">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>每场活动触达潜在人群≥600人</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>3个月累计触达1.8万人</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>活动话题累计曝光量：B2B 3万+，B2C 3万+</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 阶段目标拆解 -->
+                <div class="slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-tasks text-accent mr-3"></i>（二）阶段目标拆解
+                    </h3>
+                    
+                    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">阶段</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">时间周期</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">引流获客目标</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">转化衔接目标</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">品牌扩散目标</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark">第一阶段（启动期）</td>
+                                    <td class="px-6 py-4 text-sm text-dark">第1个月</td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        累计400+/200+<br>
+                                        单场成本≤400/320元/人
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        试听率30%/40%<br>
+                                        付费转化率15%/25%
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        触达6000人<br>
+                                        曝光1.8万
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark">第二阶段（优化期）</td>
+                                    <td class="px-6 py-4 text-sm text-dark">第2个月</td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        累计800+/400+<br>
+                                        单场成本≤360/300元/人
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        试听率35%/43%<br>
+                                        付费转化率18%/28%
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        触达6000人<br>
+                                        曝光1.8万
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark">第三阶段（稳定期）</td>
+                                    <td class="px-6 py-4 text-sm text-dark">第3个月</td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        累计1200+/600+<br>
+                                        单场成本≤350/280元/人
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        试听率38%/45%<br>
+                                        付费转化率22%/30%
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        触达6000人<br>
+                                        曝光1.8万
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 目标图表 -->
+                    <div class="mt-10">
+                        <h4 class="text-xl font-semibold mb-4">目标达成趋势图</h4>
+                        <div class="bg-white rounded-xl shadow-md p-4 h-80">
+                            <canvas id="goalsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 二、市场调研计划 -->
+        <section id="section-2" class="py-20 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">二、市场调研计划</h2>
+                    <p class="text-lg text-dark/70">前置+动态迭代·聚焦B2B差异化需求</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- 调研核心目标 -->
+                <div class="mb-16 slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-search text-accent mr-3"></i>（一）调研核心目标
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-b2b/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-users text-b2b text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">人群画像区分</h4>
+                            <p class="text-dark/80">明确B2B与B2C客户在"出海痛点、培训需求、决策链路"的差异，使人群匹配度提升35%以上。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-b2c/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-map-marker text-b2c text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">B2B专属场景验证</h4>
+                            <p class="text-dark/80">评估B2B客户聚集场景的有效性，筛选TOP2高性价比场景，降低无效投入。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-book text-primary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">B2B培训内容匹配</h4>
+                            <p class="text-dark/80">调研B2B客户对专属模块的需求强度，使B2B客户试听报名动机增强45%。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 调研阶段与执行方案 -->
+                <div class="slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-calendar-check-o text-accent mr-3"></i>（二）调研阶段与执行方案
+                    </h3>
+                    
+                    <!-- 前置调研阶段 -->
+                    <div class="mb-12">
+                        <h4 class="text-xl font-semibold mb-4 flex items-center">
+                            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-2">1</span>
+                            前置调研阶段（引流启动前1个月，耗时3周）
+                        </h4>
+                        
+                        <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">调研模块</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">调研方式</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">调研对象</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">样本量</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">数据输出与应用</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-4 py-3 text-sm text-dark font-medium">行业趋势与痛点调研</td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            二手数据<br>
+                                            专家访谈
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            行业专家、第三方机构
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            覆盖8000+企业，访谈5人
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            输出《B2B/B2C出海痛点对比报告》，确定B2B专属培训模块
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-4 py-3 text-sm text-dark font-medium">目标企业需求调研</td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            问卷调研<br>
+                                            深度访谈
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            B2B：年营收1000万-1亿企业<br>
+                                            B2C：年营收500万-5000万卖家
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            问卷400份，访谈25家
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            输出《B2B/B2C培训需求画像》，确定定价与专属福利
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-4 py-3 text-sm text-dark font-medium">线下场景有效性调研</td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            实地踩点<br>
+                                            场景访谈
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            B2B/B2C场景负责人
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            踩点18个场景，访谈18人
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            输出《B2B/B2C场景评分表》，确定优先选择场景
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- 动态迭代调研阶段 -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 flex items-center">
+                            <span class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center mr-2">2</span>
+                            动态迭代调研阶段（引流执行中，每月1次）
+                        </h4>
+                        
+                        <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">调研模块</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">调研方式</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">调研对象</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">样本量</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold text-dark">数据输出与应用</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-4 py-3 text-sm text-dark font-medium">引流活动反馈调研</td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            现场问卷<br>
+                                            电话回访
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            参与活动的B2B/B2C企业代表
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            每次问卷≥60份，每月回访≥120人
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            优化B2B活动形式，针对决策周期长推出团队报名折扣
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-4 py-3 text-sm text-dark font-medium">培训内容匹配度调研</td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            试听访谈<br>
+                                            未付费调研
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            B2B/B2C试听客户
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            每月访谈付费客户15人，问卷≥40份
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-dark">
+                                            迭代B2B课程，增加行业案例；B2C课程增加实操环节
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 三、精准人群定位 -->
+        <section id="section-3" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">三、精准人群定位</h2>
+                    <p class="text-lg text-dark/70">数据化筛选·区分B2B/B2C</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 mb-16">
+                    <!-- B2B出海客户画像 -->
+                    <div class="slide-element">
+                        <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                            <i class="fa fa-building text-b2b mr-3"></i>（一）B2B出海客户画像
+                        </h3>
+                        
+                        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2b flex items-center">
+                                        <i class="fa fa-industry mr-2"></i>行业维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">优先锁定"B2B出海痛点TOP3"行业——机械制造（52%）、家居建材（48%）、3C电子（45%），占目标人群的85%。</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2b flex items-center">
+                                        <i class="fa fa-line-chart mr-2"></i>规模维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">员工20-200人、年营收1000万-1亿的生产型/贸易型企业，占比≥90%。</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2b flex items-center">
+                                        <i class="fa fa-map-marker mr-2"></i>地域维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">聚焦B2B产业带核心区——佛山顺德（家居）、东莞长安（机械）、深圳华强北（3C），占比≥95%。</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2b flex items-center">
+                                        <i class="fa fa-clock-o mr-2"></i>行为维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">近6个月有"阿里巴巴国际站入驻"等动作的企业，占比≥75%，此类客户试听转化率高2.3倍。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- B2C出海客户画像 -->
+                    <div class="slide-element">
+                        <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                            <i class="fa fa-shopping-bag text-b2c mr-3"></i>（二）B2C出海客户画像
+                        </h3>
+                        
+                        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2c flex items-center">
+                                        <i class="fa fa-tag mr-2"></i>行业维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">聚焦"B2C出海高增长"行业——服装配饰（43%）、家居用品（40%）、美妆个护（38%），占目标人群的80%。</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2c flex items-center">
+                                        <i class="fa fa-users mr-2"></i>规模维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">员工10-100人、年营收500万-5000万的平台卖家或独立站卖家，占比≥85%。</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2c flex items-center">
+                                        <i class="fa fa-map-marker mr-2"></i>地域维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">聚焦B2C卖家聚集区——深圳龙华、杭州滨江、广州白云，占比≥90%。</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-b2c flex items-center">
+                                        <i class="fa fa-clock-o mr-2"></i>行为维度
+                                    </h4>
+                                    <p class="text-dark/80 pl-6">近3个月有"平台店铺销量下滑"等运营痛点的企业，占比≥70%。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 人群触达优先级 -->
+                <div class="slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-flag text-accent mr-3"></i>（三）人群触达优先级
+                    </h3>
+                    
+                    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">优先级</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">B2B客户匹配条件</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">B2C客户匹配条件</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">触达方式</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">占比</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors bg-green-50/50">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">高</td>
+                                    <td class="px-6 py-4 text-sm text-dark">TOP3行业+目标规模+产业带区域+近6个月出海动作</td>
+                                    <td class="px-6 py-4 text-sm text-dark">TOP3行业+目标规模+卖家聚集区+近3个月运营痛点</td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        B2B：一对一上门拜访<br>
+                                        B2C：社群定向邀约
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">45%/40%</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors bg-yellow-50/50">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">中</td>
+                                    <td class="px-6 py-4 text-sm text-dark">TOP3行业+目标规模+产业带区域</td>
+                                    <td class="px-6 py-4 text-sm text-dark">TOP3行业+目标规模+卖家聚集区</td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        B2B：产业带地推<br>
+                                        B2C：平台合作推广
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">40%/45%</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors bg-red-50/50">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">低</td>
+                                    <td class="px-6 py-4 text-sm text-dark">仅满足单个维度</td>
+                                    <td class="px-6 py-4 text-sm text-dark">仅满足单个维度</td>
+                                    <td class="px-6 py-4 text-sm text-dark">
+                                        B2B：行业协会转发<br>
+                                        B2C：泛社群宣传
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-dark">15%/15%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 人群分布图表 -->
+                    <div class="mt-10 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">B2B客户行业分布</h4>
+                            <div class="bg-white rounded-xl shadow-md p-4 h-64">
+                                <canvas id="b2bIndustryChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">B2C客户行业分布</h4>
+                            <div class="bg-white rounded-xl shadow-md p-4 h-64">
+                                <canvas id="b2cIndustryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 四、线下引流场景与执行方案 -->
+        <section id="section-4" class="py-20 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">四、线下引流场景与执行方案</h2>
+                    <p class="text-lg text-dark/70">B2B/B2C差异化设计</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- B2B专属引流场景 -->
+                <div class="mb-16 slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-building text-b2b mr-3"></i>（一）B2B专属引流场景：产业带地推+ B2B展会合作
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- 产业带地推 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                            <div class="bg-b2b/10 p-4">
+                                <h4 class="text-xl font-semibold text-b2b">1. 产业带地推（每月3个产业带，每个停留3天）</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <h5 class="font-semibold mb-2 text-dark">场景筛选</h5>
+                                    <p class="text-dark/80">选择佛山顺德（家居）、东莞长安（机械）、深圳华强北（3C）等B2B产业带，入驻目标企业≥150家/产业带。</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h5 class="font-semibold mb-2 text-dark">执行动作</h5>
+                                    <ul class="space-y-2 text-dark/80 pl-6 list-disc">
+                                        <li>提前2周与产业带协会合作，定向发送邀请，触达率≥85%，报名率≥20%</li>
+                                        <li>设"出海服务站"，安排外贸专家提供免费诊断，每日接待≥40家企业</li>
+                                        <li>推出专属福利，群成员≥200人/产业带，福利领取率≥85%</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-semibold mb-2 text-dark">数据指标</h5>
+                                    <p class="text-dark/80">单产业带投入成本≤2万元，获客≥80人（B2B），获客成本≤250元/人，试听邀约率≥30%。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B2B展会合作 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                            <div class="bg-b2b/10 p-4">
+                                <h4 class="text-xl font-semibold text-b2b">2. B2B展会合作（每2个月1场）</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <h5 class="font-semibold mb-2 text-dark">执行动作</h5>
+                                    <ul class="space-y-2 text-dark/80 pl-6 list-disc">
+                                        <li>展位设"海外买家对接咨询区"，每日接待≥60家企业，收集意向客户≥50人</li>
+                                        <li>举办"B2B出海闭门会"（每场30人），邀请行业KOL分享，现场报名试听率≥25%</li>
+                                        <li>展会专属权益：签约客户赠送"海外买家线下对接会"门票，签约转化率≥15%</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-semibold mb-2 text-dark">数据指标</h5>
+                                    <p class="text-dark/80">单展会投入成本≤5万元，获客≥120人（B2B），获客成本≤420元/人，试听邀约率≥35%。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B2C专属引流场景 -->
+                <div class="mb-16 slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-shopping-bag text-b2c mr-3"></i>（二）B2C专属引流场景：跨境电商展+卖家沙龙
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- 跨境电商展合作 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                            <div class="bg-b2c/10 p-4">
+                                <h4 class="text-xl font-semibold text-b2c">1. 跨境电商展合作（每月1场）</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <h5 class="font-semibold mb-2 text-dark">执行动作</h5>
+                                    <ul class="space-y-2 text-dark/80 pl-6 list-disc">
+                                        <li>展位设"运营诊断区"，2名平台专家提供免费建议，每日接待≥80家企业</li>
+                                        <li>推出"展期福利"，每日发放≥200份，福利领取率≥90%</li>
+                                        <li>现场举办"爆单案例分享会"，每日2场，每场50人，会后试听报名率≥30%</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-semibold mb-2 text-dark">数据指标</h5>
+                                    <p class="text-dark/80">单展会投入成本≤3万元，获客≥100人（B2C），获客成本≤300元/人，试听邀约率≥40%。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 卖家沙龙 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                            <div class="bg-b2c/10 p-4">
+                                <h4 class="text-xl font-semibold text-b2c">2. 卖家沙龙（每月2场）</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <h5 class="font-semibold mb-2 text-dark">执行动作</h5>
+                                    <ul class="space-y-2 text-dark/80 pl-6 list-disc">
+                                        <li>主题定制："独立站SEO优化"等，每场规模50-60人，到场率≥85%</li>
+                                        <li>流程设计：40分钟分享+30分钟实操+20分钟问答，收集意向客户≥40人</li>
+                                        <li>后续跟进：24小时内发送资料包+邀约，7天内试听邀约率≥45%</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-semibold mb-2 text-dark">数据指标</h5>
+                                    <p class="text-dark/80">单沙龙投入成本≤1.5万元，获客≥50人（B2C），获客成本≤300元/人，试听邀约率≥45%。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 通用场景 -->
+                <div class="slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-handshake-o text-primary mr-3"></i>（三）B2B/B2C通用场景：行业协会联合活动
+                    </h3>
+                    
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="mb-4">
+                            <h4 class="text-xl font-semibold mb-3 text-primary">合作形式</h4>
+                            <p class="text-dark/80">与B2B产业协会、B2C卖家协会联合举办"出海培训宣讲会"，每月2场（B2B/B2C各1场）。</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="text-xl font-semibold mb-3 text-primary">执行动作</h4>
+                            <ul class="space-y-2 text-dark/80 pl-6 list-disc">
+                                <li>协会协助定向邀约目标企业，B2B场次邀约≥80家，B2C场次邀约≥60家，到场率≥75%</li>
+                                <li>现场设置"会员专属优惠"：协会会员报名培训享9折，B2B会员额外赠《海外市场调研报告》，B2C会员额外赠"平台运营工具月卡"</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 text-primary">数据指标</h4>
+                            <p class="text-dark/80">单场次投入成本≤1万元，B2B获客≥40人、B2C获客≥30人，获客成本≤250/330元/人。</p>
+                        </div>
+                    </div>
+
+                    <!-- 场景效果对比 -->
+                    <div class="mt-10">
+                        <h4 class="text-xl font-semibold mb-4">不同场景获客成本对比</h4>
+                        <div class="bg-white rounded-xl shadow-md p-4 h-80">
+                            <canvas id="costComparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 五、数据化运营与优化机制 -->
+        <section id="section-5" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">五、数据化运营与优化机制</h2>
+                    <p class="text-lg text-dark/70">B2B/B2C分维度监控</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- 数据监控体系 -->
+                <div class="mb-16 slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-dashboard text-accent mr-3"></i>（一）数据监控体系（分客户类型搭建看板）
+                    </h3>
+                    
+                    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">监控维度</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">B2B核心指标</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">B2C核心指标</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">更新频率</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">获客效率</td>
+                                    <td class="px-6 py-4 text-sm text-dark">单场景获客成本、产业带/展会获客量占比</td>
+                                    <td class="px-6 py-4 text-sm text-dark">单场景获客成本、展会长沙龙获客量占比</td>
+                                    <td class="px-6 py-4 text-sm text-dark">24小时/次</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">转化衔接</td>
+                                    <td class="px-6 py-4 text-sm text-dark">试听邀约率、付费转化率（按行业/规模拆分）</td>
+                                    <td class="px-6 py-4 text-sm text-dark">试听邀约率、付费转化率（按平台/模式拆分）</td>
+                                    <td class="px-6 py-4 text-sm text-dark">周度/次</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">成本控制</td>
+                                    <td class="px-6 py-4 text-sm text-dark">地推人均成本、展会展位费投入产出比</td>
+                                    <td class="px-6 py-4 text-sm text-dark">沙龙人均成本、平台合作费投入产出比</td>
+                                    <td class="px-6 py-4 text-sm text-dark">月度/次</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 优化调整机制 -->
+                <div class="slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-refresh text-accent mr-3"></i>（二）优化调整机制
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-b2b/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-industry text-b2b text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">B2B场景优化</h4>
+                            <p class="text-dark/80">若某产业带地推获客成本连续2周超350元/人，3天内调整策略（如联合产业带协会分摊成本、更换福利为"免费外贸培训课"）。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-b2c/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-shopping-cart text-b2c text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">B2C场景优化</h4>
+                            <p class="text-dark/80">若某跨境电商展获客量连续2场低于80人，下次展会调整展位位置（移至卖家聚集区）、增加"现场实操教学"环节。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-exchange text-primary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">转化优化</h4>
+                            <p class="text-dark/80">针对B2B决策周期长，推出"试听后15天内报名享8.5折"；针对B2C试听转化率低，优化试听内容（增加"当天学当天用"的实操技巧）。</p>
+                        </div>
+                    </div>
+
+                    <!-- 转化率趋势图 -->
+                    <div class="mt-10">
+                        <h4 class="text-xl font-semibold mb-4">转化率优化趋势预测</h4>
+                        <div class="bg-white rounded-xl shadow-md p-4 h-80">
+                            <canvas id="conversionRateChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 六、风险控制与保障措施 -->
+        <section id="section-6" class="py-20 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">六、风险控制与保障措施</h2>
+                    <p class="text-lg text-dark/70">B2B/B2C差异化防控</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- 风险识别与应对 -->
+                <div class="mb-16 slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-exclamation-triangle text-accent mr-3"></i>（一）风险识别与应对（分客户类型）
+                    </h3>
+                    
+                    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">风险类型</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">B2B客户风险点</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">B2C客户风险点</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">预警指标</th>
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-dark">应对措施</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">获客成本超支</td>
+                                    <td class="px-6 py-4 text-sm text-dark">产业带地推人工成本高、展会展位费超预算</td>
+                                    <td class="px-6 py-4 text-sm text-dark">卖家沙龙场地费上涨、平台合作费增加</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B≥380元/人，B2C≥310元/人</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B：与产业带协会合办分摊成本；B2C：选择性价比高的共享会议室</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">转化效率低</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B决策链路长、培训需求分散</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2C试听后"等待观望"、对内容实用性存疑</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B≤15%，B2C≤25%</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B：提供"企业团报方案"；B2C：推出"试听不满意3天内退款"</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-dark font-medium">活动参与率低</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B企业负责人时间难协调、产业带分散</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2C卖家关注"短期收益"，对活动价值存疑</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B≤65%，B2C≤70%</td>
+                                    <td class="px-6 py-4 text-sm text-dark">B2B：提前确认时间+提供回放；B2C：明确"可落地的3个运营技巧"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 团队保障 -->
+                <div class="slide-element">
+                    <h3 class="text-2xl font-bold mb-6 text-dark flex items-center">
+                        <i class="fa fa-users text-accent mr-3"></i>（二）团队保障（分客户类型配置）
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-b2b/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-building text-b2b text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">B2B专项组（6人）</h4>
+                            <ul class="space-y-2 text-dark/80 pl-6 list-disc mb-4">
+                                <li>2名外贸行业专家（懂B2B渠道开发）</li>
+                                <li>2名产业带地推专员</li>
+                                <li>2名大客户跟进专员</li>
+                            </ul>
+                            <p class="text-dark/80 font-medium">KPI：每人每月获B2B意向客户≥80人，付费转化≥14人。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 card-hover border border-gray-100">
+                            <div class="w-12 h-12 bg-b2c/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa fa-shopping-bag text-b2c text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3">B2C专项组（4人）</h4>
+                            <ul class="space-y-2 text-dark/80 pl-6 list-disc mb-4">
+                                <li>2名跨境平台运营专家（懂亚马逊/独立站）</li>
+                                <li>1名沙龙策划专员</li>
+                                <li>1名客户跟进专员</li>
+                            </ul>
+                            <p class="text-dark/80 font-medium">KPI：每人每月获B2C意向客户≥75人，付费转化≥10.5人。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+                        <h4 class="text-xl font-semibold mb-3 text-primary">培训机制</h4>
+                        <p class="text-dark/80">每月1次B2B/B2C行业知识培训（如邀请B2B外贸总监分享、B2C大卖授课），考核通过率100%。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 结束页 -->
+        <section class="py-20 px-4 bg-gradient-to-br from-primary to-secondary text-white text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">出海品牌线下培训线下引流落地方案</h2>
+                <p class="text-xl mb-10 opacity-90">数据化版·含B2B客户+市场调研</p>
+                <div class="flex justify-center">
+                    <a href="#top" class="bg-white text-primary hover:bg-gray-100 font-medium px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center">
+                        <i class="fa fa-arrow-up mr-2"></i> 返回顶部
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white/80 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 出海品牌培训引流方案 | 数据化版</p>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 滚动时导航栏样式变化
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 滚动动画
+        const slideElements = document.querySelectorAll('.slide-element');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        slideElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+
+        // 图表初始化
+        window.addEventListener('load', function() {
+            // 目标达成趋势图
+            const goalsCtx = document.getElementById('goalsChart').getContext('2d');
+            new Chart(goalsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['第1月', '第2月', '第3月'],
+                    datasets: [
+                        {
+                            label: 'B2B 客户数',
+                            data: [400, 800, 1200],
+                            borderColor: '#0070F3',
+                            backgroundColor: 'rgba(0, 112, 243, 0.1)',
+                            tension: 0.3,
+                            fill: true
+                        },
+                        {
+                            label: 'B2C 客户数',
+                            data: [200, 400, 600],
+                            borderColor: '#14B8A6',
+                            backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                            tension: 0.3,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: false
+                        },
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // B2B行业分布图表
+            const b2bIndustryCtx = document.getElementById('b2bIndustryChart').getContext('2d');
+            new Chart(b2bIndustryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['机械制造', '家居建材', '3C电子', '其他'],
+                    datasets: [{
+                        data: [52, 48, 45, 35],
+                        backgroundColor: [
+                            'rgba(0, 112, 243, 0.8)',
+                            'rgba(0, 112, 243, 0.6)',
+                            'rgba(0, 112, 243, 0.4)',
+                            'rgba(0, 112, 243, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        }
+                    }
+                }
+            });
+
+            // B2C行业分布图表
+            const b2cIndustryCtx = document.getElementById('b2cIndustryChart').getContext('2d');
+            new Chart(b2cIndustryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['服装配饰', '家居用品', '美妆个护', '其他'],
+                    datasets: [{
+                        data: [43, 40, 38, 39],
+                        backgroundColor: [
+                            'rgba(20, 184, 166, 0.8)',
+                            'rgba(20, 184, 166, 0.6)',
+                            'rgba(20, 184, 166, 0.4)',
+                            'rgba(20, 184, 166, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        }
+                    }
+                }
+            });
+
+            // 获客成本对比图表
+            const costCtx = document.getElementById('costComparisonChart').getContext('2d');
+            new Chart(costCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['产业带地推', 'B2B展会', '跨境电商展', '卖家沙龙', '协会活动'],
+                    datasets: [
+                        {
+                            label: 'B2B 获客成本(元)',
+                            data: [250, 420, 0, 0, 250],
+                            backgroundColor: 'rgba(0, 112, 243, 0.7)',
+                        },
+                        {
+                            label: 'B2C 获客成本(元)',
+                            data: [0, 0, 300, 300, 330],
+                            backgroundColor: 'rgba(20, 184, 166, 0.7)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '成本(元/人)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 转化率趋势图表
+            const conversionCtx = document.getElementById('conversionRateChart').getContext('2d');
+            new Chart(conversionCtx, {
+                type: 'line',
+                data: {
+                    labels: ['第1月', '第2月', '第3月'],
+                    datasets: [
+                        {
+                            label: 'B2B 付费转化率(%)',
+                            data: [15, 18, 22],
+                            borderColor: '#0070F3',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'B2C 付费转化率(%)',
+                            data: [25, 28, 30],
+                            borderColor: '#14B8A6',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'B2B 试听邀约率(%)',
+                            data: [30, 35, 38],
+                            borderColor: '#0070F3',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            borderDash: [5, 5],
+                            yAxisID: 'y1'
+                        },
+                        {
+                            label: 'B2C 试听邀约率(%)',
+                            data: [40, 43, 45],
+                            borderColor: '#14B8A6',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            borderDash: [5, 5],
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: '付费转化率(%)'
+                            },
+                            min: 0,
+                            max: 40
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: '试听邀约率(%)'
+                            },
+                            min: 0,
+                            max: 60,
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
