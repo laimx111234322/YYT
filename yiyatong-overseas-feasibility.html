@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通出海私董会项目可行性报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E63946',
+                        secondary: '#1D3557',
+                        accent: '#457B9D',
+                        light: '#F1FAEE',
+                        neutral: '#A8DADC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .timeline-line {
+                @apply absolute left-6 top-0 bottom-0 w-0.5 bg-neutral hidden md:block;
+            }
+            .timeline-dot {
+                @apply absolute left-6 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 hidden md:block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 顶部导航 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-3 md:mb-0">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white mr-3">
+                    <i class="fa fa-graduation-cap"></i>
+                </div>
+                <h1 class="text-xl font-bold text-primary">怡亚通战略项目</h1>
+            </div>
+            <div class="text-center md:text-right">
+                <h2 class="text-lg font-semibold">出海私董会可行性报告</h2>
+                <p class="text-sm text-gray-500">黄埔军校大会战略延伸项目</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- 封面区域 -->
+        <section class="bg-gradient-to-r from-primary to-accent text-white rounded-2xl shadow-lg p-8 md:p-12 mb-12 text-center">
+            <h1 class="text-2xl md:text-4xl font-bold mb-4">怡亚通出海"黄埔军校"私董会</h1>
+            <h2 class="text-xl md:text-2xl font-semibold mb-6 opacity-90">企业出海战略赋能平台</h2>
+            <p class="max-w-3xl mx-auto opacity-80">
+                从"走出去"到"走进去"，构建中国企业出海生态系统，打造战略赋能新高地
+            </p>
+            <div class="mt-8 inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm">
+                <i class="fa fa-lightbulb-o mr-2"></i>
+                <span>大会造势 · 私董会深耕 · 生态落地</span>
+            </div>
+        </section>
+        
+        <!-- 一、项目定位与战略意义 -->
+        <section class="mb-16 section-fade">
+            <div class="flex items-center mb-6">
+                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">1</div>
+                <h3 class="text-2xl font-bold">项目定位与战略意义</h3>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mr-3">
+                        <i class="fa fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-secondary">项目定位</h4>
+                </div>
+                <p class="text-gray-700 ml-13">
+                    本业务板块绝非简单的培训项目，而是怡亚通构建"全球出海服务平台"生态系统的核心抓手和战略制高点，旨在成为中国出海企业的战略智库和领袖圈层构建者。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fa fa-rocket text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">打造生态入口与品牌高地</h4>
+                    <p class="text-gray-600 text-sm">
+                        通过"黄埔军校"高势能品牌，直接链接中国最优质的出海企业决策层（上市公司老板、头部企业负责人），使怡亚通从供应链服务商升维为出海领域的战略引领者。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fa fa-handshake-o text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">深化客户关系与价值挖掘</h4>
+                    <p class="text-gray-600 text-sm">
+                        服务从"交易"层面提升至"战略"层面，通过提供顶层设计、全球视野和高端圈层，增强客户粘性，为供应链、营销、资金等业务创造高信任度切入机会。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fa fa-refresh text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">构建价值闭环与生态势能</h4>
+                    <p class="text-gray-600 text-sm">
+                        作为"黄埔军校大会"的必然延续，解决"深度链接"和"价值变现"问题，形成"大会造势、私董会深耕"的完整业务闭环，构建可持续发展的生态系统。
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 二、项目可行性分析 -->
+        <section class="mb-16 section-fade">
+            <div class="flex items-center mb-6">
+                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">2</div>
+                <h3 class="text-2xl font-bold">项目可行性分析</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 市场可行性 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mr-3">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-accent">市场可行性</h4>
+                    </div>
+                    
+                    <div class="space-y-4 ml-13">
+                        <div>
+                            <h5 class="font-medium mb-1">目标客户精准</h5>
+                            <p class="text-gray-600 text-sm">
+                                直指国内有出海需求的头部企业老板和上市公司负责人，付费能力强，需求刚性（战略迷茫、资源匮乏、圈子封闭）。
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium mb-1">需求明确迫切</h5>
+                            <p class="text-gray-600 text-sm">
+                                后疫情时代，中国企业出海进入深水区，从"走出去"到"走进去"，企业家急需战略指引和顶级圈层资源，本项目精准命中这一痛点。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 操作可行性 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mr-3">
+                            <i class="fa fa-cogs"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-accent">操作可行性</h4>
+                    </div>
+                    
+                    <div class="space-y-4 ml-13">
+                        <div>
+                            <h5 class="font-medium mb-1">轻资产运营模式</h5>
+                            <p class="text-gray-600 text-sm">
+                                采用"发布会+启航仪式"引爆，随即开办首期课程，模式清晰，动作连贯，启动快捷。
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium mb-1">资源杠杆利用</h5>
+                            <p class="text-gray-600 text-sm">
+                                首期通过合资公司股东邀约，确保初始学员质量和数量，降低冷启动风险。课程和师资由专业团队设计，保障内容专业性。
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium mb-1">落地规划明确</h5>
+                            <p class="text-gray-600 text-sm">
+                                预计11月落地，时间表清晰，项目经过充分论证，具备可执行性。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 财务可行性 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mr-3">
+                            <i class="fa fa-money"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-accent">财务可行性</h4>
+                    </div>
+                    
+                    <div class="mb-4 ml-13">
+                        <canvas id="financialChart" height="160"></canvas>
+                    </div>
+                    
+                    <div class="space-y-3 ml-13">
+                        <div class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-2 text-xs"></i>
+                            <p class="text-gray-600 text-sm">"先付款，无账期"模式确保良好现金流</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-2 text-xs"></i>
+                            <p class="text-gray-600 text-sm">年销售1000万元，利润率20%的健康模型</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-2 text-xs"></i>
+                            <p class="text-gray-600 text-sm">战略价值显著，带动其他业务增长潜力大</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 三、与黄埔军校大会联动实施策略 -->
+        <section class="mb-16 section-fade">
+            <div class="flex items-center mb-6">
+                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">3</div>
+                <h3 class="text-2xl font-bold">与黄埔军校大会联动实施策略</h3>
+            </div>
+            
+            <div class="relative">
+                <div class="timeline-line"></div>
+                
+                <!-- 会前筹备 -->
+                <div class="mb-12 relative">
+                    <div class="timeline-dot" style="top: 24px;"></div>
+                    <div class="bg-secondary text-white inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 ml-0 md:ml-12">
+                        阶段一：会前筹备
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden ml-0 md:ml-12">
+                        <div class="p-6">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mr-3 flex-shrink-0 mt-1">
+                                    <i class="fa fa-planning"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">战略预埋与定向邀约</h5>
+                                    <ul class="space-y-2 text-gray-600 text-sm">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                            <span>在大会策划阶段即将"私董会"作为核心成果和升级路径进行宣传</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                            <span>针对上市公司、头部企业负责人进行定向邀请，确保高端客户基数</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                            <span>设计"大会嘉宾专属私董会优惠权益"，提升转化吸引力</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 会中招募 -->
+                <div class="mb-12 relative">
+                    <div class="timeline-dot" style="top: 24px;"></div>
+                    <div class="bg-primary text-white inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 ml-0 md:ml-12">
+                        阶段二：会中招募
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden ml-0 md:ml-12">
+                        <div class="p-6">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-3 flex-shrink-0 mt-1">
+                                    <i class="fa fa-hand-paper-o"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">氛围营造与现场转化</h5>
+                                    <ul class="space-y-2 text-gray-600 text-sm">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                            <span>大会现场设置"私董会"专属展示区和咨询台，强化品牌认知</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                            <span>安排私董会预览环节，由顶级导师现场分享核心价值，激发兴趣</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                            <span>提供大会现场签约专属权益，实现"听即签"的高效转化</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 会后落地 -->
+                <div class="relative">
+                    <div class="timeline-dot" style="top: 24px;"></div>
+                    <div class="bg-accent text-white inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 ml-0 md:ml-12">
+                        阶段三：会后落地
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden ml-0 md:ml-12">
+                        <div class="p-6">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mr-3 flex-shrink-0 mt-1">
+                                    <i class="fa fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">势能转化与快速启动</h5>
+                                    <ul class="space-y-2 text-gray-600 text-sm">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                            <span>大会结束后72小时内启动私董会首期预热，保持客户关注度</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                            <span>1个月内举办私董会启航仪式，将大会势能转化为实际业务成果</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                            <span>建立大会嘉宾与私董会学员的联动机制，形成持续转化漏斗</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 四、项目实施计划与预期效益 -->
+        <section class="mb-16 section-fade">
+            <div class="flex items-center mb-6">
+                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">4</div>
+                <h3 class="text-2xl font-bold">项目实施计划与预期效益</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 实施计划 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-secondary flex items-center">
+                        <i class="fa fa-calendar-check-o mr-2"></i>实施计划（11月落地路线图）
+                    </h4>
+                    
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-24 font-medium text-gray-500 flex-shrink-0">10月第1周</div>
+                            <div class="flex-1 pl-4 border-l-2 border-primary">
+                                <p class="text-gray-700">成立专项小组，确定私董会章程与课程体系</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="w-24 font-medium text-gray-500 flex-shrink-0">10月第2-3周</div>
+                            <div class="flex-1 pl-4 border-l-2 border-primary">
+                                <p class="text-gray-700">完成导师邀约、学员招募方案及宣传材料制作</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="w-24 font-medium text-gray-500 flex-shrink-0">10月第4周</div>
+                            <div class="flex-1 pl-4 border-l-2 border-primary">
+                                <p class="text-gray-700">黄埔军校大会现场招募，完成首期30名学员招募</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="w-24 font-medium text-gray-500 flex-shrink-0">11月第1周</div>
+                            <div class="flex-1 pl-4 border-l-2 border-primary">
+                                <p class="text-gray-700">举办私董会启航仪式，确定首次课程时间与议程</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="w-24 font-medium text-gray-500 flex-shrink-0">11月第2周起</div>
+                            <div class="flex-1 pl-4 border-l-2 border-primary">
+                                <p class="text-gray-700">按计划开展私董会活动，同步启动第二期招募</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 预期效益 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-secondary flex items-center">
+                        <i class="fa fa-line-chart mr-2"></i>预期效益与价值
+                    </h4>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-medium text-primary mb-2">直接效益</h5>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 首期30名学员，营收300万元</li>
+                                <li>• 年度目标100名学员，营收1000万元</li>
+                                <li>• 利润率保持20%以上</li>
+                                <li>• 客户续约率目标80%+</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-medium text-primary mb-2">间接效益</h5>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 带动供应链业务增长2000万+</li>
+                                <li>• 新增高净值客户20+家</li>
+                                <li>• 提升品牌溢价能力30%+</li>
+                                <li>• 构建行业影响力与话语权</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-secondary/5 p-4 rounded-lg">
+                        <h5 class="font-medium text-secondary mb-2">战略价值</h5>
+                        <p class="text-gray-600 text-sm">
+                            通过私董会构建的高端圈层，怡亚通将从传统的供应链服务商转型为中国企业出海的"战略伙伴"，形成差异化竞争壁垒，为未来3-5年的生态布局奠定核心基础。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 五、结论与建议 -->
+        <section class="mb-16 section-fade">
+            <div class="flex items-center mb-6">
+                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">5</div>
+                <h3 class="text-2xl font-bold">结论与建议</h3>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <h4 class="text-lg font-semibold mb-4 text-primary">项目结论</h4>
+                <p class="text-gray-700">
+                    "怡亚通出海私董会"项目市场定位精准，商业模式清晰，财务模型健康，且与公司打造出海服务生态的战略高度协同。它不仅是可行的，更是极具战略必要性的业务布局。该项目将成为连接"黄埔军校大会"品牌势能与实际业务落地的关键纽带，为怡亚通构建出海服务生态系统提供核心抓手。
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h4 class="text-lg font-semibold mb-4 text-primary">实施建议</h4>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold mr-3 flex-shrink-0">1</div>
+                        <div>
+                            <div class="font-medium">纳入整体战略布局</div>
+                            <p class="text-gray-600 text-sm mt-1">
+                                建议公司批准将此业务板块纳入整体可行性报告，并作为"怡亚通全球出海服务平台"的核心组成部分加快推进。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold mr-3 flex-shrink-0">2</div>
+                        <div>
+                            <div class="font-medium">成立专项推进小组</div>
+                            <p class="text-gray-600 text-sm mt-1">
+                                建议立即成立由高管牵头的专项小组，成员包括市场、销售、内容等部门核心人员，明确职责分工。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold mr-3 flex-shrink-0">3</div>
+                        <div>
+                            <div class="font-medium">细化落地执行方案</div>
+                            <p class="text-gray-600 text-sm mt-1">
+                                10月内完成课程体系、师资名单、收费标准及11月落地的详细倒计时计划，确保项目成功启动。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold mr-3 flex-shrink-0">4</div>
+                        <div>
+                            <div class="font-medium">建立联动考核机制</div>
+                            <p class="text-gray-600 text-sm mt-1">
+                                将私董会项目与黄埔军校大会、供应链业务等进行联动考核，形成协同效应。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 价值总结 -->
+        <section class="bg-gradient-to-r from-secondary to-accent text-white rounded-2xl shadow-lg p-8 section-fade">
+            <h3 class="text-2xl font-bold mb-6 text-center">战略价值总结</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-star mr-2"></i>核心价值定位
+                    </h4>
+                    <p class="opacity-90 mb-4">
+                        怡亚通出海私董会不是简单的服务产品，而是公司战略升级的"转换器"——将黄埔军校大会的品牌影响力转化为实际业务价值，将高端客户资源转化为生态合作伙伴，将单次服务转化为长期战略绑定。
+                    </p>
+                    <p class="opacity-90">
+                        它将重新定义怡亚通在出海服务领域的角色，从"参与者"转变为"引领者"和"标准制定者"。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-road mr-2"></i>未来发展展望
+                    </h4>
+                    <p class="opacity-90 mb-4">
+                        项目成熟后，可从单一私董会扩展为包含企业培训、战略咨询、资源对接、资本赋能的全方位出海服务体系，形成千亿级市场规模的业务集群。
+                    </p>
+                    <p class="opacity-90">
+                        最终，通过"黄埔军校大会+私董会+生态服务"的三层架构，怡亚通将成为中国企业出海的"标配"合作伙伴，实现商业价值与社会价值的双重丰收。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-white/20 text-center">
+                <p class="text-lg">
+                    建议公司抓住这一战略机遇，以出海私董会为切入点，系统构建全球出海服务生态，为怡亚通打造下一个增长曲线。
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white/70 py-6 mt-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>© 2024 怡亚通出海私董会项目可行性报告 | 内部资料 请勿外传</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滚动动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 财务预测图表
+            const financialCtx = document.getElementById('financialChart').getContext('2d');
+            new Chart(financialCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['首期', '半年', '年度', '第二年'],
+                    datasets: [
+                        {
+                            label: '营收(万元)',
+                            data: [300, 600, 1000, 1800],
+                            backgroundColor: 'rgba(230, 57, 70, 0.7)',
+                        },
+                        {
+                            label: '利润(万元)',
+                            data: [60, 132, 220, 414],
+                            backgroundColor: 'rgba(69, 123, 157, 0.7)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // 滚动显示动画
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.section-fade').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+    
