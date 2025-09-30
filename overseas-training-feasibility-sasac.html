@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通出海培训业务可行性报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#006699',
+                        accent: '#1A8CFF',
+                        success: '#008000',
+                        light: '#F5F7FA',
+                        dark: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['SimSun', 'STSong', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .doc-title {
+                @apply text-2xl md:text-3xl font-bold text-center mb-8 text-primary;
+            }
+            .doc-subtitle {
+                @apply text-xl font-semibold mb-6 text-primary;
+            }
+            .section-title {
+                @apply text-xl font-bold mb-6 pb-2 border-b border-gray-300 text-dark;
+            }
+            .paragraph {
+                @apply mb-4 text-gray-700 leading-relaxed;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-dark">
+    <!-- 页眉 -->
+    <header class="py-6 border-b border-gray-300">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-12 h-12 bg-primary rounded flex items-center justify-center text-white mr-4">
+                        <i class="fa fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">怡亚通供应链股份有限公司</h1>
+                        <p class="text-sm text-gray-500">国有控股上市公司</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-600">文件编号：YAT-2024-009</p>
+                    <p class="text-sm text-gray-600 mt-1">日期：2024年10月1日</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- 标题页 -->
+        <section class="text-center mb-12 py-8 border-b border-gray-300">
+            <h1 class="doc-title">怡亚通出海培训业务可行性报告</h1>
+            <p class="text-gray-600 mb-6">——高质量贸易出海示范区配套支撑项目</p>
+            <div class="inline-block bg-light px-6 py-3 rounded border border-gray-200">
+                <p class="text-sm text-gray-500">呈报单位：怡亚通供应链股份有限公司</p>
+                <p class="text-sm text-gray-500 mt-1">报送单位：深圳市人民政府国有资产监督管理委员会</p>
+            </div>
+        </section>
+        
+        <!-- 目录 -->
+        <section class="mb-12 p-6 bg-light rounded-lg border border-gray-200">
+            <h2 class="section-title">目录</h2>
+            <ul class="space-y-2 text-gray-700">
+                <li class="flex">
+                    <span class="w-12">一、</span>
+                    <span>项目背景与战略定位</span>
+                </li>
+                <li class="flex">
+                    <span class="w-12">二、</span>
+                    <span>项目主要内容与实施方式</span>
+                </li>
+                <li class="flex">
+                    <span class="w-12">三、</span>
+                    <span>可行性分析</span>
+                </li>
+                <li class="flex">
+                    <span class="w-12">四、</span>
+                    <span>实施计划与阶段目标</span>
+                </li>
+                <li class="flex">
+                    <span class="w-12">五、</span>
+                    <span>合规管理与风险控制</span>
+                </li>
+                <li class="flex">
+                    <span class="w-12">六、</span>
+                    <span>经济效益与社会效益</span>
+                </li>
+                <li class="flex">
+                    <span class="w-12">七、</span>
+                    <span>保障措施与审批请求</span>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 一、项目背景与战略定位 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">一、项目背景与战略定位</h2>
+            
+            <h3 class="doc-subtitle">（一）项目背景</h3>
+            <p class="paragraph">
+                随着怡亚通高质量贸易出海示范区建设的推进，大量深圳中小企业展现出强烈的出海意愿，但普遍面临跨境运营知识缺乏、国际市场规则不熟悉、海外资源对接不畅等痛点。为落实"企业带动企业"出海理念，构建完整的出海服务生态体系，亟需建立系统性的出海培训赋能机制，提升企业出海能力，为示范区建设提供人才和能力支撑。
+            </p>
+            
+            <h3 class="doc-subtitle">（二）战略定位</h3>
+            <p class="paragraph">
+                本项目定位为怡亚通高质量贸易出海示范区的核心配套支撑业务，是连接潜在出海企业与示范区生态服务的关键入口，通过"培训赋能+生态导入"的模式，实现三大核心价值：
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center mb-2">
+                        <i class="fa fa-filter text-primary mr-2"></i>
+                        <p class="font-medium">精准客户筛选器</p>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        通过培训精准识别有真实出海需求的优质企业，为示范区储备客户资源
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center mb-2">
+                        <i class="fa fa-graduation-cap text-primary mr-2"></i>
+                        <p class="font-medium">出海能力提升器</p>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        系统化提升企业出海运营能力，降低试错成本，提高出海成功率
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center mb-2">
+                        <i class="fa fa-link text-primary mr-2"></i>
+                        <p class="font-medium">生态服务连接器</p>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        实现培训客户向示范区供应链、物流、金融等增值服务的无缝转化
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 二、项目主要内容与实施方式 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">二、项目主要内容与实施方式</h2>
+            
+            <h3 class="doc-subtitle">（一）核心培训体系</h3>
+            <div class="overflow-x-auto mb-6">
+                <table class="min-w-full border border-gray-300">
+                    <thead>
+                        <tr class="bg-light">
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">课程级别</th>
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">培训内容</th>
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">定价标准</th>
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">培训方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 border-b text-sm">入门级</td>
+                            <td class="py-3 px-4 border-b text-sm">出海基础认知、平台选择、政策解读</td>
+                            <td class="py-3 px-4 border-b text-sm">999元/企业</td>
+                            <td class="py-3 px-4 border-b text-sm">线上录播+直播答疑</td>
+                        </tr>
+                        <tr class="bg-light">
+                            <td class="py-3 px-4 border-b text-sm">进阶级</td>
+                            <td class="py-3 px-4 border-b text-sm">平台实操、选品策略、营销推广、合规管理</td>
+                            <td class="py-3 px-4 border-b text-sm">3999元/企业</td>
+                            <td class="py-3 px-4 border-b text-sm">线上课程+线下工作坊</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 border-b text-sm">定制级</td>
+                            <td class="py-3 px-4 border-b text-sm">企业专属方案、团队陪跑、资源对接</td>
+                            <td class="py-3 px-4 border-b text-sm">19800元起/企业</td>
+                            <td class="py-3 px-4 border-b text-sm">一对一咨询+定制化服务</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3 class="doc-subtitle">（二）客户转化路径</h3>
+            <p class="paragraph">
+                建立"引流-培育-转化-增值"的全链条客户运营体系，实现培训业务与示范区生态服务的有机衔接：
+            </p>
+            
+            <div class="relative pl-6 mb-4">
+                <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                
+                <div class="relative mb-6">
+                    <div class="absolute left-[-9px] top-1 w-4 h-4 bg-primary rounded-full"></div>
+                    <p class="font-medium">流量获取阶段</p>
+                    <p class="text-sm text-gray-600 mt-1 pl-4">通过抖音平台免费内容引流，以低价入门课程筛选潜在客户</p>
+                </div>
+                
+                <div class="relative mb-6">
+                    <div class="absolute left-[-9px] top-1 w-4 h-4 bg-primary rounded-full"></div>
+                    <p class="font-medium">能力培育阶段</p>
+                    <p class="text-sm text-gray-600 mt-1 pl-4">通过系统化课程提升企业出海能力，建立专业信任</p>
+                </div>
+                
+                <div class="relative mb-6">
+                    <div class="absolute left-[-9px] top-1 w-4 h-4 bg-primary rounded-full"></div>
+                    <p class="font-medium">需求挖掘阶段</p>
+                    <p class="text-sm text-gray-600 mt-1 pl-4">一对一诊断企业出海需求，匹配示范区服务资源</p>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute left-[-9px] top-1 w-4 h-4 bg-primary rounded-full"></div>
+                    <p class="font-medium">生态转化阶段</p>
+                    <p class="text-sm text-gray-600 mt-1 pl-4">导入供应链、物流、金融等示范区增值服务，实现价值变现</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 三、可行性分析 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">三、可行性分析</h2>
+            
+            <h3 class="doc-subtitle">（一）市场可行性</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">需求旺盛且刚性</p>
+                    <p class="text-sm text-gray-600">
+                        深圳作为外贸大市，拥有超过10万家有潜在出海需求的企业，其中中小微企业占比超过90%，普遍缺乏专业的出海运营知识和经验，培训需求迫切。
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">渠道精准高效</p>
+                    <p class="text-sm text-gray-600">
+                        抖音平台聚集了大量寻求转型和出海机会的企业主，通过短视频内容引流+直播转化的模式，可精准触达目标客户，获客成本低于传统渠道30%以上。
+                    </p>
+                </div>
+            </div>
+            
+            <h3 class="doc-subtitle">（二）运营可行性</h3>
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">轻资产运营模式</p>
+                    <p class="text-sm text-gray-600">
+                        课程内容标准化开发，可重复利用；讲师以外部合作为主，降低固定成本；线上线下相结合，运营灵活高效。
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">强大信任背书</p>
+                    <p class="text-sm text-gray-600">
+                        依托怡亚通国有控股上市公司背景和示范区平台资源，采用"不满意随时退款"承诺，降低客户决策门槛。
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">天然业务协同</p>
+                    <p class="text-sm text-gray-600">
+                        与怡亚通现有供应链、物流、金融等业务无缝衔接，培训过程中可自然植入相关服务，转化路径顺畅。
+                    </p>
+                </div>
+            </div>
+            
+            <h3 class="doc-subtitle">（三）财务可行性</h3>
+            <div class="border border-gray-200 rounded-lg p-6">
+                <div class="grid md:grid-cols-3 gap-6 mb-4">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-500 mb-1">预计年度培训营收</p>
+                        <p class="text-2xl font-bold text-primary">1000万元</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm text-gray-500 mb-1">预计税前利润率</p>
+                        <p class="text-2xl font-bold text-primary">20%</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm text-gray-500 mb-1">带动生态业务增收</p>
+                        <p class="text-2xl font-bold text-primary">5000万元</p>
+                    </div>
+                </div>
+                
+                <p class="text-sm text-gray-600">
+                    采用"先收款，后培训"的模式，确保现金流健康，零坏账风险。项目初期投资约500万元，主要用于课程开发、平台搭建和市场推广，预计6个月可实现收支平衡，投资回收期1年。
+                </p>
+            </div>
+        </section>
+        
+        <!-- 四、实施计划与阶段目标 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">四、实施计划与阶段目标</h2>
+            
+            <h3 class="doc-subtitle">（一）实施步骤</h3>
+            <div class="overflow-x-auto mb-6">
+                <table class="min-w-full border border-gray-300">
+                    <thead>
+                        <tr class="bg-light">
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">阶段</th>
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">时间</th>
+                            <th class="py-3 px-4 border-b text-left text-sm font-semibold">主要任务</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 border-b text-sm">筹备期</td>
+                            <td class="py-3 px-4 border-b text-sm">10月-11月中旬</td>
+                            <td class="py-3 px-4 border-b text-sm">
+                                课程体系开发、讲师团队组建、抖音账号矩阵搭建、营销素材制作
+                            </td>
+                        </tr>
+                        <tr class="bg-light">
+                            <td class="py-3 px-4 border-b text-sm">启动期</td>
+                            <td class="py-3 px-4 border-b text-sm">11月下旬-12月</td>
+                            <td class="py-3 px-4 border-b text-sm">
+                                首场发布会举办、入门级课程上线、抖音引流测试、首批客户招募
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 border-b text-sm">运营期</td>
+                            <td class="py-3 px-4 border-b text-sm">2025年1月起</td>
+                            <td class="py-3 px-4 border-b text-sm">
+                                全系列课程运营、客户转化、生态服务导入、品牌推广
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3 class="doc-subtitle">（二）阶段目标</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <p class="font-medium mb-3">短期目标（1年内）</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                        <li>培训企业客户500家以上</li>
+                        <li>实现培训营收1000万元</li>
+                        <li>抖音平台粉丝量达5万+</li>
+                        <li>向示范区转化客户50家</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-medium mb-3">中长期目标（3年内）</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                        <li>累计培训企业客户2000家以上</li>
+                        <li>年培训营收达3000万元</li>
+                        <li>向示范区转化客户300家</li>
+                        <li>形成具有行业影响力的培训品牌</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 五、合规管理与风险控制 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">五、合规管理与风险控制</h2>
+            
+            <h3 class="doc-subtitle">（一）合规管理措施</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <p class="font-medium mb-2">国资管理合规</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                        <li>严格遵守国有资产管理相关规定，规范资金使用</li>
+                        <li>建立培训收入专户管理，确保资金安全</li>
+                        <li>定期向公司董事会和市国资委汇报业务进展</li>
+                        <li>重大合作和投资事项履行报批程序</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-medium mb-2">业务运营合规</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                        <li>遵守教育培训相关法律法规，规范招生宣传</li>
+                        <li>建立课程内容审核机制，确保政治正确和专业准确</li>
+                        <li>规范合同管理，明确双方权利义务</li>
+                        <li>保护客户信息安全，遵守数据隐私相关规定</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="doc-subtitle">（二）风险控制措施</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">市场风险</p>
+                    <p class="text-sm text-gray-600 mb-2">
+                        风险描述：市场竞争加剧，客户获取成本上升
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        防控措施：差异化课程定位，强化怡亚通国企品牌优势；建立多元化获客渠道，降低单一平台依赖
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">运营风险</p>
+                    <p class="text-sm text-gray-600 mb-2">
+                        风险描述：课程质量不达标，客户满意度低
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        防控措施：建立严格的课程质量管控体系；聘请行业专家参与课程研发；完善客户反馈机制
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">财务风险</p>
+                    <p class="text-sm text-gray-600 mb-2">
+                        风险描述：营收未达预期，成本控制不力
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        防控措施：建立月度经营分析机制；实施弹性预算管理；严格控制营销费用占比
+                    </p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <p class="font-medium mb-2">合规风险</p>
+                    <p class="text-sm text-gray-600 mb-2">
+                        风险描述：培训内容不合规，引发法律纠纷
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        防控措施：建立法务合规审查机制；购买相关责任保险；定期开展合规培训
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 六、经济效益与社会效益 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">六、经济效益与社会效益</h2>
+            
+            <h3 class="doc-subtitle">（一）经济效益</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-light p-5 rounded-lg">
+                    <p class="font-medium mb-3">直接经济效益</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                        <li>预计首年培训业务收入1000万元，利润200万元</li>
+                        <li>三年累计培训业务收入5000万元，利润1200万元</li>
+                        <li>带动公司相关业务增收1.2亿元</li>
+                        <li>提升国有资产收益率1.5个百分点</li>
+                    </ul>
+                </div>
+                <div class="bg-light p-5 rounded-lg">
+                    <p class="font-medium mb-3">间接经济效益</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                        <li>降低企业出海试错成本，平均每家企业节约50万元以上</li>
+                        <li>提高企业出海成功率，预计带动示范区企业新增出口额50亿元</li>
+                        <li>增强怡亚通生态平台用户粘性，提升整体估值</li>
+                        <li>形成新的业务增长点，优化公司收入结构</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="doc-subtitle">（二）社会效益</h3>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>提升深圳企业出海能力，助力打造"深圳品牌"国际影响力</li>
+                <li>培养1000名以上专业跨境电商人才，缓解行业人才短缺</li>
+                <li>带动500家中小企业成功出海，创造1万个以上就业岗位</li>
+                <li>形成可复制的出海培训标准，为全国提供"深圳经验"</li>
+                <li>助力深圳建设更高水平开放型经济新体制，服务国家战略</li>
+            </ul>
+        </section>
+        
+        <!-- 七、保障措施与审批请求 -->
+        <section class="mb-12 section-fade">
+            <h2 class="section-title">七、保障措施与审批请求</h2>
+            
+            <h3 class="doc-subtitle">（一）保障措施</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <p class="font-medium mb-3 flex items-center">
+                        <i class="fa fa-users text-primary mr-2"></i>组织保障
+                    </p>
+                    <p class="text-gray-700 text-sm mb-4">
+                        成立由公司分管副总经理任组长的项目工作组，成员包括市场、运营、财务、法务等部门骨干，负责项目统筹推进。
+                    </p>
+                    
+                    <p class="font-medium mb-3 flex items-center">
+                        <i class="fa fa-money text-primary mr-2"></i>资金保障
+                    </p>
+                    <p class="text-gray-700 text-sm">
+                        项目总投资500万元，全部由公司自有资金解决，主要用于课程开发、平台建设和市场推广，实行专款专用管理。
+                    </p>
+                </div>
+                
+                <div>
+                    <p class="font-medium mb-3 flex items-center">
+                        <i class="fa fa-cogs text-primary mr-2"></i>资源保障
+                    </p>
+                    <p class="text-gray-700 text-sm mb-4">
+                        整合公司内部跨境电商、供应链、法律等领域专家资源，同时聘请外部行业专家组成顾问团队，保障课程质量和专业水平。
+                    </p>
+                    
+                    <p class="font-medium mb-3 flex items-center">
+                        <i class="fa fa-bar-chart text-primary mr-2"></i>考核机制
+                    </p>
+                    <p class="text-gray-700 text-sm">
+                        将项目纳入公司年度经营业绩考核体系，设定客户数量、营收规模、转化效率等关键指标，定期评估考核。
+                    </p>
+                </div>
+            </div>
+            
+            <h3 class="doc-subtitle">（二）审批请求</h3>
+            <p class="paragraph">
+                为确保项目顺利实施，恳请市国资委给予以下支持：
+            </p>
+            
+            <ol class="list-decimal pl-5 space-y-3 text-gray-700">
+                <li>
+                    <p class="font-medium">批准项目立项</p>
+                    <p class="text-sm text-gray-600 mt-1">将本项目列为怡亚通高质量贸易出海示范区配套支撑项目，纳入整体规划推进。</p>
+                </li>
+                <li>
+                    <p class="font-medium">政策支持</p>
+                    <p class="text-sm text-gray-600 mt-1">协调市人社局、商务局等部门，将本项目纳入深圳市中小企业服务体系和人才培训计划。</p>
+                </li>
+                <li>
+                    <p class="font-medium">资源对接</p>
+                    <p class="text-sm text-gray-600 mt-1">协助对接政府、行业协会等资源，支持项目宣传推广和客户招募。</p>
+                </li>
+            </ol>
+        </section>
+        
+        <!-- 结论 -->
+        <section class="border-t border-gray-300 pt-8 section-fade">
+            <h2 class="section-title">结论</h2>
+            
+            <p class="paragraph">
+                怡亚通出海培训业务作为高质量贸易出海示范区的重要配套支撑，市场需求明确，商业模式成熟，财务模型健康，与公司整体战略高度契合。该业务不仅能够产生直接经济效益，更能为示范区精准引流，提升生态系统整体价值。
+            </p>
+            <p class="paragraph">
+                项目实施风险可控，社会效益显著，有利于发挥国有资本在服务中小企业出海中的引领作用，提升深圳企业的国际竞争力。项目的实施将进一步完善怡亚通出海服务生态，为打造"企业带动企业"出海典范提供有力支撑。
+            </p>
+            <p class="paragraph">
+                恳请市国资委批准项目立项，并给予相应支持。怡亚通将严格遵守相关规定，规范项目管理，确保项目目标实现，为深圳外贸高质量发展作出积极贡献。
+            </p>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-light py-6 mt-12 border-t border-gray-300">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            <p>怡亚通供应链股份有限公司 版权所有 © 2024</p>
+            <p class="mt-1">地址：深圳市福田区深南中路3039号国际文化大厦18楼 联系电话：0755-82407000</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滚动动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 滚动显示动画
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.section-fade').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+    
