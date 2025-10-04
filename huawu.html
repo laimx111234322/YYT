@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华伍股份主导全球备件平台建设方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <!-- 配置Tailwind自定义主题 - 参考华伍股份官网色调 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A2351', // 华伍股份主色调-深蓝色
+                        secondary: '#1A56DB', // 辅助蓝色
+                        accent: '#E67E22', // 强调色-橙色
+                        dark: '#333333',
+                        light: '#F5F7FA',
+                        gray: {
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            300: '#D1D5DB',
+                            400: '#9CA3AF',
+                            500: '#6B7280',
+                            600: '#4B5563',
+                            700: '#374151',
+                            800: '#1F2937',
+                            900: '#111827',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .slide {
+                min-height: 100vh;
+                scroll-snap-align: start;
+                display: flex;
+                flex-direction: column;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .architecture-layer {
+                transition: all 0.3s ease;
+            }
+            .architecture-layer:hover {
+                transform: translateY(-5px);
+            }
+            .scroll-container {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 overflow-x-hidden">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-primary rounded flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">HW</span>
+                </div>
+                <span class="text-xl font-bold text-primary hidden md:inline-block">华伍股份</span>
+                <span class="text-sm text-gray-500 hidden md:inline-block">全球备件平台方案</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#slide1" class="text-gray-600 hover:text-primary transition-colors text-sm">首页</a>
+                <a href="#slide2" class="text-gray-600 hover:text-primary transition-colors text-sm">项目背景</a>
+                <a href="#slide3" class="text-gray-600 hover:text-primary transition-colors text-sm">平台架构</a>
+                <a href="#slide4" class="text-gray-600 hover:text-primary transition-colors text-sm">实施路径</a>
+                <a href="#slide5" class="text-gray-600 hover:text-primary transition-colors text-sm">收益分析</a>
+                <a href="#slide6" class="text-gray-600 hover:text-primary transition-colors text-sm">资本化方案</a>
+            </nav>
+            
+            <button class="md:hidden text-gray-600 hover:text-primary" id="menuToggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-2">
+            <div class="flex flex-col space-y-3 py-3">
+                <a href="#slide1" class="text-gray-600 hover:text-primary transition-colors py-1">首页</a>
+                <a href="#slide2" class="text-gray-600 hover:text-primary transition-colors py-1">项目背景</a>
+                <a href="#slide3" class="text-gray-600 hover:text-primary transition-colors py-1">平台架构</a>
+                <a href="#slide4" class="text-gray-600 hover:text-primary transition-colors py-1">实施路径</a>
+                <a href="#slide5" class="text-gray-600 hover:text-primary transition-colors py-1">收益分析</a>
+                <a href="#slide6" class="text-gray-600 hover:text-primary transition-colors py-1">资本化方案</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="pt-16">
+        <!-- 幻灯片容器 - 修复滚动问题 -->
+        <div class="flex flex-col snap-y snap-mandatory overflow-y-auto h-[calc(100vh-4rem)] scroll-container">
+            <!-- 幻灯片1：封面 -->
+            <section id="slide1" class="slide bg-gradient-to-br from-primary to-secondary text-white">
+                <div class="container mx-auto px-6 py-12 md:py-24 flex-grow flex flex-col justify-center">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="mb-8 flex justify-center">
+                            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-primary font-bold text-2xl">HW</span>
+                            </div>
+                        </div>
+                        <h1 class="text-[clamp(1.8rem,5vw,3.5rem)] font-bold mb-6 leading-tight">
+                            华伍股份全球备件平台<br>建设与资本化方案
+                        </h1>
+                        <p class="text-[clamp(1rem,2vw,1.25rem)] text-blue-100 mb-10 max-w-2xl mx-auto">
+                            基于怡亚通供应链生态与振华重工系统支持的全球化战略布局
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#slide2" class="bg-white text-primary px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
+                                开始浏览 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 幻灯片2：项目背景与机遇 -->
+            <section id="slide2" class="slide bg-white p-6 md:p-12">
+                <div class="container mx-auto flex-grow">
+                    <div class="mb-10">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">项目背景与市场机遇</h2>
+                        <div class="h-1 w-20 bg-accent rounded"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <div class="mb-8">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                                    <i class="fa fa-check-circle text-secondary mr-3"></i>华伍股份现有基础
+                                </h3>
+                                <p class="text-gray-600 pl-8">
+                                    已跟随主机厂配套进入100+国家，拥有广泛的全球客户基础和渠道资源，
+                                    在工业制动领域具备较强的品牌影响力和市场认可度。
+                                </p>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                                    <i class="fa fa-exclamation-circle text-accent mr-3"></i>市场痛点分析
+                                </h3>
+                                <ul class="text-gray-600 pl-8 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                        <span>备件供应不及时，影响客户设备运转效率</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                        <span>跨境物流成本高、周期长，服务响应慢</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                        <span>国际支付结算复杂，资金周转效率低</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                        <span>缺乏数字化平台支撑全球服务网络</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                                    <i class="fa fa-lightbulb-o text-secondary mr-3"></i>解决方案
+                                </h3>
+                                <p class="text-gray-600 pl-8">
+                                    构建数字化全球备件平台，整合华伍股份渠道资源与怡亚通供应链服务能力，
+                                    解决工业备件跨境流通的痛点问题，打造行业领先的服务生态。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <div class="relative h-80 md:h-96">
+                                <canvas id="marketOpportunityChart"></canvas>
+                            </div>
+                            <p class="text-center text-sm text-gray-500 mt-4">全球工业备件市场规模与增长预测（单位：十亿美元）</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 幻灯片3：平台定位与核心优势（优化架构部分） -->
+            <section id="slide3" class="slide bg-gray-50 p-6 md:p-12">
+                <div class="container mx-auto flex-grow">
+                    <div class="mb-10">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">平台定位与系统架构</h2>
+                        <div class="h-1 w-20 bg-accent rounded"></div>
+                    </div>
+                    
+                    <div class="mb-12 text-center max-w-3xl mx-auto">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">成为细分领域全球领先的工业备件交易与服务平台</h3>
+                        <p class="text-gray-600">
+                            整合多方优势资源，构建覆盖全球的数字化备件服务网络，
+                            为客户提供高效、便捷、低成本的备件采购与供应链解决方案
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <!-- 华伍股份优势 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                                <i class="fa fa-globe text-2xl text-primary"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">华伍股份基础</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>100+国家的渠道与客户基础</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>工业制动领域专业品牌认知</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>成熟的制造与品控体系</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>主机厂配套的服务经验</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 怡亚通优势 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-5">
+                                <i class="fa fa-cubes text-2xl text-secondary"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">怡亚通资源支持</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>全球化供应链金融服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>覆盖全球的物流网络</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>支付3.0跨境结算系统</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>全国产业带供应商资源</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 振华重工优势 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-5">
+                                <i class="fa fa-cogs text-2xl text-accent"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">振华重工系统支持</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>成熟的平台系统技术基础</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>工业领域数字化经验</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>大型设备备件管理经验</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                                    <span>全球化服务网络运营经验</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 优化后的平台系统架构 - 修复显示问题 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-10 overflow-hidden">
+                        <h4 class="text-xl font-semibold mb-8 text-center text-gray-800">优化后的平台系统架构</h4>
+                        
+                        <!-- 架构分层展示 -->
+                        <div class="max-w-5xl mx-auto">
+                            <!-- 客户端层 -->
+                            <div class="architecture-layer mb-8 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                                <h5 class="font-semibold text-primary mb-3 flex items-center">
+                                    <i class="fa fa-desktop mr-2"></i> 客户端层
+                                </h5>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 ml-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-globe text-secondary mb-1"></i>
+                                        <p>多语言Web门户</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-mobile text-secondary mb-1"></i>
+                                        <p>移动应用</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-cogs text-secondary mb-1"></i>
+                                        <p>供应商管理端</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-user-circle text-secondary mb-1"></i>
+                                        <p>客户自助服务端</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- API网关层 -->
+                            <div class="architecture-layer mb-8 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                                <h5 class="font-semibold text-purple-700 mb-3 flex items-center">
+                                    <i class="fa fa-exchange mr-2"></i> API网关层
+                                </h5>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 ml-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-key text-purple-600 mb-1"></i>
+                                        <p>身份认证</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-filter text-purple-600 mb-1"></i>
+                                        <p>请求过滤</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-tachometer text-purple-600 mb-1"></i>
+                                        <p>流量控制</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-area-chart text-purple-600 mb-1"></i>
+                                        <p>API监控</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 业务服务层 -->
+                            <div class="architecture-layer mb-8 p-4 bg-green-50 rounded-lg border border-green-100">
+                                <h5 class="font-semibold text-green-700 mb-3 flex items-center">
+                                    <i class="fa fa-cubes mr-2"></i> 业务服务层
+                                </h5>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ml-6">
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-700 mb-2">核心交易服务</p>
+                                        <div class="space-y-2">
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-shopping-cart text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>订单管理系统</span>
+                                            </div>
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-tags text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>产品目录管理</span>
+                                            </div>
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-credit-card text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>定价与折扣系统</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-700 mb-2">供应链服务</p>
+                                        <div class="space-y-2">
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-cubes text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>智能库存管理</span>
+                                            </div>
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-truck text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>跨境物流调度</span>
+                                            </div>
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-ship text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>国际货运跟踪</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-700 mb-2">金融与客户服务</p>
+                                        <div class="space-y-2">
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-money text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>供应链金融服务</span>
+                                            </div>
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-exchange text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>全球支付结算</span>
+                                            </div>
+                                            <div class="bg-white p-2 rounded shadow-sm text-sm flex items-center">
+                                                <i class="fa fa-comments text-green-600 mr-2 w-5 text-center"></i>
+                                                <span>客户服务系统</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 数据层 -->
+                            <div class="architecture-layer mb-8 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+                                <h5 class="font-semibold text-yellow-700 mb-3 flex items-center">
+                                    <i class="fa fa-database mr-2"></i> 数据层
+                                </h5>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 ml-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-table text-yellow-600 mb-1"></i>
+                                        <p>业务数据库</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-line-chart text-yellow-600 mb-1"></i>
+                                        <p>数据仓库</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-search text-yellow-600 mb-1"></i>
+                                        <p>搜索引擎</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-bar-chart text-yellow-600 mb-1"></i>
+                                        <p>BI分析平台</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 基础设施层 -->
+                            <div class="architecture-layer p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <h5 class="font-semibold text-gray-700 mb-3 flex items-center">
+                                    <i class="fa fa-server mr-2"></i> 基础设施层
+                                </h5>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 ml-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-cloud text-gray-600 mb-1"></i>
+                                        <p>混合云架构</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-shield text-gray-600 mb-1"></i>
+                                        <p>安全防护体系</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-refresh text-gray-600 mb-1"></i>
+                                        <p>容器化部署</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded shadow-sm text-center text-sm">
+                                        <i class="fa fa-area-chart text-gray-600 mb-1"></i>
+                                        <p>监控告警系统</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 架构优势说明 -->
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                            <div class="text-primary text-xl mb-3">
+                                <i class="fa fa-puzzle-piece"></i>
+                            </div>
+                            <h5 class="font-semibold text-gray-800 mb-2">微服务架构</h5>
+                            <p class="text-gray-600 text-sm">各业务模块独立部署，可根据需求灵活扩展，支持快速迭代与升级</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                            <div class="text-primary text-xl mb-3">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <h5 class="font-semibold text-gray-800 mb-2">全球化支持</h5>
+                            <p class="text-gray-600 text-sm">多语言、多币种、多时区支持，满足全球不同地区的业务需求</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                            <div class="text-primary text-xl mb-3">
+                                <i class="fa fa-shield"></i>
+                            </div>
+                            <h5 class="font-semibold text-gray-800 mb-2">安全可靠</h5>
+                            <p class="text-gray-600 text-sm">多层次安全防护，数据加密传输与存储，保障全球交易安全</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 幻灯片4：实施路径与时间节点 -->
+            <section id="slide4" class="slide bg-white p-6 md:p-12">
+                <div class="container mx-auto flex-grow">
+                    <div class="mb-10">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">实施路径与时间节点</h2>
+                        <div class="h-1 w-20 bg-accent rounded"></div>
+                    </div>
+                    
+                    <!-- 时间线 -->
+                    <div class="relative">
+                        <!-- 时间线中轴线 -->
+                        <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform md:-translate-x-1/2"></div>
+                        
+                        <!-- 第一阶段 -->
+                        <div class="relative mb-16">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                                    <h3 class="text-xl font-semibold text-primary mb-2">第一阶段：基础建设（0-6个月）</h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm inline-block md:float-right">
+                                        <ul class="text-gray-600 space-y-1 text-sm">
+                                            <li>• 完成平台系统设计与开发</li>
+                                            <li>• 整合华伍现有渠道资源</li>
+                                            <li>• 搭建核心团队（技术、运营、市场）</li>
+                                            <li>• 投入：约3000-5000万元</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- 时间点标记 -->
+                                <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full transform md:-translate-x-1/2 flex items-center justify-center z-10">
+                                    <span class="text-white text-xs font-bold">1</span>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第二阶段 -->
+                        <div class="relative mb-16">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                                
+                                <!-- 时间点标记 -->
+                                <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full transform md:-translate-x-1/2 flex items-center justify-center z-10">
+                                    <span class="text-white text-xs font-bold">2</span>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-12">
+                                    <h3 class="text-xl font-semibold text-primary mb-2">第二阶段：试点运营（7-12个月）</h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm inline-block">
+                                        <ul class="text-gray-600 space-y-1 text-sm">
+                                            <li>• 选择3-5个重点国家进行试点</li>
+                                            <li>• 接入首批供应商与客户</li>
+                                            <li>• 完善平台功能与服务流程</li>
+                                            <li>• 投入：约5000-8000万元</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第三阶段 -->
+                        <div class="relative mb-16">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                                    <h3 class="text-xl font-semibold text-primary mb-2">第三阶段：全球扩张（13-24个月）</h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm inline-block md:float-right">
+                                        <ul class="text-gray-600 space-y-1 text-sm">
+                                            <li>• 覆盖20+核心国家市场</li>
+                                            <li>• 规模化供应商与客户接入</li>
+                                            <li>• 供应链金融业务上线</li>
+                                            <li>• 投入：约1-1.5亿元</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- 时间点标记 -->
+                                <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full transform md:-translate-x-1/2 flex items-center justify-center z-10">
+                                    <span class="text-white text-xs font-bold">3</span>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第四阶段 -->
+                        <div class="relative">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                                
+                                <!-- 时间点标记 -->
+                                <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full transform md:-translate-x-1/2 flex items-center justify-center z-10">
+                                    <span class="text-white text-xs font-bold">4</span>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-12">
+                                    <h3 class="text-xl font-semibold text-primary mb-2">第四阶段：资本化准备（25-36个月）</h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm inline-block">
+                                        <ul class="text-gray-600 space-y-1 text-sm">
+                                            <li>• 优化财务指标</li>
+                                            <li>• 完善治理结构</li>
+                                            <li>• 准备上市或并购材料</li>
+                                            <li>• 投入：约5000-8000万元</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 资源投入规划 -->
+                    <div class="mt-16">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">资源投入规划（单位：万元）</h3>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <canvas id="investmentChart" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 幻灯片5：收益预测与回报分析 -->
+            <section id="slide5" class="slide bg-gray-50 p-6 md:p-12">
+                <div class="container mx-auto flex-grow">
+                    <div class="mb-10">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">收益预测与回报分析</h2>
+                        <div class="h-1 w-20 bg-accent rounded"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-6">第三年预期收益</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-600">交易规模</span>
+                                        <span class="font-semibold text-primary">50-80亿元</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-primary h-2.5 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-600">平台服务收入</span>
+                                        <span class="font-semibold text-primary">3-5亿元</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-600">供应链金融收益</span>
+                                        <span class="font-semibold text-primary">1-1.5亿元</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-primary h-2.5 rounded-full" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-600">净利润率</span>
+                                        <span class="font-semibold text-primary">15-20%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-primary h-2.5 rounded-full" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                <h4 class="font-semibold text-gray-800 mb-3">投资回报分析</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-line-chart text-accent mt-1 mr-2"></i>
+                                        <span>预计4-5年收回投资</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-line-chart text-accent mt-1 mr-2"></i>
+                                        <span>5年后估值：50-80亿元</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-line-chart text-accent mt-1 mr-2"></i>
+                                        <span>年均复合增长率：60%+</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-6">未来五年财务预测</h3>
+                            <div class="bg-white p-6 rounded-lg shadow-sm h-[calc(100%-2.5rem)]">
+                                <canvas id="financialForecastChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 幻灯片6：资本化方案 - 修复底部可见性问题 -->
+            <section id="slide6" class="slide bg-white p-6 md:p-12 pb-20">
+                <div class="container mx-auto flex-grow">
+                    <div class="mb-10">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">资本化路径选择</h2>
+                        <div class="h-1 w-20 bg-accent rounded"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <!-- 路径一：被华伍股份并购 -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                                <i class="fa fa-handshake-o text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">路径一：被华伍股份并购</h3>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold text-gray-700 mb-2">核心优势</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-plus-circle text-secondary mt-1 mr-2"></i>
+                                        <span>整合效率高，与华伍主业协同效应强</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-plus-circle text-secondary mt-1 mr-2"></i>
+                                        <span>操作流程简单，确定性高</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-plus-circle text-secondary mt-1 mr-2"></i>
+                                        <span>可快速实现业务整合与资源协同</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold text-gray-700 mb-2">实施要点</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-circle text-xs text-secondary mt-1.5 mr-2"></i>
+                                        <span>实施时机：平台运营稳定后（第3年）</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-circle text-xs text-secondary mt-1.5 mr-2"></i>
+                                        <span>估值逻辑：基于净利润30-40倍PE</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-circle text-xs text-secondary mt-1.5 mr-2"></i>
+                                        <span>对华伍价值：完善产业链服务能力，提升整体估值</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 路径二：独立赴美上市 -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-5">
+                                <i class="fa fa-rocket text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">路径二：独立赴美上市</h3>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold text-gray-700 mb-2">核心优势</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-plus-circle text-secondary mt-1 mr-2"></i>
+                                        <span>估值水平高，融资渠道更广</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-plus-circle text-secondary mt-1 mr-2"></i>
+                                        <span>有利于吸引国际资源与人才</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-plus-circle text-secondary mt-1 mr-2"></i>
+                                        <span>提升全球品牌影响力</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold text-gray-700 mb-2">实施要点</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-circle text-xs text-secondary mt-1.5 mr-2"></i>
+                                        <span>实施时机：第4-5年，满足上市条件</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-circle text-xs text-secondary mt-1.5 mr-2"></i>
+                                        <span>上市准备：搭建VIE架构，引入国际投行</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-circle text-xs text-secondary mt-1.5 mr-2"></i>
+                                        <span>所需条件：年净利润不低于5000万美元，持续增长性</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 风险分析与应对 -->
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">风险分析与应对策略</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                <h4 class="font-semibold text-gray-700 mb-3 flex items-center">
+                                    <i class="fa fa-globe text-secondary mr-2"></i>市场风险
+                                </h4>
+                                <p class="text-gray-600 text-sm mb-3">国际市场拓展不及预期，客户获取成本高</p>
+                                <p class="text-gray-700 text-sm font-medium">应对策略：</p>
+                                <p class="text-gray-600 text-sm">先聚焦华伍现有客户，逐步拓展；与主机厂深度合作，捆绑推广</p>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                <h4 class="font-semibold text-gray-700 mb-3 flex items-center">
+                                    <i class="fa fa-truck text-secondary mr-2"></i>运营风险
+                                </h4>
+                                <p class="text-gray-600 text-sm mb-3">跨境物流与支付合规问题，服务质量不稳定</p>
+                                <p class="text-gray-700 text-sm font-medium">应对策略：</p>
+                                <p class="text-gray-600 text-sm">依托怡亚通成熟体系，合规团队提前介入；建立全球服务标准</p>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                                <h4 class="font-semibold text-gray-700 mb-3 flex items-center">
+                                    <i class="fa fa-code text-secondary mr-2"></i>技术风险
+                                </h4>
+                                <p class="text-gray-600 text-sm mb-3">平台系统稳定性与安全性，技术迭代滞后</p>
+                                <p class="text-gray-700 text-sm font-medium">应对策略：</p>
+                                <p class="text-gray-600 text-sm">振华重工技术团队深度参与，分阶段测试；预留技术迭代资金</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 总结 -->
+                    <div class="mt-16 bg-primary text-white p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-center">总结与行动建议</h3>
+                        <p class="text-center mb-6 text-blue-100 max-w-3xl mx-auto">
+                            项目价值：打造全球领先的工业备件平台，实现华伍股份、怡亚通、振华重工多方共赢，
+                            提升中国工业品牌在全球市场的竞争力
+                        </p>
+                        <div class="max-w-2xl mx-auto">
+                           
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 - 确保可见 -->
+    <footer class="bg-primary text-white py-6 relative z-10">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>© 2025 华伍股份全球备件平台项目组. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 确保DOM加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 移动端菜单切换
+            document.getElementById('menuToggle').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // 关闭移动端菜单（如果打开）
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // 计算目标位置，考虑固定导航栏高度
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2', 'shadow-md');
+                    header.classList.remove('py-3');
+                } else {
+                    header.classList.add('py-3');
+                    header.classList.remove('py-2', 'shadow-md');
+                }
+                
+                // 更新当前导航高亮
+                updateNavHighlight();
+            });
+            
+            // 更新导航高亮
+            function updateNavHighlight() {
+                const sections = document.querySelectorAll('section[id^="slide"]');
+                const navLinks = document.querySelectorAll('header a[href^="#"]');
+                
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // 考虑导航栏高度的偏移
+                    if (scrollY >= (sectionTop - 150) && scrollY < (sectionTop + sectionHeight - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary', 'font-semibold');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.remove('text-gray-600');
+                        link.classList.add('text-primary', 'font-semibold');
+                    }
+                });
+            }
+            
+            // 初始化图表 - 修复架构图显示问题
+            function initCharts() {
+                // 市场机遇图表
+                const marketCtx = document.getElementById('marketOpportunityChart');
+                if (marketCtx) {
+                    new Chart(marketCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['2023', '2024', '2025', '2026', '2027', '2028'],
+                            datasets: [{
+                                label: '全球工业备件市场规模',
+                                data: [480, 520, 570, 630, 700, 780],
+                                borderColor: '#0A2351',
+                                backgroundColor: 'rgba(10, 35, 81, 0.1)',
+                                tension: 0.3,
+                                fill: true
+                            }, {
+                                label: '数字化平台渗透率',
+                                data: [15, 22, 30, 40, 52, 65],
+                                borderColor: '#E67E22',
+                                backgroundColor: 'rgba(230, 126, 34, 0.1)',
+                                tension: 0.3,
+                                fill: true,
+                                yAxisID: 'y1'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                title: {
+                                    display: true,
+                                    text: '市场增长与数字化趋势'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                    title: {
+                                        display: true,
+                                        text: '市场规模（十亿美元）'
+                                    }
+                                },
+                                y1: {
+                                    beginAtZero: true,
+                                    position: 'right',
+                                    title: {
+                                        display: true,
+                                        text: '渗透率（%）'
+                                    },
+                                    grid: {
+                                        drawOnChartArea: false
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+                
+                // 投资图表
+                const investmentCtx = document.getElementById('investmentChart');
+                if (investmentCtx) {
+                    new Chart(investmentCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['技术开发（40%）', '市场拓展（25%）', '运营团队（20%）', '全球仓储节点（15%）'],
+                            datasets: [{
+                                data: [40, 25, 20, 15],
+                                backgroundColor: [
+                                    '#0A2351',
+                                    '#1A56DB',
+                                    '#3B82F6',
+                                    '#93C5FD'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                },
+                                title: {
+                                    display: true,
+                                    text: '总投入：约2.3-3.6亿元（3年）'
+                                }
+                            }
+                        }
+                    });
+                }
+                
+                // 财务预测图表
+                const financialCtx = document.getElementById('financialForecastChart');
+                if (financialCtx) {
+                    new Chart(financialCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['第1年', '第2年', '第3年', '第4年', '第5年'],
+                            datasets: [{
+                                label: '交易规模（亿元）',
+                                data: [5, 15, 65, 120, 200],
+                                backgroundColor: 'rgba(10, 35, 81, 0.7)',
+                                yAxisID: 'y'
+                            }, {
+                                label: '净利润（亿元）',
+                                data: [0.2, 0.8, 3.5, 8, 15],
+                                backgroundColor: 'rgba(230, 126, 34, 0.7)',
+                                yAxisID: 'y1'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: '交易规模（亿元）'
+                                    }
+                                },
+                                y1: {
+                                    beginAtZero: true,
+                                    position: 'right',
+                                    title: {
+                                        display: true,
+                                        text: '净利润（亿元）'
+                                    },
+                                    grid: {
+                                        drawOnChartArea: false
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // 初始化图表
+            initCharts();
+            
+            // 初始化导航高亮
+            updateNavHighlight();
+            
+            // 确保最后一页可以滚动到底部
+            const lastSlide = document.getElementById('slide6');
+            if (lastSlide) {
+                lastSlide.style.minHeight = 'auto';
+                lastSlide.style.paddingBottom = '6rem';
+            }
+        });
+    </script>
+</body>
+</html>
+    
