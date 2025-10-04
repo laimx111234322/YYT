@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华伍股份全球备件平台 - 系统架构</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A2351',
+                        secondary: '#1A56DB',
+                        accent: '#E67E22',
+                        gray: {
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            300: '#D1D5DB',
+                            400: '#9CA3AF',
+                            500: '#6B7280',
+                            600: '#4B5563',
+                            700: '#374151',
+                            800: '#1F2937',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .architecture-layer {
+                transition: all 0.5s ease;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            .architecture-layer.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .module-card {
+                transition: all 0.3s ease;
+            }
+            .module-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-primary rounded flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">HW</span>
+                </div>
+                <span class="text-xl font-bold text-primary">华伍股份</span>
+                <span class="text-sm text-gray-500 hidden md:inline-block">全球备件平台</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-600 hover:text-primary text-sm transition-colors">首页</a>
+                <a href="#" class="text-primary font-semibold text-sm border-b-2 border-primary pb-1">平台架构</a>
+                <a href="#" class="text-gray-600 hover:text-primary text-sm transition-colors">实施路径</a>
+                <a href="#" class="text-gray-600 hover:text-primary text-sm transition-colors">收益分析</a>
+                <a href="#" class="text-gray-600 hover:text-primary text-sm transition-colors">资本化方案</a>
+            </nav>
+            <button class="md:hidden text-gray-600 focus:outline-none" id="mobileMenuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-3">
+            <div class="flex flex-col space-y-3">
+                <a href="#" class="text-gray-600 hover:text-primary text-sm py-1">首页</a>
+                <a href="#" class="text-primary font-semibold text-sm py-1">平台架构</a>
+                <a href="#" class="text-gray-600 hover:text-primary text-sm py-1">实施路径</a>
+                <a href="#" class="text-gray-600 hover:text-primary text-sm py-1">收益分析</a>
+                <a href="#" class="text-gray-600 hover:text-primary text-sm py-1">资本化方案</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 核心内容区 -->
+    <main class="py-8 md:py-12">
+        <div class="container mx-auto px-4">
+            <!-- 页面标题区 -->
+            <div class="text-center mb-10 md:mb-16">
+                <h1 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-primary mb-3">优化后的平台系统架构</h1>
+                <div class="h-1 w-20 bg-accent rounded mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+                    基于微服务架构设计，深度整合华伍股份全球渠道、怡亚通供应链服务及振华重工技术能力，
+                    构建覆盖100+国家的工业备件数字化服务平台
+                </p>
+            </div>
+
+            <!-- 架构分层展示区 -->
+            <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-8 mb-12">
+                <!-- 1. 客户端层 -->
+                <div class="architecture-layer mb-8 p-4 md:p-6 bg-blue-50 border border-blue-100 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-desktop text-xl text-primary"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-primary">1. 客户端层</h2>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ml-16">
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full mb-3">
+                                <i class="fa fa-globe text-secondary text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">多语言Web门户</h3>
+                            <p class="text-xs text-gray-500">支持12种主流语言</p>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-primary/10 text-primary text-xs rounded">
+                                全球适配
+                            </span>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full mb-3">
+                                <i class="fa fa-mobile text-secondary text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">移动应用</h3>
+                            <p class="text-xs text-gray-500">iOS/Android双端</p>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-primary/10 text-primary text-xs rounded">
+                                便捷操作
+                            </span>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full mb-3">
+                                <i class="fa fa-cogs text-secondary text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">供应商管理端</h3>
+                            <p class="text-xs text-gray-500">库存/订单管理</p>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-secondary/10 text-secondary text-xs rounded">
+                                怡亚通对接
+                            </span>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full mb-3">
+                                <i class="fa fa-user-circle text-secondary text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">客户自助服务端</h3>
+                            <p class="text-xs text-gray-500">询价/售后跟踪</p>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-primary/10 text-primary text-xs rounded">
+                                华伍客户
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. API网关层 -->
+                <div class="architecture-layer mb-8 p-4 md:p-6 bg-purple-50 border border-purple-100 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-700/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-exchange text-xl text-purple-700"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-purple-700">2. API网关层</h2>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ml-16">
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-50 rounded-full mb-3">
+                                <i class="fa fa-key text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">身份认证</h3>
+                            <p class="text-xs text-gray-500">OAuth2.0+JWT</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-50 rounded-full mb-3">
+                                <i class="fa fa-filter text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">请求过滤</h3>
+                            <p class="text-xs text-gray-500">防SQL注入/XSS</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-50 rounded-full mb-3">
+                                <i class="fa fa-tachometer text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">流量控制</h3>
+                            <p class="text-xs text-gray-500">动态限流/熔断</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-50 rounded-full mb-3">
+                                <i class="fa fa-area-chart text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">API监控</h3>
+                            <p class="text-xs text-gray-500">实时调用统计</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 业务服务层 -->
+                <div class="architecture-layer mb-8 p-4 md:p-6 bg-green-50 border border-green-100 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-700/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-cubes text-xl text-green-700"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-green-700">3. 业务服务层</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ml-16">
+                        <!-- 核心交易服务 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                            <h3 class="text-base font-medium mb-4 flex items-center">
+                                <i class="fa fa-shopping-cart text-green-600 mr-2"></i>核心交易服务
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-list-alt text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">订单管理系统</p>
+                                        <p class="text-xs text-gray-500">全流程订单跟踪</p>
+                                    </div>
+                                </div>
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-tags text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">产品目录管理</p>
+                                        <p class="text-xs text-gray-500">备件分类与检索</p>
+                                    </div>
+                                </div>
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-percent text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">定价与折扣系统</p>
+                                        <p class="text-xs text-gray-500">动态价格管理</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 供应链服务 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                            <h3 class="text-base font-medium mb-4 flex items-center">
+                                <i class="fa fa-truck text-green-600 mr-2"></i>供应链服务
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-warehouse text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">智能库存管理</p>
+                                        <p class="text-xs text-gray-500">全球库存可视化</p>
+                                    </div>
+                                </div>
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-route text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">跨境物流调度</p>
+                                        <p class="text-xs text-gray-500">怡亚通全球网络</p>
+                                    </div>
+                                </div>
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-ship text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">国际货运跟踪</p>
+                                        <p class="text-xs text-gray-500">实时物流状态</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 金融与客户服务 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                            <h3 class="text-base font-medium mb-4 flex items-center">
+                                <i class="fa fa-money text-green-600 mr-2"></i>金融与客户服务
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-hand-holding-dollar text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">供应链金融服务</p>
+                                        <p class="text-xs text-gray-500">怡亚通金融支持</p>
+                                    </div>
+                                </div>
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-exchange-alt text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">全球支付结算</p>
+                                        <p class="text-xs text-gray-500">支付3.0系统</p>
+                                    </div>
+                                </div>
+                                <div class="module-card bg-gray-50 p-3 rounded flex items-center">
+                                    <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="fa fa-headset text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">客户服务系统</p>
+                                        <p class="text-xs text-gray-500">多语言支持</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 数据层 -->
+                <div class="architecture-layer mb-8 p-4 md:p-6 bg-yellow-50 border border-yellow-100 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-yellow-700/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-database text-xl text-yellow-700"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-yellow-700">4. 数据层</h2>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ml-16">
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-50 rounded-full mb-3">
+                                <i class="fa fa-table text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">业务数据库</h3>
+                            <p class="text-xs text-gray-500">MySQL/PostgreSQL</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-50 rounded-full mb-3">
+                                <i class="fa fa-line-chart text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">数据仓库</h3>
+                            <p class="text-xs text-gray-500">ClickHouse</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-50 rounded-full mb-3">
+                                <i class="fa fa-search text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">搜索引擎</h3>
+                            <p class="text-xs text-gray-500">Elasticsearch</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-50 rounded-full mb-3">
+                                <i class="fa fa-chart-pie text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">BI分析平台</h3>
+                            <p class="text-xs text-gray-500">实时数据看板</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 基础设施层 -->
+                <div class="architecture-layer p-4 md:p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gray-700/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-server text-xl text-gray-700"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-gray-700">5. 基础设施层</h2>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ml-16">
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-gray-50 rounded-full mb-3">
+                                <i class="fa fa-cloud text-gray-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">混合云架构</h3>
+                            <p class="text-xs text-gray-500">公有云+私有云</p>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-gray-200 text-gray-700 text-xs rounded">
+                                振华技术
+                            </span>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-gray-50 rounded-full mb-3">
+                                <i class="fa fa-shield-halved text-gray-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">安全防护体系</h3>
+                            <p class="text-xs text-gray-500">WAF/数据加密</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-gray-50 rounded-full mb-3">
+                                <i class="fa fa-cubes-stacked text-gray-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">容器化部署</h3>
+                            <p class="text-xs text-gray-500">K8s+Docker</p>
+                        </div>
+                        <div class="module-card bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-gray-50 rounded-full mb-3">
+                                <i class="fa fa-satellite-dish text-gray-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-base font-medium mb-1">监控告警系统</h3>
+                            <p class="text-xs text-gray-500">Prometheus+Grafana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心优势区 -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="module-card bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                        <i class="fa fa-puzzle-piece text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">微服务架构</h3>
+                    <p class="text-gray-600 text-sm">
+                        各业务模块独立部署，支持按需扩展与快速迭代，可灵活响应全球100+国家的业务需求变化
+                    </p>
+                </div>
+                <div class="module-card bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                        <i class="fa fa-globe-americas text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">全球化支撑</h3>
+                    <p class="text-gray-600 text-sm">
+                        多语言、多币种、多时区适配，整合怡亚通全球物流网络，实现备件跨境高效流转与交付
+                    </p>
+                </div>
+                <div class="module-card bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                        <i class="fa fa-shield-virus text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">安全可靠</h3>
+                    <p class="text-gray-600 text-sm">
+                        银行级数据加密与多层防护体系，振华重工技术团队保驾护航，保障全球交易与数据安全
+                    </p>
+                </div>
+            </div>
+
+            <!-- 技术选型说明 -->
+            <div class="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fa fa-microchip text-primary mr-2"></i>核心技术选型与资源整合
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-700 mb-3">技术栈</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Spring Cloud</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">MySQL</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Redis</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Elasticsearch</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Kubernetes</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Docker</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">React</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Chart.js</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-700 mb-3">三方资源整合</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-2">
+                                    <span class="text-white text-xs font-bold">HW</span>
+                                </div>
+                                <span class="text-sm text-gray-600">华伍股份：全球渠道资源</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-2">
+                                    <span class="text-white text-xs font-bold">YYT</span>
+                                </div>
+                                <span class="text-sm text-gray-600">怡亚通：物流/金融/支付</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center mr-2">
+                                    <span class="text-white text-xs font-bold">ZH</span>
+                                </div>
+                                <span class="text-sm text-gray-600">振华重工：技术平台支撑</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                        <span class="text-primary font-bold text-xl">HW</span>
+                    </div>
+                    <span class="text-xl font-bold">华伍股份</span>
+                </div>
+                <div class="text-center md:text-right text-sm text-blue-100">
+                    <p>© 2025 华伍股份全球备件平台项目组. 保留所有权利.</p>
+                    <p class="mt-1">工业备件数字化服务解决方案</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 架构层滚动显示动画
+        function handleScrollAnimation() {
+            const layers = document.querySelectorAll('.architecture-layer');
+            layers.forEach(layer => {
+                const layerTop = layer.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (layerTop < windowHeight * 0.85) {
+                    layer.classList.add('visible');
+                }
+            });
+        }
+
+        // 初始化动画
+        window.addEventListener('load', handleScrollAnimation);
+        window.addEventListener('scroll', handleScrollAnimation);
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    
