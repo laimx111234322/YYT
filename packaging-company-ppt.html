@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包材公司推广可行性分析与命名策略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        neutral: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .slide {
+                min-height: 100vh;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .nav-dot {
+                @apply w-3 h-3 rounded-full bg-gray-300 transition-all duration-300;
+            }
+            .nav-dot.active {
+                @apply bg-primary w-8;
+            }
+        }
+    </style>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: #3B82F6;
+            z-index: 50;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-dark">
+    <!-- 进度条 -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- 导航 -->
+    <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 bg-white/90 backdrop-blur-sm rounded-full shadow-md px-4 py-2 flex items-center gap-3">
+        <button class="nav-dot active" data-slide="1"></button>
+        <button class="nav-dot" data-slide="2"></button>
+        <button class="nav-dot" data-slide="3"></button>
+        <button class="nav-dot" data-slide="4"></button>
+        <button class="nav-dot" data-slide="5"></button>
+        <button class="nav-dot" data-slide="6"></button>
+    </nav>
+
+    <div class="container mx-auto px-4 max-w-5xl">
+        <!-- 1. 封面 -->
+        <section class="slide flex flex-col justify-center items-center text-center fade-in" id="slide1">
+            <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-8">
+                <i class="fa fa-cube text-white text-2xl"></i>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-6">包材公司推广方案</h1>
+            <h2 class="text-xl text-gray-600 mb-8">跨境电商B2B培训生态中的机会</h2>
+            <div class="text-sm text-gray-500">
+                <p>可行性分析 + 命名策略</p>
+            </div>
+        </section>
+
+        <!-- 2. 项目背景 -->
+        <section class="slide fade-in" id="slide2">
+            <div class="mb-8">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                    项目背景
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold">为什么要在培训生态中推广包材公司？</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <p class="text-gray-700 mb-4">
+                    我们已经有了一个成功的跨境电商B2B培训业务，积累了大量企业客户资源。现在，考虑顺势推广一个"小兄弟"包材公司，这是一个很有战略眼光的思路！
+                </p>
+                <p class="text-gray-700">
+                    包材是跨境电商卖家的刚需产品，从普通纸箱到定制化包装，每个卖家都需要。把包材业务融入现有培训生态，能形成业务闭环，为客户提供更完整的服务。
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1 bg-white rounded-xl shadow-sm p-6 card-hover">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">业务关联性</h3>
+                    <p class="text-gray-600 text-sm">
+                        培训内容已包含店铺运营、物流履约等环节，包材作为物流关键要素，可自然融入
+                    </p>
+                </div>
+                
+                <div class="flex-1 bg-white rounded-xl shadow-sm p-6 card-hover">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">客户基础</h3>
+                    <p class="text-gray-600 text-sm">
+                        培训业务已积累大量企业客户，这些都是包材的潜在用户，获客成本低
+                    </p>
+                </div>
+                
+                <div class="flex-1 bg-white rounded-xl shadow-sm p-6 card-hover">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">行业增长</h3>
+                    <p class="text-gray-600 text-sm">
+                        跨境电商持续增长，带动包材需求上升，特别是环保、定制化包装需求增加
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 可行性分析 -->
+        <section class="slide fade-in" id="slide3">
+            <div class="mb-8">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                    可行性分析
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold">这个想法靠谱吗？</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-check-circle text-secondary mr-2"></i>
+                        为什么可行？
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                                <i class="fa fa-handshake-o"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">信任基础已经存在</h4>
+                                <p class="text-gray-600 text-sm">
+                                    我们通过培训已经赢得客户信任，推荐包材服务更容易被接受，转化率会比陌生推广高很多
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                                <i class="fa fa-puzzle-piece"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">业务自然衔接</h4>
+                                <p class="text-gray-600 text-sm">
+                                    在讲物流、包装优化等课程时，可以自然引入包材解决方案，不突兀
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">增加收入来源</h4>
+                                <p class="text-gray-600 text-sm">
+                                    包材业务可以成为新的收入增长点，同时提高客户整体 lifetime value
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                        需要注意什么？
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 flex-shrink-0">
+                                <i class="fa fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">不要影响培训公信力</h4>
+                                <p class="text-gray-600 text-sm">
+                                    推广要适度，不能变成硬推销，以免让客户觉得培训的目的是卖包材
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 flex-shrink-0">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">保证包材质量和价格优势</h4>
+                                <p class="text-gray-600 text-sm">
+                                    产品本身要有竞争力，否则会伤害已有信任，反而影响培训业务
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 flex-shrink-0">
+                                <i class="fa fa-legal"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">明确业务边界</h4>
+                                <p class="text-gray-600 text-sm">
+                                    最好让包材公司作为独立品牌运营，避免客户混淆，保持培训的客观性
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-primary/5 rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                    <i class="fa fa-lightbulb-o text-primary text-xl mr-3"></i>
+                    <h3 class="text-xl font-semibold">结论：可行，但要讲究方法</h3>
+                </div>
+                <p class="text-gray-700">
+                    利用现有培训客户资源推广包材公司是个好主意，关键是要以客户需求为导向，将包材服务作为培训价值的延伸，而不是单纯的销售行为。
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. 命名策略 - 全球型 -->
+        <section class="slide fade-in" id="slide4">
+            <div class="mb-8">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                    命名策略
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold">包材公司叫什么名字好？</h2>
+            </div>
+            
+            <p class="text-gray-700 mb-8">
+                好的公司名称能传递专业、可靠的形象，同时让人记住。以下是适合跨境电商场景的包材公司名称方案：
+            </p>
+            
+            <h3 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fa fa-globe text-accent mr-2"></i>
+                全球型名称（突出国际业务能力）
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-2 bg-accent"></div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-accent">环球材链</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            "环球"体现全球化，"材链"强调供应链完整性，暗示资源整合能力
+                        </p>
+                        <div class="text-xs bg-gray-50 p-3 rounded-lg">
+                            <div class="font-medium mb-1">优势</div>
+                            <p class="text-gray-600">适合侧重国际物流与大宗采购的客户，名字大气且专业</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-2 bg-accent"></div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-accent">全球盾包装</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            "盾"象征保护与安全，传递可靠性，易于联想包材的防护功能
+                        </p>
+                        <div class="text-xs bg-gray-50 p-3 rounded-lg">
+                            <div class="font-medium mb-1">优势</div>
+                            <p class="text-gray-600">突出包装的保护功能，适合高价值、易损产品的包装需求</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-2 bg-accent"></div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-accent">万维包材</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            "万维"（万维网）体现互联网基因，与跨境电商培训生态高度契合
+                        </p>
+                        <div class="text-xs bg-gray-50 p-3 rounded-lg">
+                            <div class="font-medium mb-1">优势</div>
+                            <p class="text-gray-600">科技感强，适合数字化程度高的年轻企业客户</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fa fa-cogs text-accent mr-2"></i>
+                专业型名称（强调技术、环保或行业专注）
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-2 bg-secondary"></div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-secondary">绿航包装</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            "绿"突出环保，"航"关联物流速度，符合跨境电商时效要求
+                        </p>
+                        <div class="text-xs bg-gray-50 p-3 rounded-lg">
+                            <div class="font-medium mb-1">优势</div>
+                            <p class="text-gray-600">主打环保材料（可降解包材），符合国际环保趋势</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-2 bg-secondary"></div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-secondary">智装解决方案</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            "智装"（智能包装）体现技术含量，如智能尺寸优化或循环包装
+                        </p>
+                        <div class="text-xs bg-gray-50 p-3 rounded-lg">
+                            <div class="font-medium mb-1">优势</div>
+                            <p class="text-gray-600">适合服务高科技、品牌升级类客户，显得专业高端</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-2 bg-secondary"></div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-secondary">固邦材料</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            "固"表牢固，"邦"引申"联帮共赢"，暗示供应链稳定性
+                        </p>
+                        <div class="text-xs bg-gray-50 p-3 rounded-lg">
+                            <div class="font-medium mb-1">优势</div>
+                            <p class="text-gray-600">强调长期合作与质量稳定，适合建立信任感</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 命名技巧与推荐 -->
+        <section class="slide fade-in" id="slide5">
+            <div class="mb-8">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                    命名建议
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold">怎么起个好名字？</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">命名小技巧</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-key"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">加入行业关键词</h4>
+                                <p class="text-gray-600 text-sm">
+                                    如"材""包装""材料"等，让人一眼就知道是做什么的
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">简单易记</h4>
+                                <p class="text-gray-600 text-sm">
+                                    避免生僻字，最好2-4个字，朗朗上口，容易传播
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">考虑国际化</h4>
+                                <p class="text-gray-600 text-sm">
+                                    如果面向全球客户，要考虑名称在不同语言中的含义，避免负面联想
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-trademark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">提前注册商标和域名</h4>
+                                <p class="text-gray-600 text-sm">
+                                    确定名称后，及时注册公司名、商标和相关域名，避免被抢注
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">最终推荐方案</h3>
+                    
+                    <div class="bg-primary/5 rounded-xl p-6 mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white mr-4">
+                                <span class="font-bold">01</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">环球材链</h4>
+                                <p class="text-gray-600 text-sm">适合强调全球化布局</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm ml-16">
+                            名称简洁有力，既体现了全球视野，又暗示了供应链的完整性，与跨境电商的全球化特性高度匹配。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-secondary/5 rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white mr-4">
+                                <span class="font-bold">02</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">绿航包装</h4>
+                                <p class="text-gray-600 text-sm">适合突出环保与物流优势</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm ml-16">
+                            既体现了环保趋势（绿色包装），又关联了物流（航运），非常贴合跨境电商的包装需求场景。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 实施建议 -->
+        <section class="slide fade-in" id="slide6">
+            <div class="mb-8">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                    实施建议
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold">如何落地推广？</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <i class="fa fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">培训课程整合</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>在现有课程中加入"包装与物流优化"专题</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>用包材公司的案例说明如何降低物流成本</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>为学员提供包装设计的免费咨询服务</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <i class="fa fa-line-chart text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">推广策略</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>为培训学员提供专属折扣，鼓励试用</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>成功案例分享会，邀请使用包材的学员分享</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>推出"包装+物流"打包解决方案，增加价值</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <i class="fa fa-shield text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">风险规避</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>明确告知客户两家公司的关系，保持透明度</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>保证包材质量，提供满意的售后保障</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-angle-right text-primary mt-1"></i>
+                            <span>不要在培训中过度推销，保持培训的专业性</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-primary to-accent text-white rounded-xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">总结</h3>
+                <p class="mb-6 max-w-2xl mx-auto">
+                    在跨境电商B2B培训生态中推广包材公司是个可行且有前景的想法，既能为客户提供更完整的服务，又能开拓新的业务增长点。关键是选对名字，用对方法，保持客户信任。
+                </p>
+                <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                    <i class="fa fa-lightbulb-o mr-2"></i>
+                    <span>抓住跨境电商增长红利，包材业务大有可为！</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 显示初始幻灯片
+            setTimeout(() => {
+                document.getElementById('slide1').classList.add('visible');
+            }, 300);
+            
+            // 监听滚动，更新进度条和导航点
+            window.addEventListener('scroll', function() {
+                // 计算滚动进度
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("progressBar").style.width = scrolled + "%";
+                
+                // 更新当前幻灯片导航点
+                const slides = document.querySelectorAll('.slide');
+                const navDots = document.querySelectorAll('.nav-dot');
+                
+                slides.forEach((slide, index) => {
+                    const slideTop = slide.offsetTop - 100;
+                    const slideHeight = slide.offsetHeight;
+                    
+                    if (winScroll >= slideTop && winScroll < slideTop + slideHeight) {
+                        navDots.forEach(dot => dot.classList.remove('active'));
+                        navDots[index].classList.add('active');
+                        
+                        // 显示当前幻灯片
+                        slide.classList.add('visible');
+                    }
+                });
+            });
+            
+            // 导航点点击事件
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideId = this.getAttribute('data-slide');
+                    document.getElementById('slide' + slideId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
