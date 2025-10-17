@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长青文化产业集团全球战略：和而不同 文化大同</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background: #fcfcfc;
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(rgba(153, 0, 0, 0.9), rgba(121, 0, 0, 0.95)), url('https://picsum.photos/id/1051/1350/500');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4af37;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 4px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .section h2 {
+            color: #990000;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+        }
+        
+        .section h2 i {
+            margin-right: 15px;
+            color: #990000;
+        }
+        
+        .countries {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .country-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .country-header {
+            padding: 15px;
+            text-align: center;
+            background: #990000;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .country-content {
+            padding: 20px;
+        }
+        
+        .country-content ul {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .country-content li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .country-content li:before {
+            content: "•";
+            color: #990000;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .roadmap {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .roadmap:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: #990000;
+            transform: translateX(-50%);
+        }
+        
+        .roadmap-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .roadmap-item:nth-child(odd) {
+            align-self: flex-start;
+            padding-right: 40px;
+        }
+        
+        .roadmap-item:nth-child(even) {
+            align-self: flex-end;
+            padding-left: 40px;
+        }
+        
+        .roadmap-content {
+            background: #fdf9f9;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            border-left: 3px solid #990000;
+        }
+        
+        .roadmap-item:after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #ffd700;
+            border: 2px solid #990000;
+            border-radius: 50%;
+            top: 30px;
+        }
+        
+        .roadmap-item:nth-child(odd):after {
+            right: -10px;
+        }
+        
+        .roadmap-item:nth-child(even):after {
+            left: -10px;
+        }
+        
+        .phase {
+            font-weight: bold;
+            color: #990000;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .conclusion {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(rgba(153, 0, 0, 0.9), rgba(121, 0, 0, 0.95));
+            color: white;
+            border-radius: 4px;
+            border-top: 3px solid #d4af37;
+        }
+        
+        .conclusion h2 {
+            color: #ffd700;
+            border-bottom: none;
+            margin-bottom: 30px;
+        }
+        
+        .slogan {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #555;
+            font-size: 0.9rem;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .roadmap:before {
+                left: 20px;
+            }
+            
+            .roadmap-item {
+                width: 100%;
+                padding-left: 40px;
+                padding-right: 0;
+            }
+            
+            .roadmap-item:nth-child(odd),
+            .roadmap-item:nth-child(even) {
+                align-self: flex-start;
+                padding-right: 0;
+                padding-left: 40px;
+            }
+            
+            .roadmap-item:nth-child(odd):after,
+            .roadmap-item:nth-child(even):after {
+                left: 10px;
+                right: auto;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-flag"></i>
+            </div>
+            <h1>长青文化产业集团全球战略：和而不同 文化大同</h1>
+            <p>打造全球首家文化祈福文创平台，连接世界文明，促进文化共融</p>
+        </header>
+        
+        <div class="section">
+            <h2><i class="fas fa-bullseye"></i> 愿景与使命</h2>
+            <p><strong>愿景：</strong>成为全球领先的文化创意产业集团，连接世界文明，促进文化共融。</p>
+            <p><strong>使命：</strong>以产品为载体，以东方传统文明精粹为内核，将东方美学与全球各地文化精髓相结合，为全球消费者带来幸福、吉祥与心灵慰藉。</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-globe-asia"></i> 五大先锋市场与文化产品规划</h2>
+            <p>基于文化底蕴、旅游市场和文化符号影响力选择的首批目标国家：</p>
+            
+            <div class="countries">
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>日本</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>核心文化元素：</strong>神社文化、禅意、枯山水、御守</p>
+                        <p><strong>推荐联名对象：</strong>京都清水寺、伏见稻荷大社</p>
+                        <ul>
+                            <li>"神宫祈愿"系列手链</li>
+                            <li>"稻荷千本鸟居"好运饰品</li>
+                            <li>融合中国大漆工艺与日本御守文化</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>泰国</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>核心文化元素：</strong>佛教文化、南传佛教、象神</p>
+                        <p><strong>推荐联名对象：</strong>曼谷卧佛寺、清迈素贴寺</p>
+                        <ul>
+                            <li>"梵音平和"系列佛珠</li>
+                            <li>"暹罗佛光"平安扣挂坠</li>
+                            <li>融合檀香木与泰式佛像元素</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>意大利</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>核心文化元素：</strong>天主教、文艺复兴、古典神话</p>
+                        <p><strong>推荐联名对象：</strong>梵蒂冈圣彼得大教堂</p>
+                        <ul>
+                            <li>"圣殿之光"系列饰品</li>
+                            <li>"天使之翼"珐琅胸针</li>
+                            <li>融合彩窗玻璃元素与中国玉石</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>希腊</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>核心文化元素：</strong>古希腊神话、奥林匹斯众神</p>
+                        <p><strong>推荐联名对象：</strong>雅典卫城博物馆</p>
+                        <ul>
+                            <li>"神话史诗"系列饰品</li>
+                            <li>"智慧女神"猫头鹰手链</li>
+                            <li>融合神兽意象与希腊神话符号</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>墨西哥</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>核心文化元素：</strong>阿兹特克文化、亡灵节、太阳神</p>
+                        <p><strong>推荐联名对象：</strong>墨西哥国家人类学博物馆</p>
+                        <ul>
+                            <li>"生命礼赞"系列饰品</li>
+                            <li>"太阳神历"图腾项链</li>
+                            <li>融合万寿菊元素与中国太极哲学</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-road"></i> 全球落地实施路线图</h2>
+            
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="phase">第一阶段：基础建设 (0-6个月)</div>
+                        <ul>
+                            <li>全球知识产权与商标布局</li>
+                            <li>多语言品牌官网与电商平台搭建</li>
+                            <li>社交媒体矩阵建立（Instagram, TikTok, Facebook）</li>
+                            <li>海外版"一键代理"小程序开发</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="phase">第二阶段：市场进入与推广 (6-18个月)</div>
+                        <ul>
+                            <li>"文化推广大使"招募计划启动</li>
+                            <li>与目标国文化机构达成联名合作</li>
+                            <li>KOL合作与社交媒体营销活动</li>
+                            <li>线下概念店与快闪店试点</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="phase">第三阶段：深化与升华 (18个月后)</div>
+                        <ul>
+                            <li>产品线扩展至家居、香氛等领域</li>
+                            <li>举办线上线下文化交流工作坊</li>
+                            <li>与航空、酒店业战略合作</li>
+                            <li>申请"文化出海"国家战略支持</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> 核心商业模式</h2>
+            <p>长青文化产业集团全球战略建立在四大核心支柱上：</p>
+            <ul>
+                <li><strong>文化联名 (IP × Culture):</strong> 复制国内"寺庙联名"成功模式，与全球文化地标深度合作</li>
+                <li><strong>产品赋能 (Design × Meaning):</strong> 融合中国非遗工艺与当地文化符号，打造有故事的产品</li>
+                <li><strong>社群驱动 (Community × Agent):</strong> 建立"文化推广大使"网络，实现全球化社群营销</li>
+                <li><strong>全域营销 (Omni-channel):</strong> 线上线下结合，本地化渠道策略</li>
+            </ul>
+        </div>
+        
+        <div class="conclusion">
+            <h2>愿景与展望</h2>
+            <p>长青文化产业集团全球战略不仅是一个商业计划，更是一次文化对话的开启。</p>
+            <p>我们致力于让世界通过一件件精美的产品，读懂中国"和"与"安"的传统智慧，</p>
+            <p>也让中国人更好地欣赏世界的文明，实现真正的文化共融。</p>
+            
+            <div class="slogan">
+                长青文化产业集团，致世界的祝愿。<br>
+                CHANGQING CULTURE, Blessings to the World.
+            </div>
+        </div>
+        
+        <footer>
+            <p>长青文化产业集团有限公司 © 2025 | 文化出海，和而不同，文化大同</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+    

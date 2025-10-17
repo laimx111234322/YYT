@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通跨境电商园区入驻解决方案 - 无感接入，轻松应对合规新规</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F52BA', // 怡亚通蓝
+                        secondary: '#32CD32', // 生态绿
+                        accent: '#FF6B00', // 活力橙
+                        gov: '#1E40AF', // 政府蓝
+                        seller: '#059669', // 卖家绿
+                        yiyatong: '#7C3AED', // 怡亚通紫
+                        neutral: {
+                            100: '#F8FAFC',
+                            200: '#E2E8F0',
+                            700: '#334155',
+                            800: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .system-node {
+                @apply rounded-lg p-3 text-center text-sm font-medium border-2;
+            }
+            .flow-line {
+                @apply absolute h-1 bg-primary/50 -z-10;
+            }
+            .flow-line-vertical {
+                @apply absolute w-1 bg-primary/50 -z-10;
+            }
+            .sticky-nav {
+                @apply sticky top-20 z-40 bg-white/95 backdrop-blur-sm shadow-sm rounded-lg;
+            }
+            .tax-tag {
+                @apply inline-block px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium;
+            }
+            .park-feature {
+                @apply bg-gradient-to-br from-white to-neutral-50 rounded-xl p-6 shadow-sm border border-neutral-200;
+            }
+        }
+    </style>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .system-diagram {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect {
+            position: relative;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+        }
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-100%, -100%); }
+            100% { transform: rotate(30deg) translate(100%, 100%); }
+        }
+        .park-benefit-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .park-benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-inter bg-neutral-100 text-neutral-800">
+    <!-- 顶部导航 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center">
+                    
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">怡亚通跨境电商</h1>
+                        <p class="text-xs text-neutral-600">园区入驻解决方案</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#core-advantages" class="text-neutral-700 hover:text-primary transition-colors">核心优势</a>
+                    <a href="#park-benefits" class="text-neutral-700 hover:text-primary transition-colors">园区优势</a>
+                    <a href="#system-diagrams" class="text-neutral-700 hover:text-primary transition-colors">系统架构</a>
+                    <a href="#tax-benefits" class="text-neutral-700 hover:text-primary transition-colors">税务优化</a>
+                    <a href="#implementation" class="text-neutral-700 hover:text-primary transition-colors">实施路径</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors">申请入驻</a>
+                </nav>
+                <button class="md:hidden text-neutral-700" id="mobileMenuBtn">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#core-advantages" class="py-2 text-neutral-700 hover:text-primary transition-colors">核心优势</a>
+                <a href="#park-benefits" class="py-2 text-neutral-700 hover:text-primary transition-colors">园区优势</a>
+                <a href="#system-diagrams" class="py-2 text-neutral-700 hover:text-primary transition-colors">系统架构</a>
+                <a href="#tax-benefits" class="py-2 text-neutral-700 hover:text-primary transition-colors">税务优化</a>
+                <a href="#implementation" class="py-2 text-neutral-700 hover:text-primary transition-colors">实施路径</a>
+                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-center">申请入驻</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section class="py-12 md:py-20 bg-gradient-to-br from-primary/90 to-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
+                    园区入驻 · 无感接入 · 合规无忧
+                </span>
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                    跨境电商园区入驻解决方案<br>
+                    <span class="text-xl md:text-3xl font-normal">无感接入，轻松应对合规新规</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                    全规模卖家适用，通过园区入驻享受政策红利，系统自动对接实现无感接入，
+                    9610/9810/9710/1039全模式覆盖，最低成本应对亚马逊新规
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#park-benefits" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-neutral-100 transition-colors">
+                        了解园区优势
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                        立即申请入驻
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心数据看板 -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
+                    <p class="text-neutral-700">跨境电商园区</p>
+                </div>
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-primary mb-2">7天</div>
+                    <p class="text-neutral-700">快速入驻周期</p>
+                </div>
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-primary mb-2">60%</div>
+                    <p class="text-neutral-700">平均税负降低</p>
+                </div>
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-primary mb-2">5000+</div>
+                    <p class="text-neutral-700">已服务卖家</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 一、核心优势 -->
+    <section id="core-advantages" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                    全规模适用
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">全规模卖家适用的园区入驻方案</h2>
+                <p class="text-lg text-neutral-700">
+                    从小型卖家到大型企业，通过园区入驻享受政策红利，系统自动对接实现无感合规
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- 优势1：全规模适用 -->
+                <div class="park-feature park-benefit-card reveal">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">全规模适用</h3>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>小型卖家：个体工商户核定征收，税负低至3%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>中型企业：有限公司享受15-40%税收返还</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>大型企业：定制化税务筹划，综合成本优化</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>集团企业：多主体架构优化，合规分账</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 优势2：无感接入 -->
+                <div class="park-feature park-benefit-card reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-plug text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">无感接入体验</h3>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>API自动对接：亚马逊、Shopify等平台一键授权</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>数据自动同步：销售、物流、税务数据无缝流转</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>零代码配置：无需技术团队，简单配置即可使用</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>7天快速上线：从入驻到系统对接仅需7个工作日</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 优势3：全模式覆盖 -->
+                <div class="park-feature park-benefit-card reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-cubes text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">全模式合规覆盖</h3>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>9610零售出口：小包直邮，清单核放</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>9810海外仓：批量出口，海外仓储</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>9710B2B出口：大额订单，直接出口</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check-circle text-secondary mt-1"></i>
+                            <span>1039市场采购：无票免税，核定征收</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 二、园区入驻优势 -->
+    <section id="park-benefits" class="py-16 md:py-24 bg-neutral-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                    政策红利
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">园区入驻专属政策优势</h2>
+                <p class="text-lg text-neutral-700">
+                    入驻跨境电商园区，享受地方政府专项政策支持，实现合规成本最小化
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="park-feature park-benefit-card reveal">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fa fa-percent text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">税收政策优势</h3>
+                            <p class="text-neutral-600 mt-1">享受地方税收返还与优惠政策</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>增值税返还：</strong>地方留存部分（50%）返还30-60%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>所得税优惠：</strong>核定征收率低至3%，或享受15-25%返还</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>无票免税：</strong>1039模式下，无进项发票可享受出口免税</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>快速退税：</strong>9810模式"入区即退税"，资金周转提升40%</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="park-feature park-benefit-card reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fa fa-money text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">财政补贴支持</h3>
+                            <p class="text-neutral-600 mt-1">多项补贴降低企业运营成本</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>出口额补贴：</strong>年度出口额达到一定规模，享受3-5%补贴</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>物流补贴：</strong>国际物流费用补贴10-20%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>场地租金减免：</strong>园区内办公及仓储租金减免30-50%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>人才引进补贴：</strong>核心团队成员享受个人税收优惠</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="park-feature park-benefit-card reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fa fa-rocket text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">通关便利化</h3>
+                            <p class="text-neutral-600 mt-1">绿色通道提升物流效率</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>绿色通道：</strong>享受海关查验优先权，通关时效提升50%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>汇总征税：</strong>月度集中申报，减少单票操作成本</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>分类监管：</strong>根据企业信用等级享受差异化监管</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>异地通关：</strong>全国一体化通关，就近选择出口口岸</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="park-feature park-benefit-card reveal" style="transition-delay: 300ms;">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fa fa-shield text-orange-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">合规保障</h3>
+                            <p class="text-neutral-600 mt-1">专业服务应对平台合规要求</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>亚马逊合规：</strong>专业应对1099-K表单及税务申报要求</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>数据匹配：</strong>销售数据与报关数据自动匹配，避免差异</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>风险预警：</strong>实时监控政策变化，提前预警合规风险</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>专业咨询：</strong>税务、海关、法律专家团队提供全方位咨询</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center reveal">
+                <a href="#contact" class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                    <i class="fa fa-rocket mr-2"></i>
+                    立即申请园区入驻
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三、系统架构图 -->
+    <section id="system-diagrams" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                    无感接入
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">全模式无感接入系统架构</h2>
+                <p class="text-lg text-neutral-700">
+                    智能系统自动对接各大平台，实现数据无缝流转，卖家零操作即可完成合规申报
+                </p>
+            </div>
+            
+            <!-- 系统架构图 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8 reveal">
+                <h3 class="text-2xl font-semibold mb-6 text-center">跨境电商无感接入系统架构</h3>
+                <div class="system-diagram py-10">
+                    <div class="max-w-5xl mx-auto">
+                        <!-- 第一层：卖家平台 -->
+                        <div class="flex flex-col md:flex-row items-center justify-between mb-12 relative">
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                <i class="fa fa-amazon text-yiyatong mr-1"></i>
+                                亚马逊卖家
+                            </div>
+                            <div class="flow-line left-0 right-0 top-1/2"></div>
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                <i class="fa fa-shopping-cart text-yiyatong mr-1"></i>
+                                独立站卖家
+                            </div>
+                            <div class="flow-line left-0 right-0 top-1/2"></div>
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                <i class="fa fa-cube text-yiyatong mr-1"></i>
+                                其他平台卖家
+                            </div>
+                        </div>
+                        
+                        <!-- 第二层：API自动对接 -->
+                        <div class="flex flex-col md:flex-row items-center justify-center mb-16 relative">
+                            <div class="system-node border-accent bg-accent/10 text-accent w-full md:w-auto md:min-w-[280px] mb-4 md:mb-0">
+                                <i class="fa fa-plug mr-2"></i>
+                                API自动对接层
+                                <div class="text-xs mt-2">
+                                    <span class="tax-tag">一键授权</span>
+                                    <span class="tax-tag">数据同步</span>
+                                    <span class="tax-tag">零代码配置</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第三层：怡亚通智能中台 -->
+                        <div class="flex flex-col md:flex-row items-center justify-center mb-16 relative">
+                            <div class="system-node border-yiyatong bg-yiyatong/10 text-yiyatong w-full md:w-auto md:min-w-[380px] mb-4 md:mb-0 shine-effect">
+                                <i class="fa fa-cogs mr-2"></i>
+                                怡亚通智能合规中台
+                                <div class="text-xs mt-2">
+                                    <span class="tax-tag">模式智能匹配</span>
+                                    <span class="tax-tag">税务自动核算</span>
+                                    <span class="tax-tag">政策最优选择</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第四层：全模式覆盖 -->
+                        <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative">
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                9610<br>零售出口
+                            </div>
+                            <div class="flow-line left-0 right-0 top-1/2"></div>
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                9810<br>海外仓
+                            </div>
+                            <div class="flow-line left-0 right-0 top-1/2"></div>
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                9710<br>B2B出口
+                            </div>
+                            <div class="flow-line left-0 right-0 top-1/2"></div>
+                            <div class="system-node border-primary bg-primary/5 text-primary w-full md:w-auto md:min-w-[180px] mb-4 md:mb-0">
+                                1039<br>市场采购
+                            </div>
+                        </div>
+                        
+                        <!-- 第五层：监管与服务 -->
+                        <div class="flex flex-col md:flex-row items-center justify-center mb-16 relative">
+                            <div class="system-node border-gov bg-gov/10 text-gov w-full md:w-auto md:min-w-[280px] mb-4 md:mb-0">
+                                <i class="fa fa-building mr-2"></i>
+                                政府监管与服务系统
+                                <div class="text-xs mt-2">
+                                    <span class="tax-tag">自动申报</span>
+                                    <span class="tax-tag">政策兑现</span>
+                                    <span class="tax-tag">合规保障</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 reveal">
+                    <h4 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fa fa-magic text-yiyatong mr-2"></i>
+                        无感接入亮点
+                    </h4>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>零配置接入：</strong>卖家仅需平台授权，系统自动完成数据对接</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>智能模式选择：</strong>根据业务特点自动匹配最优报关模式</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>自动申报：</strong>销售数据自动生成报关单，一键申报</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>政策匹配：</strong>根据企业规模自动匹配园区优惠政策</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span><strong>风险预警：</strong>实时监控合规风险，提前预警并自动调整</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 reveal">
+                    <h4 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fa fa-cogs text-yiyatong mr-2"></i>
+                        核心功能模块
+                    </h4>
+                    <ul class="space-y-3 text-neutral-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-cog text-primary mt-1"></i>
+                            <span><strong>多平台对接引擎：</strong>支持亚马逊、Shopify等30+平台自动对接</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-cog text-primary mt-1"></i>
+                            <span><strong>智能模式匹配：</strong>根据商品、物流、金额等自动选择报关模式</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-cog text-primary mt-1"></i>
+                            <span><strong>税务自动核算：</strong>实时计算应缴税款，自动匹配最优政策</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-cog text-primary mt-1"></i>
+                            <span><strong>政策兑现系统：</strong>自动申请税收返还、补贴等优惠政策</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-cog text-primary mt-1"></i>
+                            <span><strong>合规监控中心：</strong>7×24小时监控合规状态，预警风险</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 四、税务优势详解 -->
+    <section id="tax-benefits" class="py-16 md:py-24 bg-neutral-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                    成本优化
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">全规模卖家税务优化方案</h2>
+                <p class="text-lg text-neutral-700">
+                    根据企业规模定制税务优化方案，实现合规成本最小化
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- 小型卖家 -->
+                <div class="park-feature park-benefit-card text-center reveal">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-user text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">小型卖家</h3>
+                    <p class="text-neutral-600 mb-6">年销售额500万以下</p>
+                    <div class="bg-green-50 rounded-lg p-4 mb-6">
+                        <div class="text-3xl font-bold text-green-600">3%</div>
+                        <p class="text-sm text-green-700">核定征收率</p>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700 text-left">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>个体工商户注册，享受核定征收</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>无进项发票要求，解决采购无票难题</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>综合税负降低60%以上</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>1039模式单票15万美元以内免税</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 中型企业 -->
+                <div class="park-feature park-benefit-card text-center reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">中型企业</h3>
+                    <p class="text-neutral-600 mb-6">年销售额500万-5000万</p>
+                    <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                        <div class="text-3xl font-bold text-blue-600">15-40%</div>
+                        <p class="text-sm text-blue-700">税收返还比例</p>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700 text-left">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>有限公司注册，享受税收返还</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>增值税、所得税双重返还</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>出口额达标享受额外补贴</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>9810模式"入区即退税"</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 大型企业 -->
+                <div class="park-feature park-benefit-card text-center reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-building text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">大型企业</h3>
+                    <p class="text-neutral-600 mb-6">年销售额5000万以上</p>
+                    <div class="bg-purple-50 rounded-lg p-4 mb-6">
+                        <div class="text-3xl font-bold text-purple-600">定制化</div>
+                        <p class="text-sm text-purple-700">税务筹划方案</p>
+                    </div>
+                    <ul class="space-y-3 text-neutral-700 text-left">
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>多主体架构优化，合规分账</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>跨境资金池，优化资金成本</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>定制化园区政策谈判</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa fa-check text-secondary mt-1"></i>
+                            <span>集团整体税务筹划</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 税务合规流程 -->
+            <div class="bg-white rounded-xl p-8 reveal">
+                <h3 class="text-2xl font-semibold mb-8 text-center">卖家无感接入全流程</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="bg-neutral-100 rounded-lg p-6 text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold">1</span>
+                        </div>
+                        <h4 class="font-semibold mb-3">申请入驻</h4>
+                        <p class="text-sm text-neutral-600">
+                            在线提交资料，1个工作日内完成园区入驻审核
+                        </p>
+                    </div>
+                    <div class="bg-neutral-100 rounded-lg p-6 text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold">2</span>
+                        </div>
+                        <h4 class="font-semibold mb-3">平台授权</h4>
+                        <p class="text-sm text-neutral-600">
+                            一键授权亚马逊等平台账号，系统自动对接
+                        </p>
+                    </div>
+                    <div class="bg-neutral-100 rounded-lg p-6 text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold">3</span>
+                        </div>
+                        <h4 class="font-semibold mb-3">自动申报</h4>
+                        <p class="text-sm text-neutral-600">
+                            系统自动生成报关单，完成税务申报
+                        </p>
+                    </div>
+                    <div class="bg-neutral-100 rounded-lg p-6 text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold">4</span>
+                        </div>
+                        <h4 class="font-semibold mb-3">政策兑现</h4>
+                        <p class="text-sm text-neutral-600">
+                            税收返还、补贴自动申请，资金到账
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 五、实施路径 -->
+    <section id="implementation" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                    快速实施
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">7天快速入驻实施路径</h2>
+                <p class="text-lg text-neutral-700">
+                    简化流程，快速上线，让卖家最短时间内享受园区政策红利
+                </p>
+            </div>
+            
+            <!-- 实施时间线 -->
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-7 gap-4 mb-12">
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 1</p>
+                        <p class="text-xs text-neutral-600">提交申请</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 2</p>
+                        <p class="text-xs text-neutral-600">资质审核</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 3</p>
+                        <p class="text-xs text-neutral-600">园区注册</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 4</p>
+                        <p class="text-xs text-neutral-600">系统配置</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 5</p>
+                        <p class="text-xs text-neutral-600">平台对接</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">6</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 6</p>
+                        <p class="text-xs text-neutral-600">测试验证</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-2">
+                            <span class="font-bold">7</span>
+                        </div>
+                        <p class="text-sm font-medium">Day 7</p>
+                        <p class="text-xs text-neutral-600">正式上线</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="park-feature reveal">
+                        <h3 class="text-xl font-semibold mb-4">入驻前准备</h3>
+                        <ul class="space-y-3 text-neutral-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>企业基本信息（营业执照、法人身份证）</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>跨境电商平台账号信息</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>近3个月销售数据（可选）</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>预计年出口额及主要产品类目</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="park-feature reveal" style="transition-delay: 100ms;">
+                        <h3 class="text-xl font-semibold mb-4">入驻后服务</h3>
+                        <ul class="space-y-3 text-neutral-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>专属客服7×24小时服务</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>税务专家一对一咨询</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>定期政策解读与优化建议</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <span>合规风险预警与应对方案</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 行动召唤 -->
+            <div class="bg-primary text-white rounded-xl p-8 text-center reveal" id="contact">
+                <h3 class="text-2xl font-semibold mb-4">立即开启跨境电商合规之旅</h3>
+                <p class="mb-8 max-w-2xl mx-auto">
+                    前100名入驻企业享受首年服务费5折优惠，专属税务顾问1对1服务
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-neutral-100 transition-colors">
+                        <i class="fa fa-rocket mr-2"></i>
+                        申请园区入驻
+                    </a>
+                    <a href="#" class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                        <i class="fa fa-calendar mr-2"></i>
+                        预约专业咨询
+                    </a>
+                </div>
+                <p class="mt-6 text-white/70 text-sm">咨询热线：400-888-9999 | 邮箱：park@yiyatong.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-neutral-800 text-white/70 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        
+                        <span class="text-xl font-bold text-white">怡亚通</span>
+                    </div>
+                    <p class="text-sm">
+                        中国领先的供应链服务商，专注于为跨境电商企业提供
+                        园区入驻、税务合规、系统对接一站式解决方案
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#core-advantages" class="hover:text-white transition-colors">核心优势</a></li>
+                        <li><a href="#park-benefits" class="hover:text-white transition-colors">园区优势</a></li>
+                        <li><a href="#system-diagrams" class="hover:text-white transition-colors">系统架构</a></li>
+                        <li><a href="#tax-benefits" class="hover:text-white transition-colors">税务优化</a></li>
+                        <li><a href="#implementation" class="hover:text-white transition-colors">实施路径</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-envelope-o"></i>
+                            <span>park@yiyatong.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-phone"></i>
+                            <span>400-888-9999</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-map-marker"></i>
+                            <span>深圳市南山区科兴科学园</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">关注我们</h3>
+                    <div class="flex gap-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-weixin text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-weibo text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-linkedin text-white"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm">
+                        扫码获取《园区入驻指南》
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-sm">
+                <p>© 2025 深圳市怡亚通供应链股份有限公司 版权所有 | 粤ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 移动端菜单切换
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 滚动动画
+            function checkReveal() {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+                
+                document.querySelectorAll('.reveal').forEach(el => {
+                    const revealTop = el.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+            
+            // 初始检查
+            checkReveal();
+            
+            // 滚动时检查
+            window.addEventListener('scroll', checkReveal);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长青文化产业集团全球战略：文化大同与中华文明出海新范式</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(50, 120, 50, 0.85), rgba(30, 90, 30, 0.9)), url('https://images.unsplash.com/photo-1547981609-4b6bfc67c272?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1482501150065-e7cf362daa15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            line-height: 1.8;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: #a0e6c9;
+            text-shadow: 0 0 20px rgba(160, 230, 201, 0.5);
+        }
+        
+        .strategy-badge {
+            display: inline-block;
+            background: rgba(160, 230, 201, 0.2);
+            border: 1px solid rgba(160, 230, 201, 0.5);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(69, 139, 19, 0.1);
+        }
+        
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .section h2 {
+            color: #458B13;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #a0e6c9;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+        }
+        
+        .section h2 i {
+            margin-right: 15px;
+            color: #458B13;
+            background: #e5f8f0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(69, 139, 19, 0.1);
+        }
+        
+        .countries {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .country-card {
+            background: linear-gradient(135deg, #fdfcfb 0%, #c3e2d1 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(69, 139, 19, 0.1);
+        }
+        
+        .country-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .country-header {
+            padding: 20px;
+            text-align: center;
+            background: #458B13;
+            color: white;
+            position: relative;
+        }
+        
+        .country-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #a0e6c9, #458B13);
+        }
+        
+        .country-content {
+            padding: 25px;
+        }
+        
+        .country-content ul {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .country-content li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .country-content li:before {
+            content: "•";
+            color: #458B13;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .roadmap {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 50px 0;
+        }
+        
+        .roadmap:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 5px;
+            background: linear-gradient(to bottom, #458B13, #a0e6c9, #458B13);
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .roadmap-item {
+            width: 50%;
+            padding: 25px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .roadmap-item:nth-child(odd) {
+            align-self: flex-start;
+            padding-right: 50px;
+        }
+        
+        .roadmap-item:nth-child(even) {
+            align-self: flex-end;
+            padding-left: 50px;
+        }
+        
+        .roadmap-content {
+            background: #e5f8f0;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 1px solid rgba(69, 139, 19, 0.1);
+            position: relative;
+        }
+        
+        .roadmap-content:before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .roadmap-item:nth-child(odd) .roadmap-content:before {
+            right: -15px;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #e5f8f0;
+        }
+        
+        .roadmap-item:nth-child(even) .roadmap-content:before {
+            left: -15px;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #e5f8f0 transparent transparent;
+        }
+        
+        .roadmap-item:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #458B13;
+            border-radius: 50%;
+            top: 35px;
+            border: 5px solid #e5f8f0;
+            box-shadow: 0 0 0 3px #458B13, 0 0 15px rgba(69, 139, 19, 0.5);
+        }
+        
+        .roadmap-item:nth-child(odd):after {
+            right: -12px;
+        }
+        
+        .roadmap-item:nth-child(even):after {
+            left: -12px;
+        }
+        
+        .phase {
+            font-weight: bold;
+            color: #458B13;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .phase i {
+            margin-right: 10px;
+            background: #458B13;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .conclusion {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(rgba(69, 139, 19, 0.9), rgba(49, 109, 19, 0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .conclusion::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+        .conclusion > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .conclusion h2 {
+            color: #a0e6c9;
+            border-bottom: none;
+            margin-bottom: 40px;
+            justify-content: center;
+            font-size: 2.2rem;
+        }
+        
+        .slogan {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-top: 40px;
+            font-style: italic;
+            color: #a0e6c9;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .pillar-card {
+            background: linear-gradient(135deg, #e5f8f0 0%, #c3e2d1 100%);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 1px solid rgba(69, 139, 19, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pillar-icon {
+            font-size: 2.5rem;
+            color: #458B13;
+            margin-bottom: 15px;
+            background: rgba(69, 139, 19, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .pillar-card h3 {
+            color: #458B13;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .national-strategy {
+            background: linear-gradient(135deg, #e5f8f0 0%, #c3e2d1 100%);
+            border-left: 5px solid #458B13;
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 25px 0;
+        }
+        
+        .national-strategy h3 {
+            color: #458B13;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .national-strategy h3 i {
+            margin-right: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(69, 139, 19, 0.2);
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #458B13;
+            border-left: 3px solid #a0e6c9;
+            padding-left: 20px;
+            margin: 20px 0;
+            background: rgba(160, 230, 201, 0.1);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .roadmap:before {
+                left: 20px;
+            }
+            
+            .roadmap-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            
+            .roadmap-item:nth-child(odd),
+            .roadmap-item:nth-child(even) {
+                align-self: flex-start;
+                padding-right: 0;
+                padding-left: 50px;
+            }
+            
+            .roadmap-item:nth-child(odd):after,
+            .roadmap-item:nth-child(even):after {
+                left: 13px;
+                right: auto;
+            }
+            
+            .roadmap-item:nth-child(odd) .roadmap-content:before {
+                left: -15px;
+                right: auto;
+                border-width: 10px 15px 10px 0;
+                border-color: transparent #e5f8f0 transparent transparent;
+            }
+            
+            .roadmap-item:nth-child(even) .roadmap-content:before {
+                left: -15px;
+                border-width: 10px 15px 10px 0;
+                border-color: transparent #e5f8f0 transparent transparent;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .slogan {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-tree"></i>
+            </div>
+            <h1>长青文化产业集团全球战略：文化大同与中华文明出海新范式</h1>
+            <p>积极响应"增强中华文明传播力影响力"国家战略，打造全球文化创意平台，践行全球文明倡议，推动文明交流互鉴</p>
+            <div class="strategy-badge">践行"一带一路"文化发展行动计划 • 融入全球文明倡议践行机制</div>
+        </header>
+        
+        <div class="section">
+            <h2><i class="fas fa-bullseye"></i> 战略愿景与时代使命</h2>
+            <p><strong>愿景：</strong>成为中华文化出海的标杆企业，通过文化创意产品连接世界文明，促进"各美其美，美美与共"的文化大同理想。</p>
+            <p><strong>使命：</strong>以产品为载体，以长青文化为内核，将东方美学与全球文明精髓相融合，向世界展示"可信、可爱、可敬"的中国形象。</p>
+            
+            <div class="national-strategy">
+                <h3><i class="fas fa-flag"></i> 与国家战略同频共振</h3>
+                <p>长青文化产业集团全球战略深度契合党的二十大提出的"增强中华文明传播力影响力"战略部署，以及"着力加强国际传播能力建设、促进文明交流互鉴"的重要指示。我们通过文化产品实现"以文载道、以文传声、以文化人"，践行全球文明倡议，推动中华优秀传统文化创造性转化、创新性发展。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-globe-asia"></i> 文化出海先锋市场与创新实践</h2>
+            <p>基于"一带一路"沿线文化共鸣度、市场潜力与数字化传播效能，精选五大先锋市场，推动中华文化精准传播。</p>
+            
+            <div class="countries">
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>日本</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>文化共鸣点：</strong>禅宗思想、御守文化、匠人精神</p>
+                        <p><strong>战略合作：</strong>京都清水寺、奈良东大寺</p>
+                        <ul>
+                            <li>"禅意东方"系列文创产品</li>
+                            <li>数字文创：AR御守互动体验</li>
+                            <li>非遗工艺与日本匠人精神对话工作坊</li>
+                        </ul>
+                        <p><strong>传播策略：</strong>利用社交媒体网红传播，结合短视频平台展示文化融合过程。</p>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>泰国</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>文化共鸣点：</strong>南传佛教、祈福文化、手工艺传统</p>
+                        <p><strong>战略合作：</strong>曼谷卧佛寺、清迈素贴寺</p>
+                        <ul>
+                            <li>"梵音平和"系列佛珠</li>
+                            <li>泰丝与中国刺绣融合产品</li>
+                            <li>佛教文化交流数字博物馆</li>
+                        </ul>
+                        <p><strong>传播策略：</strong>通过旅游文化节、佛教论坛等多层次人文合作机制传播。</p>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>意大利</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>文化共鸣点：</strong>文艺复兴艺术、天主教文化、家族价值观</p>
+                        <p><strong>战略合作：</strong>梵蒂冈博物馆、乌菲兹美术馆</p>
+                        <ul>
+                            <li>"东西方对话"艺术衍生品</li>
+                            <li>数字敦煌与文艺复兴VR体验</li>
+                            <li>中意家族文化主题产品系列</li>
+                        </ul>
+                        <p><strong>传播策略：</strong>借力"一带一路"中意文化交流年平台，开展高端文化对话。</p>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>希腊</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>文化共鸣点：</strong>古典哲学、神话体系、奥林匹克精神</p>
+                        <p><strong>战略合作：</strong>雅典卫城博物馆、德尔斐考古博物馆</p>
+                        <ul>
+                            <li>"神话与智慧"哲学主题产品</li>
+                            <li>中希神话数字互动展</li>
+                            <li>古代文明对话系列文创</li>
+                        </ul>
+                        <p><strong>传播策略：</strong>参与中希文明对话机制，打造文明古国合作典范。</p>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-header">
+                        <h3>墨西哥</h3>
+                    </div>
+                    <div class="country-content">
+                        <p><strong>文化共鸣点：</strong>古文明遗产、亡灵节文化、色彩艺术</p>
+                        <p><strong>战略合作：</strong>墨西哥国家人类学博物馆</p>
+                        <ul>
+                            <li>"生命礼赞"文化系列</li>
+                            <li>中墨非遗手工艺合作项目</li>
+                            <li>数字文化体验馆</li>
+                        </ul>
+                        <p><strong>传播策略：</strong>利用数字平台跨越地理距离，实现文化"云交流"。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-road"></i> 文化出海实施路线图</h2>
+            
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="phase"><i class="fas fa-seedling"></i> 第一阶段：基础建设与数字赋能 (0-6个月)</div>
+                        <ul>
+                            <li>全球知识产权布局与文化符号保护</li>
+                            <li>构建多语言智能传播平台，利用AI翻译与大数据分析</li>
+                            <li>建立海外社交媒体矩阵，打造自主可控传播渠道</li>
+                            <li>开发AR/VR文化体验产品，实现文化数字化呈现</li>
+                            <li>参与"中华老字号出海"等国家文化出海项目</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="phase"><i class="fas fa-rocket"></i> 第二阶段：精准传播与深度合作 (6-18个月)</div>
+                        <ul>
+                            <li>启动"文化推广大使"计划，培育复合型传播人才</li>
+                            <li>与"一带一路"沿线文化机构建立战略合作</li>
+                            <li>利用算法推荐实现内容精准触达目标受众</li>
+                            <li>打造海外中国文化体验中心</li>
+                            <li>举办"文化大同"国际论坛，融入全球文明对话机制</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="phase"><i class="fas fa-globe"></i> 第三阶段：生态构建与价值升华 (18个月后)</div>
+                        <ul>
+                            <li>扩展产品线至数字文化、体验经济等领域</li>
+                            <li>建设"长青文化生态系统"，实现可持续发展</li>
+                            <li>与全球文旅产业深度融合，推动文明互鉴旅游</li>
+                            <li>总结输出文化出海"长青模式"，贡献中国方案</li>
+                            <li>申请成为国家文化出口重点企业，融入国家文化战略</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> 文化出海核心支柱</h2>
+            <p>长青文化产业集团全球战略构建于四大创新支柱，全面提升中华文化国际传播效能：</p>
+            
+            <div class="pillars">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>文明对话机制</h3>
+                    <p>深入参与"良渚论坛"、"亚洲文明对话大会"等国家平台，建立多层次文明对话机制。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>数字创新赋能</h3>
+                    <p>运用AI、VR、大数据等技术，打造沉浸式文化体验，实现中华文化现代化表达。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>多元主体协同</h3>
+                    <p>构建政府、企业、民间、华侨华人共同参与的"大合唱"传播格局。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>文化品牌塑造</h3>
+                    <p>打造具有鲜明中华文化特色的国际品牌，提升文化软实力和竞争力。</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "采用贴近不同区域、不同国家、不同群体受众的精准传播方式，推进中国故事和中国声音的全球化表达、区域化表达、分众化表达，增强国际传播的亲和力和实效性。"
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-university"></i> 体制机制创新保障</h2>
+            <p>长青文化产业集团文化出海战略建立在系统性体制机制创新基础上，确保可持续发展：</p>
+            <ul>
+                <li><strong>内容开发机制：</strong>实施"中华文创数字化工程"，对传统文化元素进行现代转化</li>
+                <li><strong>人才培养机制：</strong>与高校合作培养"跨文化传播人才"，建立专业人才库</li>
+                <li><strong>金融支持机制：</strong>引入"耐心资本"，支持长期性、基础性文化出海项目</li>
+                <li><strong>效果评估机制：</strong>建立科学评估体系，实时优化传播策略</li>
+                <li><strong>风险防控机制：</strong>应对国际经贸环境变化，确保文化出海行稳致远</li>
+            </ul>
+        </div>
+        
+        <div class="conclusion">
+            <h2><i class="fas fa-peace"></i> 愿景与展望</h2>
+            <p>长青文化产业集团全球战略不仅是商业探索，更是践行文化使命、参与人类文明对话的实践。</p>
+            <p>我们致力于通过文化创意产品，向世界阐释"和而不同"、"天下大同"的中华文明理念，</p>
+            <p>在中国式现代化进程中，贡献文化出海的企业智慧与中国方案。</p>
+            
+            <div class="slogan">
+                长青文化，致世界的祝愿<br>
+                文明因交流而多彩，文明因互鉴而丰富<br>
+                EVERGREEN, Blessings to the World.
+            </div>
+        </div>
+        
+        <footer>
+            <p>长青文化产业集团有限公司 © 2025 | 践行全球文明倡议，推动中华文化出海</p>
+            <p>本战略积极响应党的二十大及二十届三中全会关于"增强中华文明传播力影响力"的战略部署</p>
+        </footer>
+    </div>
+
+    <script>
+        // 增强型滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section, .country-card, .pillar-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(section);
+            });
+            
+            // 添加点击卡片效果
+            const cards = document.querySelectorAll('.country-card, .pillar-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
