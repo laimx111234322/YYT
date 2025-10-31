@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>怡亚通跨境电商合规赋能合作方案</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Noto Sans SC', sans-serif; background-color: #f9fafb; }
+.section { padding: 6rem 2rem; max-width: 1400px; margin: 0 auto; }
+.section-white { background-color: #ffffff; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 3rem; }
+.section-gray { background-color: #f9fafb; margin-bottom: 3rem; }
+.title-container { margin-bottom: 3rem; text-align: center; }
+.section-title { font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem; }
+.section-subtitle { font-size: 1.1rem; color: #6b7280; max-width: 800px; margin: 0 auto; }
+.divider { width: 60px; height: 4px; background-color: #165DFF; margin: 1.5rem auto; border-radius: 2px; }
+.mermaid-container { height: 400px; width: 100%; margin: 2rem 0; }
+/* 平滑滚动 */
+html { scroll-behavior: smooth; }
+/* 导航栏 */
+.navbar { position: fixed; top: 0; left: 0; right: 0; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+.navbar-container { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.25rem; font-weight: 700; color: #165DFF; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-link { color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+.nav-link:hover { color: #165DFF; }
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .section { padding: 3rem 1rem; }
+    .section-title { font-size: 2rem; }
+    .nav-links { display: none; }
+    .mermaid-container { height: 300px; }
+}
+</style>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="logo">怡亚通合规赋能方案</div>
+        <div class="nav-links">
+            <a href="#intro" class="nav-link">方案介绍</a>
+            <a href="#policy" class="nav-link">政策背景</a>
+            <a href="#experience" class="nav-link">标杆经验</a>
+            <a href="#support" class="nav-link">核心支撑</a>
+            <a href="#cooperation" class="nav-link">合作模式</a>
+            <a href="#value" class="nav-link">价值贡献</a>
+            <a href="#requirements" class="nav-link">合作诉求</a>
+            <a href="#results" class="nav-link">预期成效</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 封面区域 -->
+<section id="intro" class="section section-white pt-20">
+    <div class="title-container">
+        <div class="inline-block mb-4 px-6 py-2 bg-blue-50 text-blue-600 rounded-full text-lg font-medium">
+            园区合作提案
+        </div>
+        <h1 class="section-title">政企协同·合规出海</h1>
+        <p class="text-1.5rem text-gray-600 mb-6">跨境电商数据合规与税筹一体化解决方案</p>
+        <p class="text-xl text-gray-500 mb-8">基于河南自贸试验区实践经验</p>
+        <div class="divider"></div>
+        <div class="text-2xl font-bold text-blue-700 mt-8">怡亚通出海合资公司</div>
+        <div class="mt-4 text-gray-500" id="current-date"></div>
+    </div>
+
+    <!-- 目录 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+        <a href="#policy" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">1</div>
+            <div class="text-lg text-gray-700">政策背景与行业需求</div>
+        </a>
+        <a href="#experience" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">2</div>
+            <div class="text-lg text-gray-700">河南自贸试验区标杆经验</div>
+        </a>
+        <a href="#support" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">3</div>
+            <div class="text-lg text-gray-700">核心支撑：系统与服务能力</div>
+        </a>
+        <a href="#cooperation" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">4</div>
+            <div class="text-lg text-gray-700">合作模式："园区+合规+生态"</div>
+        </a>
+        <a href="#value" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">5</div>
+            <div class="text-lg text-gray-700">对园区/企业的价值贡献</div>
+        </a>
+        <a href="#requirements" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">6</div>
+            <div class="text-lg text-gray-700">合作诉求与落地路径</div>
+        </a>
+        <a href="#results" class="flex items-center p-4 rounded-lg hover:bg-blue-50 transition-colors border border-gray-100 md:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3 text-lg font-bold">7</div>
+            <div class="text-lg text-gray-700">预期成效与保障措施</div>
+        </a>
+    </div>
+</section>
+
+<!-- 政策背景与行业需求 -->
+<section id="policy" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">政策背景与行业需求</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <i class="fa fa-gavel text-blue-600 mr-3"></i>政策驱动：合规成跨境电商生存前提
+            </h3>
+            <p class="text-gray-600 mb-4">
+                海关总署15/16号文明确跨境电商需实现“货物流、资金流、数据流”三流合一，强化9610、9810等监管代码下报关数据真实性、财税申报合规性，严禁“买单出口”“数据脱节”，违规成本显著提升。
+            </p>
+            <div class="text-sm text-blue-700 italic">参考中国网跨境电商服务平台核心观点</div>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <i class="fa fa-exclamation-triangle text-orange-600 mr-3"></i>行业合规痛点
+            </h3>
+            <p class="text-gray-600 mb-4">
+                大量跨境电商企业面临“新主体注册无合规地址、9810政策落地难、无票采购税负高、结汇数据无支撑”问题，超80%企业亟需“系统工具+园区资源”协同解决合规难题。
+            </p>
+            <div class="text-sm text-blue-700 italic">结合行业痛点分析</div>
+        </div>
+    </div>
+
+    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+            <i class="fa fa-line-chart text-blue-600 mr-3"></i>市场需求：合规化趋势下的增长机遇
+        </h3>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-4xl font-bold text-blue-700 mb-2">85%</div>
+                <div class="text-gray-700">9810模式需求同比增长</div>
+            </div>
+            <div class="w-px h-10 bg-blue-200 hidden md:block"></div>
+            <div class="text-center md:text-left">
+                <div class="text-4xl font-bold text-orange-700 mb-2">10%</div>
+                <div class="text-gray-700">9810模式实际落地率</div>
+            </div>
+            <div class="w-px h-10 bg-blue-200 hidden md:block"></div>
+            <div class="text-center md:text-left">
+                <div class="text-4xl font-bold text-red-700 mb-2">90%</div>
+                <div class="text-gray-700">企业合规转型迫切需求</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 河南自贸试验区标杆经验 -->
+<section id="experience" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">河南自贸试验区标杆经验借鉴</h2>
+        <p class="section-subtitle">依据：豫自贸工作办[2023]2号文件，提炼可复制推广的核心做法</p>
+        <div class="divider"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 郑州片区 -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+            <div class="bg-blue-600 text-white p-4">
+                <h3 class="text-xl font-bold">郑州片区：9810模式合规</h3>
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold text-gray-800 mb-3">关键做法：</h4>
+                <ul class="text-gray-600 space-y-2 mb-4">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>线上产业园，"区内注册、区外运营"</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>打通"关、汇、税"信息共享</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>4%企业所得税核定征收</span>
+                    </li>
+                </ul>
+                <div class="bg-gray-50 p-3 rounded text-sm">
+                    <span class="font-medium">实践效果：</span>22家企业入驻，税负降低50%+，合规报关率100%
+                </div>
+            </div>
+        </div>
+
+        <!-- 开封片区 -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+            <div class="bg-blue-600 text-white p-4">
+                <h3 class="text-xl font-bold">开封片区：集中登记模式</h3>
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold text-gray-800 mb-3">关键做法：</h4>
+                <ul class="text-gray-600 space-y-2 mb-4">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>统一经营场所托管服务</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>营业执照加注"集中登记地"</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>动态管理服务机构</span>
+                    </li>
+                </ul>
+                <div class="bg-gray-50 p-3 rounded text-sm">
+                    <span class="font-medium">实践效果：</span>144户登记，年省租金超万元，活跃度提升35%
+                </div>
+            </div>
+        </div>
+
+        <!-- 郑州数据交易中心 -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+            <div class="bg-blue-600 text-white p-4">
+                <h3 class="text-xl font-bold">郑州数据交易中心</h3>
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold text-gray-800 mb-3">关键做法：</h4>
+                <ul class="text-gray-600 space-y-2 mb-4">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>数据"三权分置"制度创新</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>区块链+隐私计算技术应用</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>多部门数据互通共享</span>
+                    </li>
+                </ul>
+                <div class="bg-gray-50 p-3 rounded text-sm">
+                    <span class="font-medium">实践效果：</span>交易额4.26亿元，数据流通效率提升60%
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 核心支撑：合规系统工具与服务能力 -->
+<section id="support" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">核心支撑：合规系统工具与服务能力</h2>
+        <div class="divider"></div>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+        <i class="fa fa-cogs text-blue-600 mr-3"></i>专业系统工具
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <!-- 9810系统 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-5 bg-gray-50 border-b border-gray-200">
+                <h4 class="text-xl font-semibold text-blue-700">9810出口退税申报系统</h4>
+                <p class="text-sm text-gray-500 mt-1">B2B出口海外仓（有票采购）</p>
+            </div>
+            <div class="p-5">
+                <h5 class="font-medium text-gray-800 mb-2">核心优势：</h5>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>自动核验退税资格</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>最高13%退税率，效率提升40%</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>对接国际贸易"单一窗口"</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>解决委托退税提点高痛点</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 9610系统 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-5 bg-gray-50 border-b border-gray-200">
+                <h4 class="text-xl font-semibold text-blue-700">9610核定征收申报系统</h4>
+                <p class="text-sm text-gray-500 mt-1">B2C直发出口（无票采购）</p>
+            </div>
+            <div class="p-5">
+                <h5 class="font-medium text-gray-800 mb-2">核心优势：</h5>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>增值税"免征不退"</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>企业所得税4%核定（小微企业低至1‰）</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>自动生成免税明细表</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>规避无票采购补税风险</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 数据合规系统 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-5 bg-gray-50 border-b border-gray-200">
+                <h4 class="text-xl font-semibold text-blue-700">数据合规管理系统</h4>
+                <p class="text-sm text-gray-500 mt-1">三流合一溯源保障</p>
+            </div>
+            <div class="p-5">
+                <h5 class="font-medium text-gray-800 mb-2">核心优势：</h5>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>区块链技术实现三流溯源</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>支持监管部门数据互通</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>提供合规结汇数据证明</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-blue-600 mt-1 mr-2"></i>
+                        <span>应对税务核查与海关稽查</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+        <i class="fa fa-handshake-o text-blue-600 mr-3"></i>全链路合规服务
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-blue-50 p-5 rounded-lg text-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa fa-building text-2xl"></i>
+            </div>
+            <h4 class="text-lg font-semibold text-gray-800 mb-2">主体注册服务</h4>
+            <p class="text-gray-600 text-sm">
+                工商注册、银行开户、外汇备案一站式代办，最快7个工作日完成
+            </p>
+        </div>
+
+        <div class="bg-blue-50 p-5 rounded-lg text-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa fa-calculator text-2xl"></i>
+            </div>
+            <h4 class="text-lg font-semibold text-gray-800 mb-2">税筹方案定制</h4>
+            <p class="text-gray-600 text-sm">
+                "有票退税+无票核定"组合方案，配套VAT申报、年度汇算清缴
+            </p>
+        </div>
+
+        <div class="bg-blue-50 p-5 rounded-lg text-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa fa-exchange text-2xl"></i>
+            </div>
+            <h4 class="text-lg font-semibold text-gray-800 mb-2">结汇合规支持</h4>
+            <p class="text-gray-600 text-sm">
+                对接合规结汇渠道，实现"对公收款-外汇收支证明-结汇核销"规范操作
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 合作模式 -->
+<section id="cooperation" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">合作模式：“园区+合规+生态”赋能体系</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6">模式框架</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 基础层 -->
+            <div class="bg-white border-2 border-blue-600 rounded-lg p-6 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
+                <div class="text-center mb-4">
+                    <div class="inline-block p-3 bg-blue-100 rounded-full mb-3">
+                        <i class="fa fa-map-marker text-2xl text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-700">基础层</h4>
+                    <p class="text-gray-500 font-medium">园区资源</p>
+                </div>
+                <ul class="text-gray-600 space-y-2">
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>提供集中注册地址</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>协调9810核定征收政策</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>对接地方监管部门</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 核心层 -->
+            <div class="bg-white border-2 border-blue-600 rounded-lg p-6 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
+                <div class="text-center mb-4">
+                    <div class="inline-block p-3 bg-blue-100 rounded-full mb-3">
+                        <i class="fa fa-cogs text-2xl text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-700">核心层</h4>
+                    <p class="text-gray-500 font-medium">系统与服务</p>
+                </div>
+                <ul class="text-gray-600 space-y-2">
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>导入9810/9610系统工具</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>全流程合规服务支持</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>数据对接与合规保障</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 生态层 -->
+            <div class="bg-white border-2 border-blue-600 rounded-lg p-6 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
+                <div class="text-center mb-4">
+                    <div class="inline-block p-3 bg-blue-100 rounded-full mb-3">
+                        <i class="fa fa-sitemap text-2xl text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-700">生态层</h4>
+                    <p class="text-gray-500 font-medium">企业集聚</p>
+                </div>
+                <ul class="text-gray-600 space-y-2">
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>吸引跨境电商企业入驻</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>配套关联服务产业</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check text-green-500 mt-1 mr-2"></i>
+                        <span>形成合规产业集群</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6">核心业务流程</h3>
+        <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="mermaid-container">
+                <mermaid>
+graph TD
+    A[园区提供集中注册地址+政策支持] --> B[怡亚通协助完成：工商注册+银行开户+外汇备案]
+    B --> C[企业根据业务类型，通过对应系统申报]
+    C --> C1[9810系统：有票采购B2B海外仓出口]
+    C --> C2[9610系统：无票采购B2C直发出口]
+    C1 --> D[系统对接单一窗口，同步报关数据至海关/税务]
+    C2 --> D
+    D --> E[监管部门完成合规核验（三流合一校验）]
+    E --> F[企业享受对应政策：9810退税/9610核定征收]
+    F --> G[怡亚通协助：合规结汇+税务申报+年度汇算]
+    G --> H[园区获得外贸数据增量+税收贡献，企业合规经营]
+                </mermaid>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 价值贡献 -->
+<section id="value" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">对园区/企业的价值贡献</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+            <i class="fa fa-building-o text-blue-600 mr-3"></i>对园区的价值
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- 经济数据提升 -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-3">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800">经济数据提升</h4>
+                </div>
+                <ul class="text-gray-600 space-y-3">
+                    <li class="flex items-start">
+                        <i class="fa fa-circle text-xs text-green-500 mt-1.5 mr-2"></i>
+                        <div>
+                            <span class="font-medium">外贸与结汇增量：</span>
+                            <span>1年内预计带来年合规结汇50-80亿元</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-circle text-xs text-green-500 mt-1.5 mr-2"></i>
+                        <div>
+                            <span class="font-medium">税收贡献增长：</span>
+                            <span>年贡献税收1000-1500万元，带动关联产业税收</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 产业生态完善 -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mr-3">
+                        <i class="fa fa-sitemap"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800">产业生态完善</h4>
+                </div>
+                <ul class="text-gray-600 space-y-3">
+                    <li class="flex items-start">
+                        <i class="fa fa-circle text-xs text-blue-500 mt-1.5 mr-2"></i>
+                        <div>
+                            <span class="font-medium">打造合规标杆：</span>
+                            <span>形成"数据合规+税筹规范"产业集群</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-circle text-xs text-blue-500 mt-1.5 mr-2"></i>
+                        <div>
+                            <span class="font-medium">企业集聚效应：</span>
+                            <span>1年内吸引500-2000家企业，带动2000+就业岗位</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 政策落地成效 -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center mr-3">
+                    <i class="fa fa-check-square-o"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-800">政策落地成效</h4>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h5 class="font-medium text-gray-800 mb-2">9810/9610政策落地率</h5>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-1">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 25%"></div>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>当前：不足30%</span>
+                        <span>目标：60%+</span>
+                    </div>
+                    <p class="text-gray-600 mt-2 text-sm">成为地方落实海关总署政策的典型案例</p>
+                </div>
+                <div>
+                    <h5 class="font-medium text-gray-800 mb-2">数据资产沉淀</h5>
+                    <p class="text-gray-600 text-sm">
+                        协助园区构建跨境电商数据台账，后续可对接省级数据交易平台，挖掘数据价值
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+            <i class="fa fa-user-o text-blue-600 mr-3"></i>对企业的价值
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-blue-50 p-6 rounded-lg text-center">
+                <div class="text-4xl font-bold text-blue-700 mb-2">50%+</div>
+                <div class="text-gray-700 font-medium mb-1">合规成本降低</div>
+                <p class="text-gray-600 text-sm">集中注册地址节省年租金超万元，核定征收政策降低税负50%以上</p>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg text-center">
+                <div class="text-4xl font-bold text-green-700 mb-2">0风险</div>
+                <div class="text-gray-700 font-medium mb-1">经营风险规避</div>
+                <p class="text-gray-600 text-sm">系统实现"三流合一"，避免海关稽查、税务核查风险，合规结汇</p>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-lg text-center">
+                <div class="text-4xl font-bold text-orange-700 mb-2">80%↑</div>
+                <div class="text-gray-700 font-medium mb-1">运营效率提升</div>
+                <p class="text-gray-600 text-sm">报关、退税线上化操作，时间从7-10天缩短至1-2天</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 合作诉求与落地路径 -->
+<section id="requirements" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">合作诉求与落地路径</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+            <i class="fa fa-list-alt text-blue-600 mr-3"></i>核心合作诉求（致园区/合作企业）
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                <div class="flex items-center mb-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">1</div>
+                    <h4 class="text-lg font-semibold text-gray-800">地址资源支持</h4>
+                </div>
+                <p class="text-gray-600 pl-11">
+                    提供充足集中注册地址，允许"区内注册、区外运营"，营业执照加注"园区集中登记地"
+                </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                <div class="flex items-center mb-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">2</div>
+                    <h4 class="text-lg font-semibold text-gray-800">政策对接支持</h4>
+                </div>
+                <p class="text-gray-600 pl-11">
+                    协调税务部门明确4%企业所得税应税所得率（参照郑州片区），简化核定流程
+                </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                <div class="flex items-center mb-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">3</div>
+                    <h4 class="text-lg font-semibold text-gray-800">数据接口对接</h4>
+                </div>
+                <p class="text-gray-600 pl-11">
+                    协助打通系统与海关、税务、外汇部门数据互通通道，实现数据自动核验
+                </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                <div class="flex items-center mb-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">4</div>
+                    <h4 class="text-lg font-semibold text-gray-800">政策优惠配套</h4>
+                </div>
+                <p class="text-gray-600 pl-11">
+                    对入驻企业给予注册补贴、税收返还（地方留存部分）、场地租赁优惠等支持
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+            <i class="fa fa-road text-blue-600 mr-3"></i>落地路径
+        </h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                <thead>
+                    <tr class="bg-gray-50">
+                        <th class="py-3 px-4 text-left text-gray-700 font-semibold border-b">阶段</th>
+                        <th class="py-3 px-4 text-left text-gray-700 font-semibold border-b">时间节点</th>
+                        <th class="py-3 px-4 text-left text-gray-700 font-semibold border-b">核心动作</th>
+                        <th class="py-3 px-4 text-left text-gray-700 font-semibold border-b">责任方</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-50">
+                        <td class="py-3 px-4 border-b text-gray-800 font-medium">筹备期</td>
+                        <td class="py-3 px-4 border-b text-gray-600">1-2个月</td>
+                        <td class="py-3 px-4 border-b text-gray-600">
+                            1. 确定地址范围与政策细则<br>
+                            2. 完成系统与监管部门接口测试
+                        </td>
+                        <td class="py-3 px-4 border-b text-gray-600">园区+怡亚通</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="py-3 px-4 border-b text-gray-800 font-medium">试点期</td>
+                        <td class="py-3 px-4 border-b text-gray-600">3-4个月</td>
+                        <td class="py-3 px-4 border-b text-gray-600">
+                            1. 选取10-20家企业完成注册<br>
+                            2. 试点9810/9610系统申报
+                        </td>
+                        <td class="py-3 px-4 border-b text-gray-600">怡亚通</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="py-3 px-4 border-b text-gray-800 font-medium">推广期</td>
+                        <td class="py-3 px-4 border-b text-gray-600">5-12个月</td>
+                        <td class="py-3 px-4 border-b text-gray-600">
+                            1. 引入50-100家企业<br>
+                            2. 举办合规政策宣讲会
+                        </td>
+                        <td class="py-3 px-4 border-b text-gray-600">园区+怡亚通</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="py-3 px-4 text-gray-800 font-medium">成熟期</td>
+                        <td class="py-3 px-4 text-gray-600">13-24个月</td>
+                        <td class="py-3 px-4 text-gray-600">
+                            1. 对接省级数据交易平台<br>
+                            2. 申报示范园区
+                        </td>
+                        <td class="py-3 px-4 text-gray-600">园区+怡亚通</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 预期成效与保障措施 -->
+<section id="results" class="section section-white">
+    <div class="title-container">
+        <h2 class="section-title">预期成效与保障措施</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+            <i class="fa fa-bar-chart text-blue-600 mr-3"></i>预期成效（3年目标）
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 企业规模 -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="text-center mb-4">
+                    <div class="text-4xl font-bold text-blue-700">300+</div>
+                    <div class="text-gray-700 font-medium">入驻企业数量</div>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>1年目标</span>
+                            <span>500-1000家</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>3年目标</span>
+                            <span>3000+家</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-700 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-sm text-gray-600">
+                        9810/9610模式覆盖率：1年60% → 3年90%
+                    </div>
+                </div>
+            </div>
+
+            <!-- 经济贡献 -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="text-center mb-4">
+                    <div class="text-4xl font-bold text-green-700">20-30亿</div>
+                    <div class="text-gray-700 font-medium">年合规结汇</div>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>1年目标</span>
+                            <span>50-100亿元</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>3年目标</span>
+                            <span>20-30亿元</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-700 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-sm text-gray-600">
+                        年税收贡献：1年1000-1500万 → 3年5000万+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 生态建设 -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="text-center mb-4">
+                    <div class="text-4xl font-bold text-orange-700">1000+</div>
+                    <div class="text-gray-700 font-medium">带动就业岗位</div>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>1年目标</span>
+                            <span>2000+岗位</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-orange-500 h-2 rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>3年目标</span>
+                            <span>6000+岗位</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-orange-700 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-sm text-gray-600">
+                        配套关联企业：1年1000+ → 3年5000+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+            <i class="fa fa-shield text-blue-600 mr-3"></i>保障措施
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-blue-50 p-5 rounded-lg text-center">
+                <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa fa-users text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">组织保障</h4>
+                <p class="text-gray-600 text-sm">
+                    成立"园区+怡亚通"联合工作组，每月召开会议解决落地问题
+                </p>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg text-center">
+                <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa fa-lock text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">技术保障</h4>
+                <p class="text-gray-600 text-sm">
+                    持续迭代系统，应用区块链保障数据安全，确保接口稳定
+                </p>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg text-center">
+                <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa fa-headphones text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">服务保障</h4>
+                <p class="text-gray-600 text-sm">
+                    专属客服7×12小时响应，24小时内解决企业合规咨询
+                </p>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg text-center">
+                <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa fa-eye text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">监督保障</h4>
+                <p class="text-gray-600 text-sm">
+                    定期提交企业合规报告，协助园区监管，确保无违规案例
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 封底 -->
+<section class="section section-white pb-16">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">合作愿景</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+            政企携手，打造跨境电商合规出海新标杆，助力中国品牌货通全球
+        </p>
+
+        <div class="bg-blue-50 p-8 rounded-lg max-w-2xl w-full mx-auto mb-10">
+            <h3 class="text-2xl font-semibold text-blue-800 mb-6">联系方式</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-left">
+                    <div class="text-gray-500 mb-1">合作主体</div>
+                    <div class="text-xl font-bold text-gray-800">怡亚通出海合资公司</div>
+                </div>
+                <div class="text-left">
+                    <div class="text-gray-500 mb-1">联系人</div>
+                    <div class="text-xl font-bold text-gray-800">[联系人姓名]</div>
+                </div>
+                <div class="text-left">
+                    <div class="text-gray-500 mb-1">联系方式</div>
+                    <div class="text-xl font-bold text-gray-800">[电话+邮箱]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-200 w-1/2 mx-auto mb-8"></div>
+        <div class="text-2xl font-bold text-blue-700 mb-4">
+            期待与您携手共赢！
+        </div>
+        <div class="text-gray-500">
+            感谢园区/合作企业对跨境电商合规发展的支持
+        </div>
+    </div>
+</section>
+
+<script>
+// 设置当前日期
+document.addEventListener('DOMContentLoaded', function() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    document.getElementById('current-date').textContent = `${year}年${month}月${day}日`;
+
+    // 初始化Mermaid
+    if (window.mermaid) {
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            flowchart: {
+                curve: 'linear'
+            },
+            fontSize: '14px'
+        });
+    }
+
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('shadow-md');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
+    });
+});
+</script>
+</body>
+</html>
+    
