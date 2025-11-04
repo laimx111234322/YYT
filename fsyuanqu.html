@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>共建佛山跨境电商合规出海示范园区 - 战略合作方案</title>
+    <!-- 外部资源CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <style>
+        /* 融合风格配色：怡亚通蓝绿过渡 + 佛山高新产业园专业风 */
+        :root {
+            --main-blue: #0066CC; /* 怡亚通主蓝（延续品牌识别） */
+            --main-green: #00B489; /* 怡亚通强调绿（蓝绿过渡核心） */
+            --gradient-primary: linear-gradient(120deg, #0066CC 0%, #00B489 100%); /* 蓝绿过渡渐变 */
+            --gradient-light: linear-gradient(120deg, rgba(0, 102, 204, 0.05), rgba(0, 180, 137, 0.05)); /* 浅蓝绿背景 */
+            --text-dark: #1D2129; /* 佛山高新产业园正文色（厚重专业） */
+            --text-gray: #666C78; /* 佛山高新产业园辅助文本色 */
+            --bg-white: #FFFFFF; /* 卡片/页面背景 */
+            --bg-page: #F5F7FA; /* 佛山高新产业园页面底色（浅灰清爽） */
+            --border: #E4E7ED; /* 产业园区常用边框色（细腻弱化） */
+            --border-radius: 8px; /* 适中圆角（产业园区专业感） */
+            --shadow-light: 0 3px 12px rgba(0,0,0,0.06); /* 轻微阴影（突出层次不刺眼） */
+            --shadow-medium: 0 6px 16px rgba(0,0,0,0.08); /* 中等阴影（hover交互） */
+        }
+        body {
+            font-family: "Microsoft YaHei", "Roboto", "Arial", sans-serif; /* 佛山高新产业园常用字体组合 */
+            background-color: var(--bg-page);
+            line-height: 1.75;
+            color: var(--text-dark);
+            padding: 25px 0;
+            margin: 0;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1500px; /* 佛山高新产业园宽屏布局适配 */
+            height: 880px;
+            margin: 0 auto 45px;
+            padding: 50px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-light);
+            border-radius: var(--border-radius);
+            background-color: var(--bg-white);
+            position: relative;
+        }
+        /* 响应式适配（产业园区官网适配逻辑） */
+        @media (max-width: 1400px) {
+            .slide {
+                height: auto;
+                min-height: 100vh;
+                padding: 35px;
+            }
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .slide {
+                padding: 25px 15px;
+            }
+            .slide-title {
+                font-size: 28px !important;
+                padding-bottom: 15px !important;
+            }
+            .chapter-title {
+                font-size: 24px !important;
+                padding-left: 30px !important;
+            }
+            .section-subtitle {
+                font-size: 20px !important;
+            }
+            .text-content {
+                font-size: 15px !important;
+            }
+        }
+        /* 头部样式（删除收件人信息，突出产业属性） */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .project-tag {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.15); /* 蓝绿渐变阴影 */
+        }
+        .project-tag i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .park-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--main-blue);
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .park-logo i {
+            font-size: 22px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* 标题样式（蓝绿过渡+产业园区厚重感） */
+        .slide-title {
+            font-size: 38px;
+            font-weight: bold;
+            color: var(--main-blue);
+            margin: 20px 0 40px;
+            text-align: center;
+            line-height: 1.4;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--main-green);
+            position: relative;
+        }
+        .slide-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: var(--gradient-primary); /* 蓝绿过渡下划线 */
+        }
+        .chapter-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--main-blue);
+            margin: 40px 0 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 40px;
+        }
+        .chapter-title::before {
+            content: "";
+            width: 12px;
+            height: 32px;
+            background: var(--gradient-primary);
+            position: absolute;
+            left: 0;
+            border-radius: 6px;
+        }
+        .section-subtitle {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--main-blue);
+            margin: 35px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-subtitle i {
+            color: var(--main-green);
+            font-size: 24px;
+            width: 32px;
+            text-align: center;
+        }
+        /* 内容区域样式（产业园区清爽滚动体验） */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        .content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .content::-webkit-scrollbar-track {
+            background: #F0F2F5;
+            border-radius: 3px;
+        }
+        .content::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--main-blue), var(--main-green)); /* 蓝绿过渡滚动条 */
+            border-radius: 3px;
+        }
+        .text-content {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: justify;
+            color: var(--text-dark);
+        }
+        /* 高亮样式（蓝绿过渡强调） */
+        .highlight {
+            color: var(--main-blue);
+            font-weight: bold;
+            font-size: 1.05em;
+            position: relative;
+            padding: 0 3px;
+        }
+        .highlight::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--main-blue), var(--main-green)); /* 蓝绿过渡下划线 */
+            border-radius: 1px;
+        }
+        .highlight-accent {
+            color: var(--main-green);
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+        /* 网格布局（产业园区规整间距） */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 35px 0;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 28px;
+            margin: 35px 0;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 35px 0;
+        }
+        /* 卡片样式（产业园区简洁专业风） */
+        .card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 2px 0 0 2px;
+        }
+        .card:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-5px);
+            border-color: var(--main-blue);
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--main-blue);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-title i {
+            font-size: 22px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-content {
+            font-size: 15px;
+            line-height: 1.7;
+            flex: 1;
+            color: var(--text-dark);
+        }
+        .card-content .list-item {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .card-content .list-item i {
+            color: var(--main-blue);
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .card-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #F0F2F5;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        /* 数据卡片样式（蓝绿渐变背景） */
+        .data-card {
+            text-align: center;
+            padding: 25px 15px;
+            background: var(--gradient-light);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0, 102, 204, 0.1);
+        }
+        .data-number {
+            font-size: 42px;
+            font-weight: bold;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+        .data-label {
+            font-size: 17px;
+            color: var(--main-blue);
+            font-weight: 500;
+        }
+        .data-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+        /* 表格样式（产业园区规整风格） */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 35px 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        th, td {
+            padding: 18px 22px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+        th {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: var(--gradient-light);
+        }
+        tr:hover {
+            background-color: #F0F7FF;
+            transition: background-color 0.3s ease;
+        }
+        /* 政策依据样式（蓝绿边框） */
+        .policy-source {
+            background-color: var(--gradient-light);
+            border-left: 3px solid var(--main-blue);
+            padding: 12px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 12px 0;
+            font-size: 14px;
+            color: var(--main-blue);
+        }
+        .policy-source strong {
+            color: var(--main-blue);
+            font-weight: 600;
+        }
+        /* 实施路径样式（产业园区简洁时间线） */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 35px;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 12px;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+            border-radius: 1.5px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 15px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -32px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        .timeline-stage {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--main-blue);
+            margin-bottom: 12px;
+        }
+        .timeline-period {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+            display: inline-block;
+            background-color: var(--gradient-light);
+            padding: 4px 12px;
+            border-radius: 18px;
+        }
+        .timeline-content {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border);
+        }
+        .timeline-achieve {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid #F0F2F5;
+        }
+        .timeline-achieve-title {
+            font-weight: 600;
+            color: var(--main-blue);
+            margin-bottom: 8px;
+        }
+        /* 风险管控样式（产业园区简洁卡片） */
+        .risk-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 22px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border);
+            margin-bottom: 22px;
+        }
+        .risk-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .risk-icon i {
+            font-size: 22px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .risk-content {
+            flex: 1;
+        }
+        .risk-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--main-blue);
+            margin-bottom: 8px;
+        }
+        .risk-desc {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+        /* 结语样式（蓝绿渐变+产业园区大气感） */
+        .conclusion {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin: 50px 0 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
+        }
+        .conclusion-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+        .conclusion-content {
+            font-size: 18px;
+            line-height: 1.9;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        /* 附件样式（蓝绿浅背景） */
+        .attachment {
+            margin-top: 45px;
+            background: var(--gradient-light);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+        }
+        .attachment-title {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--main-blue);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .attachment-title i {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 20px;
+        }
+        .attachment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+        .attachment-item i {
+            color: var(--main-green);
+            font-size: 18px;
+        }
+        /* 封面特殊样式（产业园区科技感背景） */
+        .cover-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230066cc' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: -1;
+            opacity: 0.9;
+        }
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            text-align: center;
+        }
+        .cover-slogan {
+            font-size: 24px;
+            color: var(--main-blue);
+            line-height: 2.1;
+            max-width: 1100px;
+            margin: 35px 0 50px;
+            font-weight: 500;
+        }
+        .cover-highlight {
+            color: var(--main-green);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        /* 图表容器样式（产业园区简洁风） */
+        .chart-container {
+            width: 100%;
+            height: 330px;
+            margin: 18px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 第1页：封面 -->
+    <div class="slide">
+        <div class="cover-bg"></div>
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-handshake-o"></i> 战略合作方案
+            </div>
+            <!-- 已删除「致：佛山怡亚通园区管理层」等收件人信息 -->
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content cover-content">
+            <div class="slide-title">共建佛山跨境电商合规出海示范园区</div>
+            <p class="cover-slogan">
+                以<span class="cover-highlight">政策突破</span>为基石，以<span class="cover-highlight">系统赋能</span>为支撑，以<span class="cover-highlight">数据驱动</span>为核心<br>
+                打造全国领先的跨境电商合规出海生态高地，实现税收增长、产业集聚、品牌升级三重目标
+            </p>
+            <div style="display: flex; gap: 25px; margin-top: 45px; flex-wrap: wrap; justify-content: center;">
+                <div class="data-card">
+                    <i class="fa fa-building-o" style="font-size: 36px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                    <div class="data-number">4000+</div>
+                    <div class="data-label">企业集聚</div>
+                    <div class="data-desc">本地+外地卖家入驻</div>
+                </div>
+                <div class="data-card">
+                    <i class="fa fa-money" style="font-size: 36px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                    <div class="data-number">1亿+</div>
+                    <div class="data-label">年税收贡献</div>
+                    <div class="data-desc">企业所得税+增值税等</div>
+                </div>
+                <div class="data-card">
+                    <i class="fa fa-globe" style="font-size: 36px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                    <div class="data-number">100亿$</div>
+                    <div class="data-label">年结汇规模</div>
+                    <div class="data-desc">提升区域外贸活力</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第2页：项目核心价值 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-diamond"></i> 核心价值
+            </div>
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="chapter-title">为园区打造“数据驱动”的跨境电商生态高地</div>
+            
+            <div class="text-content">本项目通过政策创新、系统赋能、资源整合，突破传统跨境电商园区发展瓶颈，将佛山园区升级为<span class="highlight">全国领先的跨境电商合规出海示范基地</span>，实现规模化集聚、合规化运营、生态化发展的多重价值。</div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-line-chart"></i> 规模化企业集聚与税收增长
+                    </div>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>吸引<span class="highlight-accent">外地3000家卖家+本地1000家卖家</span>入驻，形成千亿级产业集群</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>年税收贡献约<span class="highlight-accent">1亿元</span>，含企业所得税、增值税、个人所得税等</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>年结汇规模达<span class="highlight-accent">100亿美元</span>，显著提升园区外贸数据总量</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>增强区域金融活力，成为佛山外贸增长新引擎</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-shield"></i> 数据化监管与合规标杆
+                    </div>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>提供一站式外综服合规系统，实现<span class="highlight-accent">报关、税务、结汇</span>数据全链条可追溯</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>建立“阳光化”监管体系，规避传统跨境电商灰色操作风险</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>实现<span class="highlight-accent">三流合一</span>（货流、资金流、数据流），满足监管要求</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>打造跨境电商合规出海全国标杆，提升园区品牌影响力</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-sitemap"></i> 产业生态溢出效应
+                    </div>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>带动物流、仓储、金融、营销等<span class="highlight-accent">上下游产业链企业</span>集聚</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>形成百亿级跨境电商生态圈，提升产业整体竞争力</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>促进本地制造业与跨境电商融合，助力“佛山制造”出海</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>创造大量就业岗位，推动区域经济高质量发展</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 45px; text-align: center;">
+                <div style="display: inline-block; background: var(--gradient-light); border-radius: var(--border-radius); padding: 25px 35px; border: 1px solid rgba(0, 102, 204, 0.1);">
+                    <p style="font-size: 19px; color: var(--main-blue); font-weight: 500;">项目核心逻辑：<span class="highlight">政策突破吸引企业集聚 → 系统赋能保障合规运营 → 数据驱动实现价值提升</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第3页：核心政策支持需求 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-gavel"></i> 政策支持
+            </div>
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="chapter-title">需园区协调的核心政策支持（成功关键）</div>
+            
+            <div class="text-content">为确保项目顺利落地并实现预期目标，需园区协助对接政府相关部门，重点解决以下两大关键政策问题，为跨境电商企业提供合规经营的基础保障。</div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-map-marker"></i> 工商地址创新：支持“一址多照”集群登记
+                    </div>
+                    <div class="card-content">
+                        <div style="margin-bottom: 22px;">
+                            <strong style="color: var(--main-blue); font-size: 17px;">核心诉求：</strong>
+                            <p>为4000家卖家提供独立的合规注册地址（如“园区地址+虚拟编号”），满足亚马逊多店铺防关联需求。</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 22px;">
+                            <strong style="color: var(--main-blue); font-size: 17px;">园区协调动作：</strong>
+                            <ul style="margin-left: 20px; list-style-type: disc;">
+                                <li>向市场监督管理局申请跨境电商集群登记试点，参考惠州“园区成立外综服企业+地址托管”模式</li>
+                                <li>建立地址动态管理制度，确保每个主体可追溯、可联系</li>
+                                <li>协助制定集群登记管理细则，规范地址使用流程</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="policy-source">
+                            <strong>政策参考依据：</strong>《惠州市市场监督管理局关于支持跨境电子商务产业发展的若干措施》（惠市监注〔2024〕3号），明确支持跨境电商园区开展集群注册，实行“一址多照”地址托管机制。
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-calculator"></i> 税务政策突破：明确9810出口适用核定征收
+                    </div>
+                    <div class="card-content">
+                        <div style="margin-bottom: 22px;">
+                            <strong style="color: var(--main-blue); font-size: 17px;">核心诉求：</strong>
+                            <p>对无进项发票的9810（海外仓）出口业务，允许按收入总额的4%核定应纳税所得额，使企业实际税负降至约1%。</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 22px;">
+                            <strong style="color: var(--main-blue); font-size: 17px;">园区协调动作：</strong>
+                            <ul style="margin-left: 20px; list-style-type: disc;">
+                                <li>联合税务局、商务局，参考河南自贸区“离境即退税+核定征收”经验，出台佛山园区专项操作指引</li>
+                                <li>确保税务系统与外贸综合服务系统数据对接，实现“单证合规、数据核销”</li>
+                                <li>协助推动税务部门建立跨境电商税收征管绿色通道</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="policy-source">
+                            <strong>政策参考依据：</strong>《中国（河南）自由贸易试验区郑州片区跨境电子商务零售出口税收管理办法（试行）》（郑自贸管委〔2023〕18号），明确对9810模式出口企业无进项发票情形实行核定征收，核定应税所得率为4%。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 35px;">
+                <div class="section-subtitle"><i class="fa fa-file-text-o"></i> 国家层面政策依据</div>
+                <div class="policy-source" style="padding: 18px; font-size: 15px;">
+                    <strong>核心政策文件：</strong>国家税务总局《关于跨境电子商务综合试验区零售出口企业所得税核定征收有关问题的公告》（2025年第15号）<br>
+                    <strong>政策要点：</strong>明确要求跨境电商平台数据需同步至税务部门，为阳光化监管和核定征收提供政策基础；支持跨境电商综合试验区内企业实行核定征收，简化税收征管流程，助力跨境电商企业合规发展。<br>
+                    <strong>实践案例：</strong>惠州园区通过“公服平台对接海关税务”已实现数据纳统，具体案例详见《惠州跨境电子商务综合试验区发展报告（2024）》（惠州市商务局、惠州海关联合发布）。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第4页：我方资源与系统支持 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-cogs"></i> 赋能方案
+            </div>
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="chapter-title">我方提供的资源与系统支持</div>
+            
+            <div class="text-content">为降低园区投入风险，确保项目快速落地见效，我方将提供全方位的资源支持和系统赋能，承担核心建设和运营成本，与园区共同推进项目发展。</div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-desktop"></i> 外综服合规系统
+                    </div>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>自动生成<span class="highlight">9810/9610报关单</span>，实现快速通关</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>智能匹配税务申报表，确保税务合规</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>同步平台销售数据，实现三流合一（货、款、数据）</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>向园区开放<span class="highlight">数据看板</span>，实时监控企业出口额、结汇量、税收贡献</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>系统对接海关、税务、外管等监管部门，实现数据互通</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-info-circle"></i> 系统已在多个跨境电商园区验证，稳定性和合规性有保障
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-users"></i> 企业招商与培育体系
+                    </div>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>6个月内引入首批<span class="highlight">1000家卖家</span>（含300家年出口额超千万级重点客户）</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>建立全国招商网络，重点吸引珠三角、长三角优质卖家</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>提供<span class="highlight">合规培训、政策解读、运营指导</span>等培育服务</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>整合物流、支付、金融等资源，提供一站式配套服务</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>建立企业分级培育体系，助力中小卖家成长为头部企业</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-info-circle"></i> 拥有成熟的招商团队和丰富的卖家资源库
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa fa-handshake-o"></i> 联合运营机制
+                    </div>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>与园区成立<span class="highlight">合资公司或联合工作组</span>，共同负责项目运营</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>共同承担招商、政策协调、风险管控职责，实现利益共享</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>建立定期沟通机制，及时解决项目推进中的问题</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>共同申报各级政府扶持政策，争取专项补贴资金</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fa fa-angle-right"></i>
+                            <span>联合打造园区品牌，举办行业峰会、招商推介会等活动</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-info-circle"></i> 建立清晰的权责划分和利益分配机制
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 35px; text-align: center;">
+                <div class="section-subtitle" style="justify-content: center;">系统赋能核心优势</div>
+                <div class="grid-4" style="margin-top: 18px;">
+                    <div class="data-card">
+                        <i class="fa fa-check-square-o" style="font-size: 32px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                        <div class="data-label">全流程合规</div>
+                        <div class="data-desc">报关/税务/结汇一体化</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fa fa-bolt" style="font-size: 32px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                        <div class="data-label">高效便捷</div>
+                        <div class="data-desc">自动化操作降低成本</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fa fa-bar-chart" style="font-size: 32px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                        <div class="data-label">数据可视</div>
+                        <div class="data-desc">实时监控运营数据</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fa fa-plug" style="font-size: 32px; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+                        <div class="data-label">接口开放</div>
+                        <div class="data-desc">对接监管与服务商系统</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第5页：实施路径与预期效益 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-roadmap"></i> 实施路径
+            </div>
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="chapter-title">分阶段推进，实现快速见效与长期发展</div>
+            
+            <div class="text-content">项目采用“试点先行、逐步推广、全面成熟”的实施策略，分三个阶段推进，确保每个阶段都有明确的目标和可量化的成果，实现风险可控、效益可期。</div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-stage">第一阶段：试点期</div>
+                    <div class="timeline-period">3个月</div>
+                    <div class="timeline-content">
+                        <strong style="color: var(--main-blue);">关键任务：</strong>
+                        <ul style="margin-left: 20px; list-style-type: disc; margin-top: 10px;">
+                            <li>园区协调获批“一址多照”集群登记政策</li>
+                            <li>完成与税务部门沟通，确定核定征收试点方案</li>
+                            <li>选定100家企业试跑核定征收流程</li>
+                            <li>完成合规系统部署与监管部门接口对接</li>
+                        </ul>
+                        <div class="timeline-achieve">
+                            <div class="timeline-achieve-title">目标成果：</div>
+                            <p>实现首单9810阳光化报关、退税；建立完善的政策落地流程；验证系统稳定性和合规性</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-stage">第二阶段：推广期</div>
+                    <div class="timeline-period">6个月</div>
+                    <div class="timeline-content">
+                        <strong style="color: var(--main-blue);">关键任务：</strong>
+                        <ul style="margin-left: 20px; list-style-type: disc; margin-top: 10px;">
+                            <li>合规系统全面上线运行</li>
+                            <li>启动大规模招商，扩大入驻企业至2000家</li>
+                            <li>完善物流、金融、培训等产业链配套服务</li>
+                            <li>建立企业服务标准和运营管理体系</li>
+                        </ul>
+                        <div class="timeline-achieve">
+                            <div class="timeline-achieve-title">目标成果：</div>
+                            <p>月均结汇超5亿美元，税收贡献超3000万元；形成初步产业集聚效应；获得市场广泛认可</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-stage">第三阶段：成熟期</div>
+                    <div class="timeline-period">1年</div>
+                    <div class="timeline-content">
+                        <strong style="color: var(--main-blue);">关键任务：</strong>
+                        <ul style="margin-left: 20px; list-style-type: disc; margin-top: 10px;">
+                            <li>入驻企业规模达到4000家目标</li>
+                            <li>将成功模式复制至其他产业带</li>
+                            <li>申报省级/国家级跨境电商示范园区</li>
+                            <li>构建完整的跨境电商产业生态圈</li>
+                        </ul>
+                        <div class="timeline-achieve">
+                            <div class="timeline-achieve-title">目标成果：</div>
+                            <p>全年税收破亿，结汇规模达100亿美元；成为全国跨境电商合规出海标杆；实现产业价值最大化</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 45px;">
+                <div class="section-subtitle"><i class="fa fa-bar-chart"></i> 核心效益量化预测</div>
+                <div class="chart-container">
+                    <canvas id="benefitChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第6页：风险管控与共赢保障 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-shield"></i> 风险管控
+            </div>
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="chapter-title">风险可控，保障园区与我方共赢发展</div>
+            
+            <div class="text-content">本项目通过完善的风险管控机制和共赢保障措施，确保政策、资金、运营等各环节风险可控，最大限度降低园区投入，实现双方长期稳定合作与共同发展。</div>
+
+            <div style="margin-bottom: 30px;">
+                <div class="section-subtitle"><i class="fa fa-exclamation-triangle"></i> 核心风险管控措施</div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">
+                        <i class="fa fa-gavel"></i>
+                    </div>
+                    <div class="risk-content">
+                        <div class="risk-title">政策风险可控</div>
+                        <div class="risk-desc">核定征收已有国家层面指导（国家税务总局2025年第15号公告），且惠州、河南等地已通过专项政策验证可行性，不存在政策冲突风险；园区作为政策协调主体，可与政府部门建立常态化沟通机制，及时应对政策调整。</div>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="risk-content">
+                        <div class="risk-title">园区投入最小化</div>
+                        <div class="risk-desc">我方承担系统开发、企业招商、运营推广等核心成本；园区仅需协调政策资源及提供必要的物理空间，无大额资金投入压力；项目收益按约定比例分配，园区可实现“轻资产、高回报”。</div>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">
+                        <i class="fa fa-sign-out"></i>
+                    </div>
+                    <div class="risk-content">
+                        <div class="risk-title">退出机制清晰</div>
+                        <div class="risk-desc">若政策未达成（地址集群登记或核定征收未获批），双方可协商终止合作，无强制捆绑条款；已投入的系统资源可由我方收回，园区无需承担额外损失；合作期间建立定期评估机制，可根据实际情况调整合作模式。</div>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="risk-content">
+                        <div class="risk-title">运营风险可控</div>
+                        <div class="risk-desc">我方拥有成熟的跨境电商园区运营团队和丰富的行业经验，已成功运营多个类似项目；建立严格的企业入驻审核机制和风险监控体系，防范虚假贸易、违规操作等风险；与监管部门保持密切沟通，确保运营合规。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-subtitle"><i class="fa fa-handshake-o"></i> 共赢保障机制</div>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">
+                            <i class="fa fa-balance-scale"></i> 权责清晰的合作机制
+                        </div>
+                        <div class="card-content">
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>明确双方在政策协调、招商运营、风险管控等方面的权责分工</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>建立月度沟通会议、季度工作汇报、年度成果评估机制</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>共同制定项目发展规划和阶段性目标，确保方向一致</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>设立联合工作组，负责日常协调和问题解决</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">
+                            <i class="fa fa-share-alt"></i> 利益共享的分配机制
+                        </div>
+                        <div class="card-content">
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>基于税收贡献、企业入驻数量等核心指标，建立合理的收益分配模式</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>共同争取政府专项扶持资金，按约定比例分配使用</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>项目成熟后，可根据双方贡献调整分配比例，实现长期共赢</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>建立透明的财务核算体系，确保收益分配公平公正</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第7页：结语与附件 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="project-tag">
+                <i class="fa fa-paper-plane"></i> 结语与附件
+            </div>
+            <div class="park-logo">
+                <i class="fa fa-building"></i>
+                <span>佛山高新技术产业园</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="conclusion">
+                <div class="conclusion-title">携手共建跨境电商合规出海新标杆</div>
+                <div class="conclusion-content">
+                    本项目通过 “政策突破+系统赋能” 双轮驱动，将帮助佛山园区在跨境电商合规化竞争中抢占先机，实现税收增长、数据纳统、产业升级三重目标。<br>
+                    只要园区协助解决地址与税务核心政策，我们承诺6个月内初见成效，1年内打造全国标杆！<br>
+                    诚邀园区管理层据此方案与税务、商务部门沟通，我们将全力配合推进项目落地！
+                </div>
+            </div>
+
+            <div class="attachment">
+                <div class="attachment-title">
+                    <i class="fa fa-file-text-o"></i> 附件参考资料
+                </div>
+                <div class="attachment-list">
+                    <div class="attachment-item">
+                        <i class="fa fa-file-pdf-o"></i>
+                        <span>《中国（河南）自由贸易试验区郑州片区跨境电子商务零售出口税收管理办法（试行）》（郑自贸管委〔2023〕18号）</span>
+                    </div>
+                    <div class="attachment-item">
+                        <i class="fa fa-file-pdf-o"></i>
+                        <span>《惠州市市场监督管理局关于支持跨境电子商务产业发展的若干措施》（惠市监注〔2024〕3号）</span>
+                    </div>
+                    <div class="attachment-item">
+                        <i class="fa fa-file-pdf-o"></i>
+                        <span>《惠州跨境电子商务综合试验区发展报告（2024）》（惠州市商务局、惠州海关联合发布）</span>
+                    </div>
+                    <div class="attachment-item">
+                        <i class="fa fa-file-pdf-o"></i>
+                        <span>国家税务总局《关于跨境电子商务综合试验区零售出口企业所得税核定征收有关问题的公告》（2025年第15号）</span>
+                    </div>
+                    <div class="attachment-item">
+                        <i class="fa fa-file-pdf-o"></i>
+                        <span>跨境电商合规系统功能说明书及成功案例集</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 图表采用蓝绿过渡色，贴合融合风格
+        document.addEventListener('DOMContentLoaded', function() {
+            new Chart(document.getElementById('benefitChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['试点期（3个月）', '推广期（6个月）', '成熟期（1年）'],
+                    datasets: [
+                        {
+                            label: '入驻企业数量（家）',
+                            data: [100, 2000, 4000],
+                            backgroundColor: 'rgba(0, 102, 204, 0.7)', // 怡亚通主蓝
+                            borderColor: 'rgba(0, 102, 204, 1)',
+                            borderWidth: 1,
+                            borderRadius: 6
+                        },
+                        {
+                            label: '月均税收贡献（万元）',
+                            data: [100, 3000, 830],
+                            backgroundColor: 'rgba(0, 180, 137, 0.7)', // 怡亚通强调绿
+                            borderColor: 'rgba(0, 180, 137, 1)',
+                            borderWidth: 1,
+                            borderRadius: 6
+                        },
+                        {
+                            label: '月均结汇规模（亿美元）',
+                            data: [1, 5, 8.3],
+                            backgroundColor: 'linear-gradient(to right, rgba(0, 102, 204, 0.7), rgba(0, 180, 137, 0.7))', // 蓝绿过渡
+                            borderColor: 'linear-gradient(to right, rgba(0, 102, 204, 1), rgba(0, 180, 137, 1))',
+                            borderWidth: 1,
+                            borderRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { 
+                            position: 'top', 
+                            labels: { 
+                                font: { size: 13 },
+                                padding: 18
+                            } 
+                        },
+                        title: { 
+                            display: true, 
+                            text: '项目各阶段核心效益预测', 
+                            font: { size: 17, weight: 'bold' }, 
+                            color: 'var(--main-blue)',
+                            padding: { bottom: 22 }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                            padding: 10,
+                            titleFont: { size: 15 },
+                            bodyFont: { size: 13 },
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y;
+                                        if (context.datasetIndex === 0) label += ' 家';
+                                        else if (context.datasetIndex === 1) label += ' 万元';
+                                        else if (context.datasetIndex === 2) label += ' 亿美元';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            grid: { 
+                                color: 'rgba(0,0,0,0.04)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                padding: 8
+                            }
+                        },
+                        x: {
+                            grid: { 
+                                display: false
+                            },
+                            ticks: {
+                                padding: 8,
+                                font: { size: 13 }
+                            }
+                        }
+                    },
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.7
+                }
+            });
+        });
+    </script>
+</body>
+</html>
