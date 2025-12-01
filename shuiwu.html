@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主动合规，安心经营——跨境电商的阳光之路</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans SC', '思源黑体', sans-serif;
+        }
+        body {
+            background: #fff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            padding: 4vw;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex;
+        }
+        h1 {
+            font-size: 3.2vw;
+            font-weight: 600;
+            color: #2E7D32; /* 温暖绿色主色调，亲和不生硬 */
+            margin-bottom: 2vw;
+            line-height: 1.4;
+        }
+        h2 {
+            font-size: 2.5vw;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 2.5vw;
+        }
+        p {
+            font-size: 1.8vw;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 2vw;
+            max-width: 90%;
+        }
+        .subtitle {
+            font-size: 2vw;
+            color: #777;
+            margin-bottom: 3vw;
+        }
+        .speaker {
+            position: absolute;
+            bottom: 3vw;
+            right: 4vw;
+            font-size: 1.5vw;
+            color: #2E7D32;
+            font-weight: 500;
+        }
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            width: 95%;
+            margin-top: 3vw;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 30%;
+            background: #F5F7F5;
+            border-radius: 12px;
+            padding: 2vw;
+            text-align: left;
+            margin-bottom: 2vw;
+        }
+        .card-icon {
+            font-size: 2.8vw;
+            color: #2E7D32;
+            margin-bottom: 1.2vw;
+        }
+        .card-title {
+            font-size: 1.8vw;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1vw;
+        }
+        .card-desc {
+            font-size: 1.5vw;
+            color: #666;
+            line-height: 1.6;
+        }
+        .key-point {
+            display: inline-block;
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 0.8vw 2vw;
+            border-radius: 8px;
+            font-size: 1.6vw;
+            font-weight: 500;
+            margin: 0.8vw;
+        }
+        .heart-icon {
+            font-size: 4vw;
+            color: #2E7D32;
+            margin-bottom: 2vw;
+        }
+        .emphasis {
+            color: #2E7D32;
+            font-weight: 600;
+        }
+    </style>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 第1页：开场页 -->
+    <div class="slide active" id="slide1">
+        <img src="https://picsum.photos/id/1060/1920/1080" class="bg-img" alt="温暖办公场景">
+        <h1>各位电商朋友，大家好！</h1>
+        <div class="subtitle">一名税务老兵的诚恳建议：主动合规，安心经营</div>
+        <p>我是税务战线上的一名老兵，今天以新身份，跟咱们最有活力的跨境电商朋友们，唠点实在的</p>
+        <div class="speaker">分享人 | XXX （原国家税务总局XX分局 退休干部）</div>
+    </div>
+
+    <!-- 第2页：政策核心通俗解读 -->
+    <div class="slide" id="slide2">
+        <h2>15/17号文的核心：税务局有了“千里眼”和“顺风耳”</h2>
+        <p>这个文件不用抠法条，说白了就一句话：<span class="emphasis">信息时代，透明征税</span></p>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <div class="card-title">以前：看不清、听不见</div>
+                <div class="card-desc">海外业务数据分散，征管难度大，不少合规卖家反而吃亏</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-radar"></i></div>
+                <div class="card-title">现在：数据可视化</div>
+                <div class="card-desc">平台自动报送销售数据，每笔交易都在监管视野内</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                <div class="card-title">核心是：公平竞争</div>
+                <div class="card-desc">让守规矩的卖家不吃亏，创造公平的市场环境</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第3页：征管逻辑揭秘 -->
+    <div class="slide" id="slide3">
+        <h2>税务局是怎么发现风险的？——给大家交个底</h2>
+        <p>现在查税靠“数据驱动”，系统自动干活，我给大家拆三个关键步骤</p>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-database"></i></div>
+                <div class="card-title">第一步：数据“碰库”</div>
+                <div class="card-desc">平台销售、收款流水、报关数据、个人银行账、社保信息，系统自动比对</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="card-title">第二步：指标异常预警</div>
+                <div class="card-desc">税负率、收入增长和行业差距太大，或公司“微利”但个人账户流水巨大，就亮红灯</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="card-title">第三步：风险评级</div>
+                <div class="card-desc">系统打分分高中低风险，高风险的就是重点关注对象</div>
+            </div>
+        </div>
+        <p style="margin-top: 2vw; font-size: 1.6vw;">举个例子：平台卖1000万，银行卡进800万，个税只报10万——这就是明显的“逻辑不通”</p>
+    </div>
+
+    <!-- 第4页：老税务的心里话 -->
+    <div class="slide" id="slide4">
+        <div class="heart-icon"><i class="fas fa-heart"></i></div>
+        <h2>老税务的几句心里话</h2>
+        <div class="card-container">
+            <div class="card" style="width: 45%;">
+                <div class="card-title">第一：别抱侥幸心理</div>
+                <div class="card-desc">“船小好掉头”“查不到我”的想法要不得！大数据不认企业大小，只认数据逻辑</div>
+            </div>
+            <div class="card" style="width: 45%;">
+                <div class="card-title">第二：“拖”是下下策</div>
+                <div class="card-desc">问题不会自己消失，只会越滚越大。等到稽查找上门，性质就变了，处理余地也小了</div>
+            </div>
+            <div class="card" style="width: 95%;">
+                <div class="card-title">第三：态度决定一切</div>
+                <div class="card-desc">主动梳理、主动补报、主动沟通，这叫“主动消除危害后果”，税务机关会从轻、减轻甚至免除处罚。现在主动行动，不是成本，是给企业长治久安的“投资”</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第5页：结尾过渡页 -->
+    <div class="slide" id="slide5">
+        <img src="https://picsum.photos/id/1059/1920/1080" class="bg-img" alt="阳光大道">
+        <h1>拥抱阳光，共赢未来</h1>
+        <p>时代变了，游戏规则也变了——过去“闷声发大财”的旧思路，现在行不通了</p>
+        <p>把生意做得规范、做得阳光，看起来麻烦一点，但路会越走越宽！以后融资、贷款、上市，<span class="emphasis">规范的财务数据就是你最硬的底气</span></p>
+        <p style="margin-top: 3vw;">我知道大家一听合规就头大，流程复杂、专业性强——所以借助专业力量特别关键</p>
+        <p style="font-size: 2vw; color: #2E7D32; font-weight: 600; margin-top: 1vw;">今天主办方推出的合规系统，就是把复杂政策变成标准化操作，相当于请了个专业“税务顾问团队”</p>
+        <p style="margin-top: 2vw; font-size: 1.8vw;">希望大家抓住机会，顺利转型，在阳光大道上把生意越做越红火！谢谢大家！</p>
+    </div>
+
+    <script>
+        // 幻灯片切换逻辑（保持与前序PPT一致，便于衔接）
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
+
+        // 点击切换下一页
+        document.addEventListener('click', () => {
+            const nextIndex = (currentIndex + 1) % slides.length;
+            showSlide(nextIndex);
+        });
+
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                const nextIndex = (currentIndex + 1) % slides.length;
+                showSlide(nextIndex);
+            } else if (e.key === 'ArrowLeft') {
+                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            }
+        });
+
+        // 初始化显示第一页
+        showSlide(0);
+    </script>
+</body>
+</html>
