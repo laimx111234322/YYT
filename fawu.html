@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨境电商合规演讲PPT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans SC', '思源黑体', sans-serif;
+        }
+        body {
+            background: #fff;
+            overflow: hidden; /* 隐藏滚动条 */
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            padding: 4vw;
+            display: none; /* 默认隐藏所有幻灯片 */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex; /* 显示当前幻灯片 */
+        }
+        h1 {
+            font-size: 3.5vw;
+            font-weight: 700;
+            color: #0F52BA;
+            margin-bottom: 1.5vw;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 2.8vw;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2vw;
+        }
+        h3 {
+            font-size: 2vw;
+            font-weight: 600;
+            color: #0F52BA;
+            margin-bottom: 1vw;
+        }
+        p {
+            font-size: 1.8vw;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5vw;
+        }
+        .subtitle {
+            font-size: 2.2vw;
+            color: #999;
+            margin-bottom: 3vw;
+        }
+        .speaker {
+            position: absolute;
+            bottom: 3vw;
+            right: 4vw;
+            font-size: 1.5vw;
+            color: #0F52BA;
+        }
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 2vw;
+        }
+        .card {
+            width: 28%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 2vw;
+            text-align: left;
+        }
+        .card-icon {
+            font-size: 2.5vw;
+            color: #0F52BA;
+            margin-bottom: 1vw;
+        }
+        .card-title {
+            font-size: 1.8vw;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8vw;
+        }
+        .card-desc {
+            font-size: 1.5vw;
+            color: #666;
+            line-height: 1.5;
+        }
+        .risk-card {
+            width: 45%;
+            padding: 2.5vw;
+            border-radius: 12px;
+            text-align: left;
+            color: #fff;
+        }
+        .risk-low {
+            background: #FF6B6B;
+            opacity: 0.8;
+        }
+        .risk-high {
+            background: #E53935;
+        }
+        .map-container {
+            width: 80%;
+            height: 50vh;
+            margin: 2vw 0;
+            position: relative;
+        }
+        .map-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .path-container {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3vw 0;
+        }
+        .path-node {
+            width: 25%;
+            padding: 1.5vw;
+            border-radius: 8px;
+            font-size: 1.6vw;
+            font-weight: 600;
+            color: #fff;
+        }
+        .node1 {
+            background: #FF6B6B;
+        }
+        .node2 {
+            background: #FFC107;
+            color: #333;
+        }
+        .node3 {
+            background: #4CAF50;
+        }
+        .arrow {
+            font-size: 2.5vw;
+            color: #0F52BA;
+            font-weight: bold;
+        }
+        .module-container {
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3vw;
+        }
+        .module {
+            width: 20%;
+            text-align: center;
+        }
+        .module-icon {
+            font-size: 3vw;
+            color: #0F52BA;
+            margin-bottom: 1vw;
+        }
+        .module-text {
+            font-size: 1.5vw;
+            color: #333;
+            font-weight: 500;
+        }
+        .warning-tag {
+            display: inline-block;
+            background: #E53935;
+            color: #fff;
+            padding: 0.5vw 1.5vw;
+            border-radius: 30px;
+            font-size: 1.5vw;
+            margin-bottom: 2vw;
+        }
+        .wrong-mind {
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2vw;
+        }
+        .wrong-card {
+            width: 30%;
+            border: 2px solid #E53935;
+            border-radius: 8px;
+            padding: 1.5vw;
+            text-align: center;
+        }
+        .wrong-text {
+            font-size: 1.6vw;
+            color: #E53935;
+            font-weight: 500;
+        }
+        .transition-text {
+            font-size: 2vw;
+            color: #333;
+            font-weight: 600;
+            margin-top: 4vw;
+        }
+    </style>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 第1页：开场页 -->
+    <div class="slide active" id="slide1">
+        <img src="https://picsum.photos/id/1040/1920/1080" class="bg-img" alt="风暴云与灯塔">
+        <h1>一场无法回避的合规风暴已经登陆</h1>
+        <div class="subtitle">跨境电商15/17号文法律解读与安全指南</div>
+        <div class="speaker">演讲人 | XXX 律师（10年跨境电商合规服务经验）</div>
+    </div>
+
+    <!-- 第2页：政策核心解读 -->
+    <div class="slide" id="slide2">
+        <h2>15/17号文核心：税务机关的「天眼」已开启</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="card-title">自动报送义务</div>
+                <div class="card-desc">平台定期推送：卖家身份+店铺信息+销售收入数据至税务总局</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="card-title">系统性征管</div>
+                <div class="card-desc">数据交换周期性、全覆盖，替代传统个案调查模式</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-search-dollar"></i></div>
+                <div class="card-title">交易透明化</div>
+                <div class="card-desc">每一笔跨境交易，均纳入税务监管视野，无死角覆盖</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第3页：全球趋势背书 -->
+    <div class="slide" id="slide3">
+        <h2>这不是孤立事件：全球围剿「信息孤岛」</h2>
+        <div class="subtitle">CRS准则+BEPS计划下的跨境合规大趋势</div>
+        <div class="map-container">
+            <img src="https://picsum.photos/id/101/1200/600" class="map-img" alt="世界地图">
+            <!-- 地图标注（可替换为带标注的地图图） -->
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-globe"></i></div>
+                <div class="card-title">CRS全球税务交换</div>
+                <div class="card-desc">100+国家参与，跨境税务信息实时共享</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                <div class="card-title">BEPS反税基侵蚀</div>
+                <div class="card-desc">国际共识下，规范跨境企业税收征管漏洞</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第4页：风险警示（行政+刑事） -->
+    <div class="slide" id="slide4">
+        <span class="warning-tag">⚠️ 律师郑重提示</span>
+        <h2>法律风险三重奏：你可能面临的后果</h2>
+        <div class="card-container">
+            <div class="risk-card risk-low">
+                <div class="card-title">行政风险（大概率发生）</div>
+                <div class="card-desc">• 补缴历史税款<br>• 巨额滞纳金（按日0.05%）<br>• 罚款（0.5倍-5倍应纳税额）</div>
+            </div>
+            <div class="risk-card risk-high">
+                <div class="card-title">刑事风险（底线红线）</div>
+                <div class="card-desc">• 触犯《刑法》第201条逃税罪<br>• 情节严重者面临有期徒刑+罚金<br>• 个人征信永久污点</div>
+            </div>
+        </div>
+        <p style="margin-top: 2vw;">这些风险不是危言耸听，而是已有案例印证的法律后果</p>
+    </div>
+
+    <!-- 第5页：错误心态与心理风险 -->
+    <div class="slide" id="slide5">
+        <h2>看不见的风险：心理煎熬与误判代价</h2>
+        <p>等待观望的不确定性，会直接影响经营决策——拖延只会让问题越滚越大</p>
+        <div class="wrong-mind">
+            <div class="wrong-card">
+                <div class="wrong-text"><i class="fas fa-times"></i> 我规模小，查不到我</div>
+            </div>
+            <div class="wrong-card">
+                <div class="wrong-text"><i class="fas fa-times"></i> 用个人账号，没关系</div>
+            </div>
+            <div class="wrong-card">
+                <div class="wrong-text"><i class="fas fa-times"></i> 再观望一下，先不行动</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第6页：合规出路 -->
+    <div class="slide" id="slide6">
+        <h2>安全出路：从被动恐慌到主动合规</h2>
+        <div class="subtitle">构建你的「合规防火墙」，法律层面无懈可击</div>
+        <div class="path-container">
+            <div class="path-node node1">被动恐慌<br>（数据透明前）</div>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <div class="path-node node2">主动诊断<br>（现状梳理）</div>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <div class="path-node node3">合规落地<br>（系统支撑）</div>
+        </div>
+        <div class="module-container">
+            <div class="module">
+                <div class="module-icon"><i class="fas fa-stethoscope"></i></div>
+                <div class="module-text">税务合规诊断</div>
+            </div>
+            <div class="module">
+                <div class="module-icon"><i class="fas fa-sitemap"></i></div>
+                <div class="module-text">业务架构设计</div>
+            </div>
+            <div class="module">
+                <div class="module-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="module-text">资金回流规范</div>
+            </div>
+            <div class="module">
+                <div class="module-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="module-text">合规凭证留存</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第7页：结尾过渡页 -->
+    <div class="slide" id="slide7">
+        <img src="https://picsum.photos/id/1059/1920/1080" class="bg-img" alt="阳光大道">
+        <h1>科技赋能合规，为跨境生意保驾护航</h1>
+        <p style="font-size: 2vw; color: #333; margin-top: 3vw;">复杂的法律合规要求，必须用系统性、技术驱动的工具来解决</p>
+        <div class="transition-text">接下来，我的同事将为大家揭晓——如何用一套简单、高效、可靠的系统，搞定15/17号文合规全流程</div>
+        <p style="margin-top: 4vw; font-size: 2.2vw; color: #0F52BA; font-weight: 600;">掌声有请XXX（产品负责人）</p>
+    </div>
+
+    <script>
+        // 幻灯片切换逻辑（点击/键盘控制）
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        // 显示当前幻灯片
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
+
+        // 点击切换下一页
+        document.addEventListener('click', () => {
+            const nextIndex = (currentIndex + 1) % slides.length;
+            showSlide(nextIndex);
+        });
+
+        // 键盘方向键控制
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                const nextIndex = (currentIndex + 1) % slides.length;
+                showSlide(nextIndex);
+            } else if (e.key === 'ArrowLeft') {
+                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            }
+        });
+
+        // 初始化显示第一页
+        showSlide(0);
+    </script>
+</body>
+</html>
